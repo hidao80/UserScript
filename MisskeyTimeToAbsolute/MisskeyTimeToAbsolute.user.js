@@ -17,8 +17,8 @@
 // @author      hidao80
 // @version     1.2
 // @run-at      document-idle
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
 // ==/UserScript==
 
 const tag = document.createElement("style");

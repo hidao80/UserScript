@@ -18,8 +18,8 @@
 // @version     1.2
 // @grant       none
 // @run-at      document-idle
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
 // ==/UserScript==
 
 // Initialization of reading voice

@@ -18,8 +18,8 @@
 // @version     1.2
 // @grant       none
 // @run-at      document-idle
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
 // ==/UserScript==
 
 // Initialization of reading voice

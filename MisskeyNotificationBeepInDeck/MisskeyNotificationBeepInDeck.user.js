@@ -17,8 +17,8 @@
 // @author      hidao80
 // @version     1.2
 // @run-at      document-idle
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
 // ==/UserScript==
 
 // クリックまたは新しい投稿があった場合の処理
