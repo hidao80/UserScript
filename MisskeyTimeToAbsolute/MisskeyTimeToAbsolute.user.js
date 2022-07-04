@@ -15,19 +15,18 @@
 // @description Change time to absolute notation bookmarklet for Misskey v11.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.2
+// @version     1.3
 // @run-at      document-idle
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
 // ==/UserScript==
 
-const tag = document.createElement("style");
-tag.innerText = `
+const sheet = new CSSStyleSheet();
+sheet.replaceSync(`
 .transition time::before {
-content: attr(title) " (";
+    content: attr(title) " (";
 }
 .transition time::after {
-content: ")";
-}
-`;
-document.getElementsByTagName("head").item(0).appendChild(tag);
+    content: ")";
+}`);
+document.adoptedStyleSheets = document.adoptedStyleSheets.concat(sheet);
