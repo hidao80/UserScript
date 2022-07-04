@@ -15,7 +15,7 @@
 // @description This is a script to read out the timeline of a mastodon home using the Speech API.
 // @match       https://fedibird.com/*/*
 // @author      hidao80
-// @version     1.2
+// @version     1.3
 // @grant       none
 // @run-at      document-idle
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
@@ -40,7 +40,7 @@ const setVoice = () => {
 
 const timer = setInterval(v => {
 // Designation of lanes to watch for posts
-    var parentElment = document.querySelector('[aria-label="ホーム"]');
+    const parentElment = document.querySelector('[aria-label="ホーム"]');
     if (parentElment) {
         clearInterval(timer);
 
@@ -48,9 +48,10 @@ const timer = setInterval(v => {
 
         // If there is a change in the lane,
         // check if it is the first and read it out if the first has changed
-        const topTootId = () => {
-            return parentElment.querySelector(".status").dataset.id;
+        function topTootId() {
+            return parentElment.querySelector("article")?.dataset.id;
         };
+
         let oldTootId = topTootId();
         // console.log(oldTootId);
         var mo = new MutationObserver(() => {
@@ -61,7 +62,7 @@ const timer = setInterval(v => {
                 speech();
             }
         });
-        mo.observe(parentElment.querySelector(".item-list"), { childList: true });
+        mo.observe(parentElment.querySelector(".item-list"), { childList: true, subtree: true });
 
         // Trimming the readout
         function speech() {
@@ -69,15 +70,17 @@ const timer = setInterval(v => {
             synth.cancel();
 
             // Get toot
-            const elem = parentElment.querySelector(".status__wrapper");
+            const elem = parentElment?.querySelector(".status__wrapper");
+
+            if (elem?.querySelector(".display-name__html") == undefined) return;
 
             // Trimming date and user ID
-            const name = elem.querySelector(".display-name__html").textContent + "さんのトゥート。";
-            const toot = elem.getAttribute('aria-label').split(', ');
+            const name = elem?.querySelector(".display-name__html").textContent + "さんのトゥート。";
+            const toot = elem?.getAttribute('aria-label')?.split(', ');
 
             // Retrieve any comma in the message, even if there is a comma in the message.
             let message = '';
-            for (let i = 0; i < toot.length; i++) {
+            for (let i = 0; i < toot?.length; i++) {
                 if (i != 0 && i != (toot.length - 1) && i != (toot.length - 2)) {
                     message += toot[i];
                 }
