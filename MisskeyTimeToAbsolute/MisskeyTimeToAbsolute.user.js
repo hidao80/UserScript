@@ -15,7 +15,7 @@
 // @description Change time to absolute notation bookmarklet for Misskey v11.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.3
+// @version     1.4
 // @run-at      document-idle
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
