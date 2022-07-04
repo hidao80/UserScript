@@ -21,12 +21,12 @@
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js
 // ==/UserScript==
 
-const sheet = new CSSStyleSheet();
-sheet.replaceSync(`
+const usableSheet = [...document.styleSheets].filter(x => x.href?.startsWith(location.origin)).slice(-1)[0];
+usableSheet.insertRule(`
 .transition time::before {
     content: attr(title) " (";
-}
+}`, usableSheet.cssRules.length);
+usableSheet.insertRule(`
 .transition time::after {
     content: ")";
-}`);
-document.adoptedStyleSheets = document.adoptedStyleSheets.concat(sheet);
+}`, usableSheet.cssRules.length);
