@@ -22,12 +22,22 @@
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js
 // ==/UserScript==
 
-const sheet = new CSSStyleSheet();
-sheet.replaceSync(`
+// const sheet = new CSSStyleSheet();
+// sheet.replaceSync(`
+// article time::before {
+//     content: attr(title) " (";
+// }
+// article time::after {
+//     content: ")";
+// }`);
+// document.adoptedStyleSheets = document.adoptedStyleSheets.concat(sheet);
+
+const usableSheet = [...document.styleSheets].filter(x => x.href?.startsWith(location.origin)).slice(-1)[0];
+usableSheet.insertRule(`
 article time::before {
     content: attr(title) " (";
-}
+}`, usableSheet.cssRules.length);
+usableSheet.insertRule(`
 article time::after {
     content: ")";
-}`);
-document.adoptedStyleSheets = document.adoptedStyleSheets.concat(sheet);
+}`, usableSheet.cssRules.length);
