@@ -14,23 +14,12 @@
 // @name        MastodonTimeToAbsolute
 // @description Change time to absolute notation bookmarklet for Mastodon.
 // @match       https://fedibird.com/web/*
-// @match       https://fedibird.com/web/*/timelines/*
 // @author      hidao80
-// @version     1.0
+// @version     1.1
 // @run-at      document-idle
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js
 // ==/UserScript==
-
-// const sheet = new CSSStyleSheet();
-// sheet.replaceSync(`
-// article time::before {
-//     content: attr(title) " (";
-// }
-// article time::after {
-//     content: ")";
-// }`);
-// document.adoptedStyleSheets = document.adoptedStyleSheets.concat(sheet);
 
 const usableSheet = [...document.styleSheets].filter(x => x.href?.startsWith(location.origin)).slice(-1)[0];
 usableSheet.insertRule(`
