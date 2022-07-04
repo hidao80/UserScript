@@ -7,6 +7,9 @@
 
 Change time to absolute notation bookmarklet for Misskey v11.
 
+## Install
+[Click here.](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
+
 ## Licence
 
 MIT
