@@ -7,6 +7,9 @@
 
 Bookmarklet that sounds a notification sound even when the deck is displayed in Misskey.
 
+## Install
+[Click here.](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
+
 ## Licence
 
 MIT
