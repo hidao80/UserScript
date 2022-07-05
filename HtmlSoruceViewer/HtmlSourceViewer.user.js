@@ -35,7 +35,7 @@ GM_addStyle(GM_getResourceText("shCore.css"));
 GM_addStyle(GM_getResourceText("shCoreDefault.css"));
 
 // Fixed a bug that caused tags to be hidden.
-const html = document.getElementsByTagName('HTML')[0].outerHTML.replace(/</g, "&lt;");
+const html = document.getElementsByTagName('BODY')[0].outerHTML.replace(/</g, "&lt;");
 
 document.body.innerHTML = `<pre class="brush: xml;toolbar: false;">${html}</pre>`;
 
