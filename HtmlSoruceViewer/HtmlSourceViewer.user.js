@@ -13,9 +13,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // ==UserScript==
 // @name        HtmlSourceViewer
 // @description Displays the HTML source of the page being displayed.
-// @match       *://*/*
+// @include     http://*
+// @include     https://*
 // @author      hidao80
 // @version     1.0
+// @namespace   hidao80
 // @run-at      document-end
 // @grant       GM_addStyle
 // @grant       GM_getResourceText

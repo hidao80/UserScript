@@ -13,10 +13,13 @@
 // ==UserScript==
 // @name        MisskeyNotificationBeepInDeck
 // @description Bookmarklet that sounds a notification sound even when the deck is displayed in Misskey.
-// @match       https://misskey.dev/*
+// @include     https://misskey.dev/*
+// @include     https://misskey.io/*
 // @author      hidao80
-// @version     1.2
-// @run-at      document-idle
+// @version     1.3
+// @namespace   hidao80
+// @run-at      document-end
+// @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
 // ==/UserScript==

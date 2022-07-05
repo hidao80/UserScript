@@ -13,11 +13,13 @@
 // ==UserScript==
 // @name        MastodonTootSpeach
 // @description This is a script to read out the timeline of a mastodon home using the Speech API.
-// @match       https://fedibird.com/*/*
+// @include     https://fedibird.com/web/*
+// @include     https://mstdn.jp/web/*
 // @author      hidao80
-// @version     1.3
+// @version     1.4
+// @namespace   hidao80
+// @run-at      document-end
 // @grant       none
-// @run-at      document-idle
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
 // ==/UserScript==

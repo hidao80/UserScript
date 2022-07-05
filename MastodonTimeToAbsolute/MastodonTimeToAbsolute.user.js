@@ -13,10 +13,12 @@
 // ==UserScript==
 // @name        MastodonTimeToAbsolute
 // @description Change time to absolute notation bookmarklet for Mastodon.
-// @match       https://fedibird.com/web/*
+// @include     https://fedibird.com/web/*
+// @include     https://mstdn.jp/web/*
 // @author      hidao80
-// @version     1.1
-// @run-at      document-idle
+// @version     1.2
+// @namespace   hidao80
+// @run-at      document-end
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js
 // ==/UserScript==

@@ -13,11 +13,13 @@
 // ==UserScript==
 // @name        MisskeyNotesSpeech
 // @description Bookmarklet to read out Misskey's social timeline using the Speech API.
-// @match       https://misskey.dev/*
+// @include     https://misskey.dev/*
+// @include     https://misskey.io/*
 // @author      hidao80
-// @version     1.2
+// @version     1.3
+// @namespace   hidao80
+// @run-at      document-end
 // @grant       none
-// @run-at      document-idle
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
 // ==/UserScript==
