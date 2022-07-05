@@ -10,6 +10,8 @@ Change time to absolute notation bookmarklet for Misskey v11.
 ## Install
 After installing the UserScript Manager extension, go to https://github.com/hidao80/UserScript/blob/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js and click on the Source Click on the "Raw" button in the code.
 
+or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
+
 ## Licence
 
 MIT

@@ -8,6 +8,8 @@ This is a script to read out the timeline of a mastodon home using the Speech AP
 ## Install
 After installing the UserScript Manager extension, go to https://github.com/hidao80/UserScript/blob/main/MastodonTootSpeech/MastodonTootSpeech.user.js and click on the Source Click on the "Raw" button in the code.
 
+or [Click to install](https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeech/MastodonTootSpeech.user.js)
+
 ## Licence
 
 MIT
