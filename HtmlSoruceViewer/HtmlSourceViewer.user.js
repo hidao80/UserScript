@@ -27,7 +27,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js
 // ==/UserScript==
 
-if (!/#HtmlSourceViewer/.test(location.hash)) return;
+if (!/#hsv/.test(location.hash)) return;
 
 GM_addStyle(GM_getResourceText("shCore.css"));
 GM_addStyle(GM_getResourceText("shCoreDefault.css"));
