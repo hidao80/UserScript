@@ -8,7 +8,7 @@
 Displays the HTML source of the page being displayed.
 
 ## Install
-[Click here.](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
+After installing the UserScript Manager extension, go to https://github.com/hidao80/UserScript/blob/main/HtmlSoruceViewer/HtmlSourceViewer.user.js and click on the Source Click on the "Raw" button in the code.
 
 ## Hou to use
 Add "#HtmlSourceViewer" to the URL fragment where you want to view the source to access it.
