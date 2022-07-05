@@ -13,8 +13,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // ==UserScript==
 // @name        HtmlSourceViewer
 // @description Displays the HTML source of the page being displayed.
-// @include     http://*
-// @include     https://*
+// @match       http://*
+// @match       https://*
 // @author      hidao80
 // @version     1.0
 // @namespace   hidao80
@@ -31,13 +31,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 if (!/#hsv/.test(location.hash)) return;
 
-GM_addStyle(GM_getResourceText("shCore.css"));
-GM_addStyle(GM_getResourceText("shCoreDefault.css"));
-
 // Fixed a bug that caused tags to be hidden.
-const html = document.getElementsByTagName('BODY')[0].outerHTML.replace(/</g, "&lt;");
-
+const html = document.getElementsByTagName('HTML')[0].outerHTML.replace(/</g, "&lt;");
 document.body.innerHTML = `<pre class="brush: xml;toolbar: false;">${html}</pre>`;
 
-SyntaxHighlighter.config.bloggerMode = true;
-SyntaxHighlighter.all()
+try {
+    // If local files are available, syntax highlighting will be applied.
+    // Currently not supported by iOS/iPadOS
+    GM_addStyle(GM_getResourceText("shCore.css"));
+    GM_addStyle(GM_getResourceText("shCoreDefault.css"));
+
+    SyntaxHighlighter.config.bloggerMode = true;
+    SyntaxHighlighter.all()
+} catch (ex) {
+}
