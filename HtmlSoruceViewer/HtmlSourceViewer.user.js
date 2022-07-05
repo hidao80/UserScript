@@ -29,7 +29,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js
 // ==/UserScript==
 
-if (!/#hsv/.test(location.hash)) return;
+if (!/^#hsv$/.test(location.hash)) return;
 
 // Fixed a bug that caused tags to be hidden.
 const html = document.getElementsByTagName('HTML')[0].outerHTML.replace(/</g, "&lt;");
