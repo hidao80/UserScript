@@ -8,7 +8,7 @@
 Change time to absolute notation bookmarklet for Mastodon.
 
 ## Install
-[Click here.](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
+After installing the UserScript Manager extension, go to https://github.com/hidao80/UserScript/blob/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js and click on the Source Click on the "Raw" button in the code.
 
 ## Licence
 

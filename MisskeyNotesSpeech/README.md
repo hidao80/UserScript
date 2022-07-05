@@ -7,8 +7,8 @@
 
 Bookmarklet to read out Misskey's social timeline using the Speech API.
 
-## Install
-[Click here.](https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
+## Installe.](https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
+After installing the UserScript Manager extension, go to https://github.com/hidao80/UserScript/blob/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js and click on the Source Click on the "Raw" button in the code.
 
 ## Licence
 
