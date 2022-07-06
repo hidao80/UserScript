@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [chatworkhighlighter](./chatworkhighlighter/README.md)  
+
+Chatworkのコード表記にシンタックスハイライトをかけます。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/chatworkhighlighter/chatworkhighlighter.user.js)
+
 ## [HtmlSourceViewer](./HtmlSourceViewer/README.md)
 
 表示中のページのHTMLソースを表示します。iOS/iPadOS以外ではシンタックスハイライトがかかります。
