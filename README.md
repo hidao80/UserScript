@@ -7,11 +7,11 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [chatworkhighlighter](./chatworkhighlighter/README.md)  
+## [ChatworkHighlighter](./ChatworkHighlighter/README.md)  
 
 Syntax highlighting is applied to the code notation in Chatwork.
 
-[Click to install](https://github.com/hidao80/UserScript/raw/main/chatworkhighlighter/chatworkhighlighter.user.js)
+[Click to install](https://github.com/hidao80/UserScript/raw/main/ChatworkHighlighter/ChatworkHighlighter.user.js)
 
 ## [HtmlSourceViewer](./HtmlSourceViewer/README.md)  
 

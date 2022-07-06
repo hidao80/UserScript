@@ -7,11 +7,11 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [chatworkhighlighter](./chatworkhighlighter/README.md)  
+## [ChatworkHighlighter](./ChatworkHighlighter/README.md)  
 
 Chatworkのコード表記にシンタックスハイライトをかけます。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/chatworkhighlighter/chatworkhighlighter.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/ChatworkHighlighter/ChatworkHighlighter.user.js)
 
 ## [HtmlSourceViewer](./HtmlSourceViewer/README.md)
 
