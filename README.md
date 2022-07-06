@@ -6,7 +6,7 @@
 
 Displays the HTML source of the page being viewed, with syntax highlighting for non-iOS/iPadOS.
 
-[Click to install](https://github.com/hidao80/UserScript/raw/main/HtmlsourceViewer/HtmlSourceViewer.user.js)
+[Click to install](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
 
 ## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
 

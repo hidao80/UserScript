@@ -6,7 +6,7 @@
 
 表示中のページのHTMLソースを表示します。iOS/iPadOS以外ではシンタックスハイライトがかかります。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/HtmlsourceViewer/HtmlSourceViewer.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
 
 ## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
 
