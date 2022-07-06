@@ -9,9 +9,9 @@
 
 ## インストール
 
-拡張機能UserScript Managerをインストール後、https://github.com/hidao80/UserScript/blob/main/HtmlSoruceViewer/HtmlSourceViewer.user.js にアクセスし、ソースコードの外枠にある「Raw」ボタンをクリックします。
+拡張機能UserScript Managerをインストール後、https://github.com/hidao80/UserScript/blob/main/HtmlsourceViewer/HtmlSourceViewer.user.js にアクセスし、ソースコードの外枠にある「Raw」ボタンをクリックします。
 
-または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/HtmlSoruceViewer/HtmlSourceViewer.user.js)
+または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/HtmlsourceViewer/HtmlSourceViewer.user.js)
 
 ## 使い方
 ソースを表示したいURLのURLフラグメントに「#hsv」を追加してアクセスします。
