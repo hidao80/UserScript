@@ -3,7 +3,8 @@
 [README English](./README.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
-![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+
 
 Speech APIを使って、Mastodonのホームタイムラインの新着tootを読み上げるUserScriptです。
 
@@ -15,4 +16,4 @@ Speech APIを使って、Mastodonのホームタイムラインの新着tootを�
 
 ## ライセンス
 
-MIT
+[MIT](/LICENSE)

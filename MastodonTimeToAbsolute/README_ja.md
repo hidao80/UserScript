@@ -3,7 +3,8 @@
 [README English](./README.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
-![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+
 
 Mastodonのtootの投稿時間を絶対表記に変更するUserScriptです。
 
@@ -15,4 +16,4 @@ Mastodonのtootの投稿時間を絶対表記に変更するUserScriptです。
 
 ## ライセンス
 
-MIT
+[MIT](/LICENSE)

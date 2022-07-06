@@ -3,7 +3,8 @@
 [README 日本語版](./README_ja.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
-![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+
 
 Displays the HTML source of the page being viewed, with syntax highlighting for non-iOS/iPadOS.
 
@@ -20,4 +21,4 @@ e.g. https://hidao80.github.io/amazon-url-shortener/#hsv
 
 ## Licence
 
-MIT
+[MIT](/LICENSE)

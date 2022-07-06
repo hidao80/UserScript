@@ -2,6 +2,11 @@
 
 [README English](./README.md)
 
+[![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
+![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
+
 ## [HtmlSourceViewer](./HtmlSourceViewer/README.md)
 
 表示中のページのHTMLソースを表示します。iOS/iPadOS以外ではシンタックスハイライトがかかります。

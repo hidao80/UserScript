@@ -3,7 +3,8 @@
 [README English](./README.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
-![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+
 
 Misskeyでデッキを表示しているときにも通知音を鳴らすUserScriptです。
 
@@ -15,4 +16,4 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 ## ライセンス
 
-MIT
+[MIT](/LICENSE)

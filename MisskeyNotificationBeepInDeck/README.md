@@ -3,7 +3,8 @@
 [README 日本語版](./README_ja.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
-![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+
 
 UserScript that sounds a notification sound even when the deck is displayed in Misskey.
 
@@ -15,4 +16,4 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNoti
 
 ## Licence
 
-MIT
+[MIT](/LICENSE)

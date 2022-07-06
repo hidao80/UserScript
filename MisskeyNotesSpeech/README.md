@@ -3,7 +3,8 @@
 [README 日本語版](./README_ja.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
-![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
+[![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
+
 
 UserScript to read out Misskey's social timeline using the Speech API.
 
@@ -15,4 +16,4 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNote
 
 ## Licence
 
-MIT
+[MIT](/LICENSE)
