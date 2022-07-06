@@ -1,8 +1,8 @@
-# Htmlソーズビューアー
+# Htmlソースビューアー
 
 [README English](./README.md)
 
-[![VanillaJS](https://img.shields.io/badge/Framework-VanillaJS-blue.svg)](http://vanilla-js.com/)
+[![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 ![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
 
 表示中のページのHTMLソースを表示します。iOS/iPadOS以外ではシンタックスハイライトがかかります。

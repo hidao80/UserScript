@@ -2,7 +2,7 @@
 
 [README 日本語版](./README_ja.md)
 
-[![VanillaJS](https://img.shields.io/badge/Framework-VanillaJS-blue.svg)](http://vanilla-js.com/)
+[![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 ![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
 
 Displays the HTML source of the page being viewed, with syntax highlighting for non-iOS/iPadOS.

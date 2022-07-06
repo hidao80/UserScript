@@ -2,7 +2,7 @@
 
 [README English](./README.md)
 
-[![VanillaJS](https://img.shields.io/badge/Framework-VanillaJS-blue.svg)](http://vanilla-js.com/)
+[![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 ![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
 
 Misskey v11で投稿時刻を絶対表記に変更するUserScriptです。

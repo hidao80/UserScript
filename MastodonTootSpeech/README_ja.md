@@ -2,7 +2,7 @@
 
 [README English](./README.md)
 
-[![VanillaJS](https://img.shields.io/badge/Framework-VanillaJS-blue.svg)](http://vanilla-js.com/)
+[![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 ![hidao quality](https://img.shields.io/badge/hidao-quality-orange.svg)
 
 Speech APIを使って、Mastodonのホームタイムラインの新着tootを読み上げるUserScriptです。
