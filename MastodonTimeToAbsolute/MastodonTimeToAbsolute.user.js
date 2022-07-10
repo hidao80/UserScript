@@ -13,8 +13,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // ==UserScript==
 // @name        MastodonTimeToAbsolute
 // @description Change time to absolute notation UserScript for Mastodon.
-// @match       https://fedibird.com/web/*
-// @match       https://mstdn.jp/web/*
+// @match       https://fedibird.com/*
+// @match       https://mstdn.jp/*
 // @author      hidao80
 // @version     1.3
 // @namespace   https://github.com/hidao80/UserScript

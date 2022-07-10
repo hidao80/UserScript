@@ -13,8 +13,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // ==UserScript==
 // @name        MastodonTootSpeach
 // @description UserScript that uses the Speech API to read out new toots in Mastodon's home timeline.
-// @match       https://fedibird.com/web/*
-// @match       https://mstdn.jp/web/*
+// @match       https://fedibird.com/*
+// @match       https://mstdn.jp/*
 // @author      hidao80
 // @version     1.5
 // @namespace   https://github.com/hidao80/UserScript
