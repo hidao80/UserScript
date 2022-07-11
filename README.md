@@ -11,7 +11,7 @@
 
 Display the contents of the browser's developer tools console on the screen.
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js)
+[Click to install](https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js)
 
 ## [ChatworkHighlighter](./ChatworkHighlighter/README.md)  
 
