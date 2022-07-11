@@ -69,13 +69,89 @@ for (let style of styles) {
 
 
 
+/**
+ * Multilingualization library class
+ *
+ * @class Multilingualization
+ */
+class Multilingualization {
+    /**
+     *  @var dictionaries Multilingual dictionary object
+     */
+    static dictionaries = {
+        "en": {
+            "dict-1": "Details: ",
+            "dict-2": "Move to the Opposite",
+        },
+        "ja": {
+            "dict-1": "詳細: ",
+            "dict-2": "反対側へ移動",
+        },
+        "es": {
+            "dict-1": "Detalles: ",
+            "dict-2": "Pasar al otro lado",
+        },
+        "ru": {
+            "dict-1": "Подробности: ",
+            "dict-2": "Перейдите на другую сторону",
+        },
+        "fr": {
+            "dict-1": "Détails : ",
+            "dict-2": "Passez à l'opposé",
+        },
+        "de": {
+            "dict-1": "Détails : ",
+            "dict-2": "Auf die Gegenseite gehen",
+        },
+        "zh": {
+            "dict-1": "细节。",
+            "dict-2": "转移到对立面",
+        },
+    }
+
+    /**
+     * Get current language
+     *
+     * @returns {string} Current language
+     */
+    static language() {
+        const lang = (window.navigator.languages && window.navigator.languages[0]) ||
+            window.navigator.language ||
+            window.navigator.userLanguage ||
+            window.navigator.browserLanguage;
+
+        // Show English for undefined languages
+        return this.dictionaries[lang] ? lang : "en";
+    }
+
+    /**
+     * Get translated term
+     *
+     * @param {string} term Term to be translated
+     * @returns {string} Translated term
+     */
+    static translate(index) {
+        return this.dictionaries[this.language()][index];
+    }
+
+    /**
+     * Initialization of dictionary object
+     */
+    static translateAll() {
+        const dictionary = this.dictionaries[this.language()];
+        for (let elem of document.querySelectorAll('[data-translate]')) {
+            elem.innerHTML = dictionary[elem.dataset.translate];
+        }
+    }
+}
+
 // Output area
 const div = document.createElement("div");
 const details = document.createElement("details");
 
 // Output logs
 const log = msg => {
-    const str = typeof(msg) == "string" ? msg : JSON.stringify(msg,undefined,1);
+    const str = typeof msg  == "string" ? `<pre>${msg}<pre>` : JSON.stringify(msg,undefined,1);
     div.insertAdjacentHTML("beforeend", `<p class="debug-top">${str}</p>`);
     div.scrollTop = div.scrollHeight;
 };
