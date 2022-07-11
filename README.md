@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [OnScreenConsole](./OnScreenConsole/README.md)  
+
+Display the contents of the browser's developer tools console on the screen.
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js)
+
 ## [ChatworkHighlighter](./ChatworkHighlighter/README.md)  
 
 Syntax highlighting is applied to the code notation in Chatwork.

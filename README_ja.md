@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [OnScreenConsole](./OnScreenConsole/README.md)  
+
+ブラウザの開発者ツールのコンソールの内容を画面に表示します。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js)
+
 ## [ChatworkHighlighter](./ChatworkHighlighter/README.md)  
 
 Chatworkのコード表記にシンタックスハイライトをかけます。
