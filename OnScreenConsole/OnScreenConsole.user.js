@@ -80,32 +80,32 @@ class Multilingualization {
      */
     static dictionaries = {
         "en": {
-            "dict-1": "Details: ",
-            "dict-2": "Move to the Opposite",
+            "Details: ": "Details: ",
+            "Move to the Opposite": "Move to the Opposite",
         },
         "ja": {
-            "dict-1": "詳細: ",
-            "dict-2": "反対側へ移動",
+            "Details: ": "詳細: ",
+            "Move to the Opposite": "反対側へ移動",
         },
         "es": {
-            "dict-1": "Detalles: ",
-            "dict-2": "Pasar al otro lado",
+            "Details: ": "Detalles: ",
+            "Move to the Opposite": "Pasar al otro lado",
         },
         "ru": {
-            "dict-1": "Подробности: ",
-            "dict-2": "Перейдите на другую сторону",
+            "Details: ": "Подробности: ",
+            "Move to the Opposite": "Перейдите на другую сторону",
         },
         "fr": {
-            "dict-1": "Détails : ",
-            "dict-2": "Passez à l'opposé",
+            "Details: ": "Détails : ",
+            "Move to the Opposite": "Passez à l'opposé",
         },
         "de": {
-            "dict-1": "Détails : ",
-            "dict-2": "Auf die Gegenseite gehen",
+            "Details: ": "Détails : ",
+            "Move to the Opposite": "Auf die Gegenseite gehen",
         },
         "zh": {
-            "dict-1": "细节。",
-            "dict-2": "转移到对立面",
+            "Details: ": "细节。",
+            "Move to the Opposite": "转移到对立面",
         },
     }
 
@@ -169,10 +169,10 @@ const alignRight = (condition) => {
 
 // Enabling the debug function
 const summary = document.createElement("summary");
-summary.textContent = "Details: ";
+summary.textContent = Multilingualization.translate("Details: ");
 
 const moveOpposite = document.createElement("a");
-moveOpposite.insertAdjacentHTML("beforeend", "Move to the Opposite");
+moveOpposite.insertAdjacentHTML("beforeend", Multilingualization.translate("Move to the Opposite"));
 moveOpposite.addEventListener("click", () => {
     alignRight(details.style.left == "0px");
 });
