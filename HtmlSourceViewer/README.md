@@ -13,6 +13,12 @@ After installing the UserScript Manager extension, go to https://github.com/hida
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
 
+## Hou to use
+
+Add "#-sv" to the URL fragment where you want to view the source to access it.
+
+e.g. https://hidao80.github.io/amazon-url-shortener/#-sv
+
 ## Licence
 
 [MIT](/LICENSE)
