@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [FediverseTimeToAbsolute](./FediverseToAbsolute/README.md)  
+
+UserScript to add absolute notation to Fediverse's posting time.  
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
+
 ## [OnScreenConsole](./OnScreenConsole/README.md)  
 
 Display the contents of the browser's developer tools console on the screen.
