@@ -10,7 +10,7 @@ Speech APIを使って、Misskeyのソーシャルタイムラインを読み上
 
 ## インストール
 
-拡張機能UserScript Managerをインストールした後、https://github.com/hidao80/UserScript/blob/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
+UserScript管理拡張機能をインストールした後、https://github.com/hidao80/UserScript/blob/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
 

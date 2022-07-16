@@ -8,7 +8,7 @@
 ブラウザの開発者ツールのコンソールの内容を画面に表示します。
 
 ## インストール
-拡張機能UserScript Managerをインストール後、https://github.com/hidao80/UserScript/blob/main/OnScreenConsole/OnScreenConsole.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
+UserScript管理拡張機能をインストール後、https://github.com/hidao80/UserScript/blob/main/OnScreenConsole/OnScreenConsole.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js)
 

@@ -8,7 +8,7 @@
 Misskeyの投稿時間に絶対表記を追加するUserScriptです。   
 
 ## インストール
-拡張機能UserScript Managerをインストール後、https://github.com/hidao80/UserScript/blob/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
+UserScript管理拡張機能をインストール後、https://github.com/hidao80/UserScript/blob/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
 

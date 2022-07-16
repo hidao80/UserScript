@@ -10,7 +10,7 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 ## インストール
 
-拡張機能UserScript Managerをインストールした後、https://github.com/hidao80/UserScript/blob/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
+UserScript管理拡張機能をインストールした後、https://github.com/hidao80/UserScript/blob/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
