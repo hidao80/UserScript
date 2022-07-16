@@ -7,12 +7,6 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)  
-
-UserScript to add absolute notation to Fediverse's posting time.
-
-[Click to install](https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
-
 ## [OnScreenConsole](./OnScreenConsole/README.md)  
 
 Display the contents of the browser's developer tools console on the screen.
@@ -34,7 +28,6 @@ Displays the HTML source of the page being viewed, with syntax highlighting for 
 ## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
 
 UserScript to add absolute notation to Mastodon's posting time.  
-**Please use FediverseTimeToAbsolute as it has stopped updating.**
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
 
@@ -59,6 +52,5 @@ UserScript that sounds a notification sound even when the deck is displayed in M
 ## [MisskeyTimeToAbsolute](./MisskeyTimeToAbsolute/README.md)  
 
 UserScript to add absolute notation to Misskey's posting time.  
-**Please use FediverseTimeToAbsolute as it has stopped updating.**
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
