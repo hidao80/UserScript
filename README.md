@@ -28,6 +28,7 @@ Displays the HTML source of the page being viewed, with syntax highlighting for 
 ## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
 
 UserScript to add absolute notation to Mastodon's posting time.  
+**Please use FediverseTimeToAbsolute as it has stopped updating.**
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
 
@@ -52,5 +53,6 @@ UserScript that sounds a notification sound even when the deck is displayed in M
 ## [MisskeyTimeToAbsolute](./MisskeyTimeToAbsolute/README.md)  
 
 UserScript to add absolute notation to Misskey's posting time.  
+**Please use FediverseTimeToAbsolute as it has stopped updating.**
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)

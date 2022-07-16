@@ -6,6 +6,7 @@
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
 
 Misskeyの投稿時間に絶対表記を追加するUserScriptです。   
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 ## インストール
 UserScript管理拡張機能をインストール後、https://github.com/hidao80/UserScript/blob/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。

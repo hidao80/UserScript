@@ -28,6 +28,7 @@ Chatworkのコード表記にシンタックスハイライトをかけます。
 ## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
 
 Mastodonの投稿時間に絶対表記を追加するUserScriptです。 
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
 
@@ -52,5 +53,6 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 ## [MisskeyTimeToAbsolute](./MisskeyTimeToAbsolute/README.md)  
 
 Misskeyの投稿時間に絶対表記を追加するUserScriptです。 
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
