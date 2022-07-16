@@ -7,7 +7,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [FediverseTimeToAbsolute](./FediverseToAbsolute/README.md)  
+## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)  
 
 UserScript to add absolute notation to Fediverse's posting time.  
 
