@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)  
+
+Fediverseの投稿時間に絶対表記を追加するUserScriptです。 
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
+
 ## [OnScreenConsole](./OnScreenConsole/README.md)  
 
 ブラウザの開発者ツールのコンソールの内容を画面に表示します。
@@ -27,7 +33,8 @@ Chatworkのコード表記にシンタックスハイライトをかけます。
 
 ## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
 
-Mastodonのtootの投稿時間を絶対表記に変更するUserScriptです。
+Mastodonの投稿時間に絶対表記を追加するUserScriptです。 
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
 
@@ -51,6 +58,7 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 ## [MisskeyTimeToAbsolute](./MisskeyTimeToAbsolute/README.md)  
 
-Misskey v11で投稿時刻を絶対表記に変更するUserScriptです。
+Misskeyの投稿時間に絶対表記を追加するUserScriptです。 
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)

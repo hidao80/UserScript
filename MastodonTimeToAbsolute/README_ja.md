@@ -5,8 +5,8 @@
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
 
-
-Mastodonのtootの投稿時間を絶対表記に変更するUserScriptです。
+Mastodonの投稿時間に絶対表記を追加するUserScriptです。 
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 ## インストール
 

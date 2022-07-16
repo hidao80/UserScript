@@ -5,8 +5,8 @@
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
 
-
-Misskey v11で投稿時刻を絶対表記に変更するUserScriptです。
+Misskeyの投稿時間に絶対表記を追加するUserScriptです。   
+**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
 
 ## インストール
 拡張機能UserScript Managerをインストール後、https://github.com/hidao80/UserScript/blob/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js にアクセスしソースコード外枠の「Raw」ボタンをクリックします。

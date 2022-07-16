@@ -5,8 +5,7 @@
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
 
-
-Change time to absolute notation UserScript for Misskey v11.
+UserScript to add absolute notation to Fediverse's posting time.  
 
 ## Install
 After installing the UserScript Manager extension, go to https://github.com/hidao80/UserScript/blob/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js and click the "Raw" button on the outer frame of the source code.

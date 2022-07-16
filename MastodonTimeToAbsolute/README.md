@@ -5,8 +5,8 @@
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
 
-
-Change time to absolute notation UserScript for Mastodon.
+UserScript to add absolute notation to Mastodon's posting time.  
+**Please use FediverseTimeToAbsolute as it has stopped updating.**
 
 ## Install
 
