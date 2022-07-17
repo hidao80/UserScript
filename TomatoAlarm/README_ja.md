@@ -9,9 +9,9 @@
 
 ## インストール
 
-UserScript管理拡張機能をインストール後、https://github.com/hidao80/UserScript/blob/main/HtmlSourceViewer/HtmlSourceViewer.user.js にアクセスし、ソースコードの外枠にある「Raw」ボタンをクリックします。
+UserScript管理拡張機能をインストール後、https://github.com/hidao80/UserScript/blob/main/TomatoAlarm/TomatoAlarm.user.js にアクセスし、ソースコードの外枠にある「Raw」ボタンをクリックします。
 
-または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
+または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js)
 
 ## 使い方
 
