@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README.md)  
+
+Display the server to which the contributor belongs in an easily viewable manner.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js)
+
 ## [TomatoAlarm](./TomatoAlarm/README.md)  
 
 In the manner of the Pomodoro Technique, an alarm (the sound of a wind chime) is sounded once every 10 minutes after the start button is pressed.

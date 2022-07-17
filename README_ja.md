@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README.md)  
+
+投稿者が所属するサーバーを見やすく表示します。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js)
+
 ## [TomatoAlarm](./TomatoAlarm/README.md)  
 
 ポモドーロテクニックの要領で、スタートボタンを押してから10分に一度アラーム（風鈴の音）を鳴らします。
