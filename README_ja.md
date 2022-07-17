@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [TomatoAlarm](./TomatoAlarm/README.md)  
+
+ポモドーロテクニックの要領で、スタートボタンを押してから10分に一度アラーム（風鈴の音）を鳴らします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js)
+
 ## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)  
 
 Fediverseの投稿時間に絶対表記を追加するUserScriptです。 

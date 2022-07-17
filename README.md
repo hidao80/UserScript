@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [TomatoAlarm](./TomatoAlarm/README.md)  
+
+In the manner of the Pomodoro Technique, an alarm (the sound of a wind chime) is sounded once every 10 minutes after the start button is pressed.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js)
+
 ## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)  
 
 UserScript to add absolute notation to Fediverse's posting time.  
