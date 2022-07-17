@@ -14,6 +14,10 @@ UserScript管理拡張機能をインストールした後、https://github.com/
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
+## 注意
+
+ブラウザの仕様上、画面内のボタンを1回以上操作しないと音が再生されません。
+
 ## ライセンス
 
 [MIT](/LICENSE)

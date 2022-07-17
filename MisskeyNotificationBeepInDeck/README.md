@@ -14,6 +14,9 @@ After installing the UserScript Manager extension, go to https://github.com/hida
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
+## Attention
+
+Browser specifications do not allow sound to be played unless the button in the screen is operated more than once.
 ## Licence
 
 [MIT](/LICENSE)
