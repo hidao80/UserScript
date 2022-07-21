@@ -74,6 +74,15 @@ const styles = [
         display: block;
         text-align: right;
     }`,
+
+    // notification column for deck layout
+    `.dsfykdcjpuwfvpefwufddclpjhzktmpw>.notification>div>header[data-v-bb2367fa] {
+        display: block;
+        width: 100%;
+        color: var(--noteHeaderInfo);
+        font-size: .9em;
+        margin-left: auto;
+    }`,
 ];
 
 // Style is a later winner, so send and add
