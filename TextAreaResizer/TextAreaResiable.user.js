@@ -31,8 +31,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 const styles = [
     // for Misskey
-    `.textarea {
+    `.textarea > textarea {
         resize: vertical;
+        padding-right: 0;
+        padding-bottom: 0;
     }`,
 
     // for Mastodon
