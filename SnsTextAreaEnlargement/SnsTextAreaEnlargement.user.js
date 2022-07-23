@@ -60,6 +60,7 @@ setTimeout(() => {
     }
 
     const ua = window.navigator.userAgent.toLowerCase();
+    console.log(ua);
 
     if (ua.indexOf("iphone") !== -1 || ua.indexOf("ipad") !== -1) {
         for (let style of iosStyles) {
