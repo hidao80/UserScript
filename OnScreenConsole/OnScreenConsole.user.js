@@ -185,8 +185,6 @@ moveOpposite.setAttribute("id", "debug-opposite");
 details.appendChild(summary);
 details.appendChild(div);
 
-document.body.appendChild(details);
-
 // Whether to display or not
 details.style.display = "block";
 details.style.position = "absolute";
@@ -195,3 +193,8 @@ details.style.top = 0;
 
 // Overwrite console.log
 console.log = log;
+
+setTimeout(() => {
+    document.body.appendChild(details);
+}, 300);
+
