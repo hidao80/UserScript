@@ -7,11 +7,11 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [TextAreaResiable](./TextAreaResiable/README.md)  
+## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
 
-Make the text area resizable. 
+Enlarge the text area.
 
-[Click to install](https://github.com/hidao80/UserScript/raw/main/TextAreaResiable/TextAreaResiable.user.js)
+[Click to install](https://github.com/hidao80/UserScript/raw/main/SnsTextAreaEnlargement/SnsTextAreaEnlargement.user.js)
 
 ## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README.md)  
 
