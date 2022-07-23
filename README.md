@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [TextAreaResiable](./TextAreaResiable/README.md)  
+
+Make the text area resizable. 
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/TextAreaResiable/TextAreaResiable.user.js)
+
 ## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README.md)  
 
 Display the server to which the contributor belongs in an easily viewable manner.
