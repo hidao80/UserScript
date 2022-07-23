@@ -44,7 +44,7 @@ const styles = [
 const iosStyles = [
     // for Misskey
     `.textarea > textarea {
-        height: 8rem;
+        height: 30vh;
     }`,
 ];
 
