@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [KeywordsFilter](./KeywordsFilter/README.md)  
+
+Filter out offensive words in Misskey.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
+
 ## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
 
 Enlarge the text area.

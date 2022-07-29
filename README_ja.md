@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [KeywordsFilter](./KeywordsFilter/README.md)  
+
+Misskeyでの不快な単語をフィルタリングします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
+
 ## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
 
 テキストエリアを大きくします。
