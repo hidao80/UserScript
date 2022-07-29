@@ -7,7 +7,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [KeywordsFilter](./KeywordsFilter/README.md)  
+## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)  
 
 Filter out offensive words in Misskey.
 
@@ -16,7 +16,7 @@ Filter out offensive words in Misskey.
 The upgrade will overwrite locally customized keyword lists for filtering.  
 Please save your keyword list externally.
 
-[Click to install](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
+[Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
 
 ## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
 

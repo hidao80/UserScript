@@ -7,7 +7,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [KeywordsFilter](./KeywordsFilter/README.md)  
+## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)  
 
 Misskeyでの不快な単語をフィルタリングします。
 
@@ -16,7 +16,7 @@ Misskeyでの不快な単語をフィルタリングします。
 バージョンアップにより、ローカルでカスタマイズしたフィルタリング対象キーワードリストが上書きされます。  
 キーワードリストを外部に保存しておいてください。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
 
 ## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
 
