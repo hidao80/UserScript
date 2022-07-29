@@ -13,6 +13,11 @@ UserScript管理拡張機能をインストール後、https://github.com/hidao8
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
 
+## 使用上の注意
+
+バージョンアップにより、ローカルでカスタマイズしたフィルタリング対象キーワードリストが上書きされます。  
+キーワードリストを外部に保存しておいてください。
+
 ## ライセンス
 
 [MIT](/LICENSE)

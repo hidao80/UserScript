@@ -11,6 +11,11 @@
 
 Misskeyでの不快な単語をフィルタリングします。
 
+## 使用上の注意
+
+バージョンアップにより、ローカルでカスタマイズしたフィルタリング対象キーワードリストが上書きされます。  
+キーワードリストを外部に保存しておいてください。
+
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
 
 ## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  

@@ -13,6 +13,11 @@ After installing the UserScript Manager extension, go to https://github.com/hida
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
 
+## Usage Notes
+
+The upgrade will overwrite locally customized keyword lists for filtering.  
+Please save your keyword list externally.
+
 ## Licence
 
 [MIT](/LICENSE)

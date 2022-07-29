@@ -11,6 +11,11 @@
 
 Filter out offensive words in Misskey.
 
+## Usage Notes
+
+The upgrade will overwrite locally customized keyword lists for filtering.  
+Please save your keyword list externally.
+
 [Click to install](https://github.com/hidao80/UserScript/raw/main/KeywordsFilter/KeywordsFilter.user.js)
 
 ## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
