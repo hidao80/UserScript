@@ -46,7 +46,7 @@ const EXCLUSION_WORDS = [
 ];
 const KEYWORDS = [
     // User defined keywords
-    "",
+//    "EXCLUSION_WORD",
 
     // Default keywords
     "馬鹿",
