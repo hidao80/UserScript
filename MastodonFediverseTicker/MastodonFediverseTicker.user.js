@@ -25,7 +25,7 @@ SOFTWARE.
 // ==UserScript==
 // @name        MastodonFediverseTicker
 // @description Display the server to which the contributor belongs in an easily viewable manner.
-// @match       https://mstdn.com/*
+// @match       https://mstdn.jp/*
 // @match       https://pawoo.net/*
 // @match       https://fedibird.com/*
 // @author      hidao80
