@@ -15,6 +15,8 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MastodonFed
 
 ## Screen shot
 
+![image](https://user-images.githubusercontent.com/8155294/190210793-efbb1c65-860b-40d3-a68e-d8015372f7e6.png)
+
 ## Licence
 
 [MIT](/LICENSE)
