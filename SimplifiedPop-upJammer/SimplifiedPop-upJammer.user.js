@@ -25,7 +25,8 @@ SOFTWARE.
 // ==UserScript==
 // @name        SimplifiedPop-upJammer
 // @description Hides elements that pop up elements. Pages to be disabled should be set from the UserScript Manager.
-// @match       https://**/*
+// @match       http://*/*
+// @match       https://*/*
 // @author      hidao80
 // @version     1.0
 // @namespace   https://github.com/hidao80/UserScript
