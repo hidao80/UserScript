@@ -77,9 +77,3 @@ UserScript to read out Misskey's social timeline using the Speech API.
 UserScript that sounds a notification sound even when the deck is displayed in Misskey.
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
-
-## [SimplifiedPop-upJammer](./SimplifiedPop-upJammer/README.md)  
-
-A simplified pop-up blocker.
-
-[Click to install](https://github.com/hidao80/UserScript/raw/main/SimplifiedPop-upJammer/SimplifiedPop-upJammer.user.js)

@@ -77,9 +77,3 @@ Speech APIを使って、Misskeyのソーシャルタイムラインを読み上
 Misskeyでデッキを表示しているときにも通知音を鳴らすUserScriptです。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
-
-## [SimplifiedPop-upJammer](./SimplifiedPop-upJammer/README.md)  
-
-簡易版ポップアップブロッカーです。
-
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/SimplifiedPop-upJammer/SimplifiedPop-upJammer.user.js)
