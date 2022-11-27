@@ -60,13 +60,6 @@ Displays the HTML source of the page being viewed, with syntax highlighting for 
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
 
-## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
-
-UserScript to add absolute notation to Mastodon's posting time.  
-**Please use FediverseTimeToAbsolute as it has stopped updating.**
-
-[Click to install](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
-
 ## [MastodonTootSpeech](./MastodonTootSpeech/README.md)  
 
 UserScript that uses the Speech API to read out new toots in Mastodon's home timeline.
@@ -85,9 +78,8 @@ UserScript that sounds a notification sound even when the deck is displayed in M
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
-## [MisskeyTimeToAbsolute](./MisskeyTimeToAbsolute/README.md)  
+## [SimplifiedPop-upJammer](./SimplifiedPop-upJammer/README.md)  
 
-UserScript to add absolute notation to Misskey's posting time.  
-**Please use FediverseTimeToAbsolute as it has stopped updating.**
+A simplified pop-up blocker.
 
-[Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
+[Click to install](https://github.com/hidao80/UserScript/raw/main/SimplifiedPop-upJammer/SimplifiedPop-upJammer.user.js)

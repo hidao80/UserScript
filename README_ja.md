@@ -60,13 +60,6 @@ Chatworkのコード表記にシンタックスハイライトをかけます。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
 
-## [MastodonTimeToAbsolute](./MastodonTimeToAbsolute/README.md)  
-
-Mastodonの投稿時間に絶対表記を追加するUserScriptです。  
-**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
-
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MastodonTimeToAbsolute/MastodonTimeToAbsolute.user.js)
-
 ## [MastodonTootSpeech](./MastodonTootSpeech/README.md)  
 
 Speech APIを使って、Mastodonのホームタイムラインの新着tootを読み上げるUserScriptです。
@@ -85,9 +78,8 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
-## [MisskeyTimeToAbsolute](./MisskeyTimeToAbsolute/README.md)  
+## [SimplifiedPop-upJammer](./SimplifiedPop-upJammer/README.md)  
 
-Misskeyの投稿時間に絶対表記を追加するUserScriptです。  
-**更新を停止しているのでFediverseTimeToAbsoluteを使ってください。**
+簡易版ポップアップブロッカーです。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyTimeToAbsolute/MisskeyTimeToAbsolute.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/SimplifiedPop-upJammer/SimplifiedPop-upJammer.user.js)
