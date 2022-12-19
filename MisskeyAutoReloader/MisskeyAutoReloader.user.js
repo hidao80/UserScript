@@ -22,13 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
+
 // ==UserScript==
 // @name        MisskeyAutoReloader
 // @description Reload once every 10 minutes if there are no posts being typed.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @author      hidao80
-// @version     1.1
+// @version     1.2
 // @namespace   https://github.com/hidao80/UserScript
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
 // @run-at      document-end
