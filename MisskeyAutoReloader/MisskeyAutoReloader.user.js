@@ -89,7 +89,7 @@ SOFTWARE.
             clearInterval(timer);
 
             const waitMillisec = 600_000;
-            reloadTimerId = setTimeout(reload, waitMillisec);
+            reloadTimerId = setInterval(reload, waitMillisec);
 
             const observer = new MutationObserver(resetTimer);
             for (const column of columns) {
