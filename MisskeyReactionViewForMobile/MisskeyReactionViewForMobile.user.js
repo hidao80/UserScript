@@ -34,7 +34,7 @@ SOFTWARE.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @author      hidao80
-// @version     0.1.1
+// @version     1.0
 // @namespace   https://github.com/hidao80/UserScript
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/2b50.png
 // @run-at      document-end
