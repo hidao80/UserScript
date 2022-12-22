@@ -34,7 +34,7 @@ SOFTWARE.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @author      hidao80
-// @version     0.1.0
+// @version     0.1.1
 // @namespace   https://github.com/hidao80/UserScript
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/2b50.png
 // @run-at      document-end
@@ -45,25 +45,13 @@ SOFTWARE.
 
 // Prevent namespace contamination
 (() => {
-    /**
-     * Fake jQuery object
-     *
-     * @param {string} selector - css selector
-     * @returns {null|array<Element>}
-     */
-    function $(selector) {
-        const elem = document.querySelectorAll(selector);
-        if (elem === []) {
-            return null;
-        } else if (elem.length >= 2) {
-            return elem;
-        } else {
-            return elem[0];
-        }
-    }
-
     function dispatch(e) {
         e.target.dispatchEvent(new Event('mouseover'));
+    }
+
+    function setEventListener(elem) {
+        elem.removeEventListener('touchstart', dispatch);
+        elem.addEventListener("touchstart", dispatch);
     }
 
     // Wait until the monitored object has been drawn.
@@ -79,13 +67,19 @@ SOFTWARE.
             const observer = new MutationObserver(mutationList => {
                 for (const elem of mutationList) {
                     if (/reaction/.test(elem.target.className)) {
-                        elem.target.removeEventListener('touchstart', dispatch);
-                        elem.target.addEventListener("touchstart", dispatch);
+                        setEventListener(elem.target);
                     }
                 }
             });
             for (const column of columns) {
                 observer.observe(column, { childList: true });
+            }
+
+            // Register an event to a reaction button
+            // that already exists when the page is opened.
+            var elems = document.querySelectorAll('span[data-v-3d955dc5]');
+            for (const elem of elems) {
+                setEventListener(elem);
             }
         }
     }, 700);
