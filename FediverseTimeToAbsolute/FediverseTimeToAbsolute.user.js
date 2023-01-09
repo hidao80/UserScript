@@ -3,9 +3,12 @@
 // @description Change time to absolute notation UserScript for Fediverse.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
+// @match       https://pawoo.net/*
 // @match       https://mstdn.sublimer.me/*
+// @match       https://social.vivaldi.net/*
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
+// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
 // @version     1.11
 // @namespace   https://github.com/hidao80/UserScript
@@ -16,6 +19,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 const styles = [
     // not post-column

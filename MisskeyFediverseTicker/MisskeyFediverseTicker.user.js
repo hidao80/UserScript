@@ -3,6 +3,7 @@
 // @description Display the server to which the contributor belongs in an easily viewable manner.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
+// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
 // @version     1.5.1
 // @namespace   https://github.com/hidao80/UserScript
@@ -13,6 +14,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 const CHARACTER = "abcdefghijklmnopqrstuvwxyz-_.,/?&%=[]0123456789";
 const CLASS_NAME = "fediverse-ticker";

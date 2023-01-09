@@ -3,6 +3,7 @@
 // @description UserScript that sounds a notification sound even when the deck is displayed in Misskey.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
+// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
 // @version     1.7
 // @namespace   https://github.com/hidao80/UserScript
@@ -13,6 +14,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 // Sound when notifications come in.
 const timer = setInterval(v => {

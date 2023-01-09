@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name        MastodonFediverseTicker
 // @description Display the server to which the contributor belongs in an easily viewable manner.
+// @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
 // @match       https://pawoo.net/*
-// @match       https://fedibird.com/*
+// @match       https://mstdn.sublimer.me/*
+// @match       https://social.vivaldi.net/*
 // @author      hidao80
 // @version     1.0
 // @namespace   https://github.com/hidao80/UserScript
@@ -14,6 +16,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonFediverseTicker/MastodonFediverseTicker.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonFediverseTicker/MastodonFediverseTicker.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 const usableSheet = [...document.styleSheets].slice(-1)[0];
 

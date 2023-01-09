@@ -3,7 +3,9 @@
 // @description UserScript that uses the Speech API to read out new toots in Mastodon's home timeline.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
+// @match       https://pawoo.net/*
 // @match       https://mstdn.sublimer.me/*
+// @match       https://social.vivaldi.net/*
 // @author      hidao80
 // @version     1.６
 // @namespace   https://github.com/hidao80/UserScript
@@ -14,6 +16,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeach/MastodonTootSpeech.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 // Initialization of reading voice
 const synth = window.speechSynthesis;

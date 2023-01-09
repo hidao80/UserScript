@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name        MastodonKeywordsFilter
 // @description Filter out offensive words in Misskey.
+// @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
 // @match       https://pawoo.net/*
-// @match       https://fedibird.com/*
+// @match       https://mstdn.sublimer.me/*
+// @match       https://social.vivaldi.net/*
 // @author      hidao80
 // @version     1.1
 // @namespace   https://github.com/hidao80/UserScript
@@ -14,6 +16,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 const FILTERED_WORDS = "■■■";
 

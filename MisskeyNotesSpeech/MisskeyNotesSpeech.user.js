@@ -3,6 +3,7 @@
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
+// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
 // @version     1.5
 // @namespace   https://github.com/hidao80/UserScript
@@ -13,6 +14,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 // Initialization of reading voice
 const synth = window.speechSynthesis;

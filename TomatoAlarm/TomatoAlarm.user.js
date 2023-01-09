@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        TomatoAlarm
 // @description In the manner of the Pomodoro Technique, an alarm (the sound of a wind chime) is sounded once every 10 minutes after the start button is pressed.
-// @match       https://calendar.google.com/calendar/*
+// @match       *://*/*
 // @author      hidao80
 // @version     1.1
 // @namespace   https://github.com/hidao80/UserScript
@@ -12,6 +12,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 const button = document.createElement('div');
 button.textContent = '🍅Start🍅';

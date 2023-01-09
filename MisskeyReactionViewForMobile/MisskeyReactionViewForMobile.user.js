@@ -9,6 +9,7 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
+// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
 // @version     1.0
 // @namespace   https://github.com/hidao80/UserScript
@@ -19,6 +20,12 @@
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyReactionViewForMobile/MisskeyReactionViewForMobile.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyReactionViewForMobile/MisskeyReactionViewForMobile.user.js
 // ==/UserScript==
+
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 // Prevent namespace contamination
 (() => {

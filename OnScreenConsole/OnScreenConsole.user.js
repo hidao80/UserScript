@@ -14,6 +14,12 @@
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js
 // ==/UserScript==
 
+// Twitter Emoji (Twemoji)
+// License
+//   Copyright 2019 Twitter, Inc and other contributors
+//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
+
 const styles = [`
     #debug-details {
         display: none;
