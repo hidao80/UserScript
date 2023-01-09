@@ -3,7 +3,7 @@
 // @description Reload once every 10 minutes if there are no posts being typed.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.2
+// @version     1.3
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/1f552.png

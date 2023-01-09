@@ -1,9 +1,3 @@
-// Twitter Emoji (Twemoji)
-// License
-//   Copyright 2019 Twitter, Inc and other contributors
-//   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
-//   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
-
 // ==UserScript==
 // @name        MisskeyReactionViewForMobile
 // @description You will also be able to see who has reacted on your phone or tablet.
@@ -11,7 +5,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.0
+// @version     1.1
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/2b50.png
