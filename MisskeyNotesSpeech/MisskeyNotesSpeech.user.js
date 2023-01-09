@@ -31,19 +31,37 @@ const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
 const utter = new SpeechSynthesisUtterance();
 // utterrate = 1;
 // uttervolume = 20;
+let target = "ソーシャル";
+
+/**
+ * Get current language
+ *
+ * @returns {string} Current language
+ */
+function language() {
+    const lang = ((window.navigator.languages && window.navigator.languages[0]) ||
+        window.navigator.language ||
+        window.navigator.userLanguage ||
+        window.navigator.browserLanguage).slice(0, 2);
+
+    // Show English for undefined languages
+    return this.dictionaries[lang] ? lang : "en";
+}
 
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
     utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || getVoice(ENGLISH);
+    target = language() == "ja" ? /ソーシャル/ : /[Ss]ocial/;
 };
 
 // When a voice color object is loaded, the voice color is set to "Nanami" for Edge.
 synth.onvoiceschanged = setVoice;
 
 const timer = setInterval(v => {
+    regexp = new RegExp(target, 'i')
     // Designation of lanes to watch for posts
     var parentElment = [...document.querySelectorAll(".header")].find(
-        v => /ソーシャル/.test(v.textContent)
+        v => regexp.test(v.textContent)
     )?.parentElement.parentElement;
 
     if (parentElment) {
