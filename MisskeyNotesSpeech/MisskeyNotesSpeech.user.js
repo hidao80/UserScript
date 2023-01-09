@@ -31,7 +31,7 @@ const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
 const utter = new SpeechSynthesisUtterance();
 // utterrate = 1;
 // uttervolume = 20;
-let target = "ソーシャル";
+let target = "Title of Socail Time Line";
 
 /**
  * Get current language
@@ -44,14 +44,17 @@ function language() {
         window.navigator.userLanguage ||
         window.navigator.browserLanguage).slice(0, 2);
 
-    // Show English for undefined languages
-    return this.dictionaries[lang] ? lang : "en";
+    if (lang == "ja") {
+        return /ソーシャル/;
+    } else if (lang == "en") {
+        return /[Ss]ocial/;
+    }
 }
 
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
     utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || getVoice(ENGLISH);
-    target = language() == "ja" ? /ソーシャル/ : /[Ss]ocial/;
+    target = language();
 };
 
 // When a voice color object is loaded, the voice color is set to "Nanami" for Edge.
@@ -80,6 +83,8 @@ const timer = setInterval(v => {
             utter.text += parentElment.querySelector(".text>.havbbuyv").getAttribute("text")
                 .replace(/\n/g, '。')
                 .replace(/。+/g, '。')
+                .replace(/\`\`\`.+\`\`\`/g, ' ')
+                .replace(/\`/g, '')
                 .replace(/https?:\/\/[\w/:%#\$&\?\(\)~\.=\+\-]+/g, ' ');
 
             // Reading out notes
