@@ -5,7 +5,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.7
+// @version     1.8
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -65,7 +65,7 @@ const timer = setInterval(v => {
     // Designation of lanes to watch for posts
     var parentElment = [...document.querySelectorAll(".header")].find(
         v => regexp.test(v.textContent)
-    )?.parentElement.parentElement;
+    )?.parentElement.parentElement ?? document.querySelector(".notes.transition")?.parentElement;
 
     if (parentElment) {
         clearInterval(timer);
