@@ -5,7 +5,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.8
+// @version     1.9
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -63,11 +63,14 @@ synth.onvoiceschanged = setVoice;
 const timer = setInterval(v => {
     regexp = new RegExp(target, 'i')
     // Designation of lanes to watch for posts
-    var parentElment = [...document.querySelectorAll(".header")].find(
-        v => regexp.test(v.textContent)
-    )?.parentElement.parentElement ?? document.querySelector(".notes.transition")?.parentElement;
+    var lane = [...document.querySelectorAll(".round")];
+    if (lane.length > 1) {
+        lane = lane.find(v => regexp.test(v.textContent));
+    } else {
+        lane = lane[0];
+    }
 
-    if (parentElment) {
+    if (lane) {
         clearInterval(timer);
         setVoice();
 
@@ -77,10 +80,10 @@ const timer = setInterval(v => {
             synth.cancel();
 
             // Nickname cutout
-            utter.text = parentElment.querySelector(".havbbuyv.nowrap").textContent + "さんのノート。";
+            utter.text = lane.querySelector(".havbbuyv.nowrap").textContent + "さんのノート。";
 
             // Notebook cutout (excluding CW)
-            utter.text += parentElment.querySelector(".text>.havbbuyv").getAttribute("text")
+            utter.text += lane.querySelector(".text>.havbbuyv").getAttribute("text")
                 .replace(/\n/g, '。')
                 .replace(/。+/g, '。')
                 .replace(/\`\`\`.+\`\`\`/g, ' ')
@@ -92,7 +95,7 @@ const timer = setInterval(v => {
         }
 
         // Call the read function when a post is added.
-        const targetLane = parentElment.querySelector(".transition.notes") ?? parentElment.querySelector(".transition");
+        const targetLane = lane.querySelector(".transition.notes") ?? lane.querySelector(".transition");
         (new MutationObserver(speech)).observe(targetLane, { childList: true });
     }
 }, 500);
