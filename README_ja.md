@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [ChatGPTSuggest](./ChatGptSuggest/README.md)  
+
+ChatGPTに簡易的な入力補完機能を追加します。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js)
+
 ## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)  
 
 Misskeyでの不快な単語をフィルタリングします。

@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [ChatGPTSuggest](./ChatGptSuggest/README.md)  
+
+Add a simple input completion function to ChatGPT.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js)
+
 ## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)  
 
 Filter out offensive words in Misskey.
