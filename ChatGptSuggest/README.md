@@ -30,3 +30,7 @@ Press `Enter` to submit.
 ## Licence
 
 [MIT](/LICENSE)
+
+## Screen shot
+
+![image](https://user-images.githubusercontent.com/8155294/214703505-90712692-c405-4a2a-8cbc-a0ed41c962f4.png)
