@@ -7,54 +7,54 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [ChatGPTSuggest](./ChatGptSuggest/README.md)  
+## [ChatGPTSuggest](./ChatGptSuggest/README.md)
 
 ChatGPTに簡易的な入力補完機能を追加します。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js)
 
-## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)  
+## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)
 
 Misskeyでの不快な単語をフィルタリングします。
 
 ## 使用上の注意
 
-バージョンアップにより、ローカルでカスタマイズしたフィルタリング対象キーワードリストが上書きされます。  
+バージョンアップにより、ローカルでカスタマイズしたフィルタリング対象キーワードリストが上書きされます。
 キーワードリストを外部に保存しておいてください。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
 
-## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)  
+## [SnsTextAreaEnlargement](./SnsTextAreaEnlargement/README.md)
 
 テキストエリアを大きくします。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/SnsTextAreaEnlargement/SnsTextAreaEnlargement.user.js)
 
-## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README.md)  
+## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README.md)
 
 投稿者が所属するサーバーを見やすく表示します。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js)
 
-## [TomatoAlarm](./TomatoAlarm/README.md)  
+## [TomatoAlarm](./TomatoAlarm/README.md)
 
 ポモドーロテクニックの要領で、スタートボタンを押してから10分に一度アラーム（風鈴の音）を鳴らします。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js)
 
-## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)  
+## [FediverseTimeToAbsolute](./FediverseTimeToAbsolute/README.md)
 
-Fediverseの投稿時間に絶対表記を追加するUserScriptです。 
+Fediverseの投稿時間に絶対表記を追加するUserScriptです。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
 
-## [OnScreenConsole](./OnScreenConsole/README.md)  
+## [OnScreenConsole](./OnScreenConsole/README.md)
 
 ブラウザの開発者ツールのコンソールの内容を画面に表示します。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js)
 
-## [ChatworkHighlighter](./ChatworkHighlighter/README.md)  
+## [ChatworkHighlighter](./ChatworkHighlighter/README.md)
 
 Chatworkのコード表記にシンタックスハイライトをかけます。
 
@@ -66,19 +66,19 @@ Chatworkのコード表記にシンタックスハイライトをかけます。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js)
 
-## [MastodonTootSpeech](./MastodonTootSpeech/README.md)  
+## [MastodonTootSpeech](./MastodonTootSpeech/README.md)
 
 Speech APIを使って、Mastodonのホームタイムラインの新着tootを読み上げるUserScriptです。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MastodonTootSpeech/MastodonTootSpeech.user.js)
 
-## [MisskeyNotesSpeech](./MisskeyNotesSpeech/README.md)  
+## [MisskeyNotesSpeech](./MisskeyNotesSpeech/README.md)
 
 Speech APIを使って、Misskeyのソーシャルタイムラインを読み上げるUserScriptです。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
 
-## [MisskeyNotificationBeepInDeck](./MisskeyNotificationBeepInDeck/README.md)  
+## [MisskeyNotificationBeepInDeck](./MisskeyNotificationBeepInDeck/README.md)
 
 Misskeyでデッキを表示しているときにも通知音を鳴らすUserScriptです。
 
