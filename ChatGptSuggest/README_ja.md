@@ -5,7 +5,7 @@
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
 
-ChatGPTのプロンプトに入力するオススメのフレーズの候補を表示しし、入力補完します。
+ChatGPTのプロンプトに入力するオススメのフレーズの候補を表示し、入力補完します。
 
 ## インストール
 
