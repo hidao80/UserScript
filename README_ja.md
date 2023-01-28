@@ -7,6 +7,13 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+
+## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README.md)
+
+Misskey v11でモバイル版モードにしているときにCtrl+Enterでnoteを投稿できるようにします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)
+
 ## [ChatGPTSuggest](./ChatGptSuggest/README.md)
 
 ChatGPTに簡易的な入力補完機能を追加します。
