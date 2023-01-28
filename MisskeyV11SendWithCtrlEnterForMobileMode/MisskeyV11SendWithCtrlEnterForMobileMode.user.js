@@ -32,7 +32,7 @@ function addSendKeyBinding(e) {
     }
 }
 
-// the button in the screen is operated more than once.
+// Watch for the submit text area to be drawn.
 new MutationObserver(addSendKeyBinding).observe(document.body, {
     childList: true,
 });
