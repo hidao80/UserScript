@@ -3,7 +3,7 @@
 // @description When in mobile view of Misskey ver.11, Ctrl+Enter can be used to post a NOTE.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0
+// @version     1.1
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e8.png
@@ -25,6 +25,8 @@ function addSendKeyBinding(e) {
         textarea.addEventListener("keydown", (e) => {
             if (e.ctrlKey && e.key === "Enter") {
                 document.querySelector('button[class="submit"]').click();
+            } else if (e.key === "Escape") {
+                document.querySelector('button[class="cancel"]').click();
             }
         });
         // Flag to confirm duplicate registration
