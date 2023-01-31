@@ -8,6 +8,12 @@
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
 
+## [MisskeyV11ReactionPickerExpandWidth](./MisskeyV11ReactionPickerExpandWidth/README.md)
+
+Misskey v11でモバイル版モードにしているときにリアクションパレットを画面下部に表示させるUserScriptです。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
+
 ## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README.md)
 
 Misskey v11でモバイル版モードにしているときにCtrl+Enterでnoteを投稿できるようにします。

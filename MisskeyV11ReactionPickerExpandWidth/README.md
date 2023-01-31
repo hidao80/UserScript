@@ -21,6 +21,10 @@ After installing the UserScript Manager extension, go to <https://github.com/hid
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
 
+## Screenshot
+
+<img src="screen_shot.webp" width="300" />
+
 ## Licence
 
 [MIT](/LICENSE)

@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [MisskeyV11ReactionPickerExpandWidth](./MisskeyV11ReactionPickerExpandWidth/README.md)
+
+UserScript to display the reaction palette at the bottom of the screen when in mobile version mode with Misskey v11.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
+
 ## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README.md)
 
 Allow Ctrl+Enter to post a NOTE when in mobile version mode in Misskey v11.

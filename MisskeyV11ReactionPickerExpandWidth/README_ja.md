@@ -21,6 +21,10 @@ UserScript管理拡張機能をインストール後、<https://github.com/hidao
 
 または[ここをクリックするとインストールします。](https://github.com/hidao80/UserScript/raw/main/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
 
+## スクリーンショット
+
+<img src="screen_shot.webp" width="300" />
+
 ## ライセンス
 
 [MIT](/LICENSE)
