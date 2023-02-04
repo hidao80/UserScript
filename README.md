@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [BuiltinMasumisuSearchforMisskeyDev](./BuiltinMasumisuSearchforMisskeyDev/README.md)
+
+When searching for posts on Misskey.dev, use [Masumisu Search](https://masmis-search.ja-jp.org/ui) instead of Misskey's search function.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
+
 ## [MisskeyV11ReactionPickerExpandWidth](./MisskeyV11ReactionPickerExpandWidth/README.md)
 
 UserScript to display the reaction palette at the bottom of the screen when in mobile version mode with Misskey v11.
