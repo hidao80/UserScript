@@ -3,7 +3,7 @@
 // @description Search for posts on Misskay.dev using Masumisearch.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0
+// @version     1.1
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @run-at      document-end
@@ -17,7 +17,7 @@ function Masumisearch() {
     if (search && !search.dataset.masumisu) {
         search.addEventListener("search", (e) => {
             e.stopImmediatePropagation();
-            location.href = `https://masmis-search.ja-jp.org/search?q=account.domain:${location.host}+${search.value}`;
+            open(`https://masmis-search.ja-jp.org/search?q=account.domain:${location.host}+${search.value}`, '_blank');
         }, true);
         // Disable change events
         search.addEventListener("change", (e) => {
