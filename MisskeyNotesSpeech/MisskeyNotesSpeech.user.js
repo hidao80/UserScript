@@ -5,7 +5,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.9
+// @version     1.10
 // @namespace   https://github.com/hidao80/UserScript
 // @licence     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -32,6 +32,7 @@ const utter = new SpeechSynthesisUtterance();
 // utterrate = 1;
 // uttervolume = 20;
 let target = "Title of Socail Time Line";
+let from = "contributor's name";
 
 /**
  * Get current language
@@ -45,16 +46,18 @@ function language() {
         window.navigator.browserLanguage).slice(0, 2);
 
     if (lang == "ja") {
-        return /ソーシャル/;
+        target = /ソーシャル/;
+        from = "さんのノート。"
     } else if (lang == "en") {
-        return /[Ss]ocial/;
+        target = /[Ss]ocial/;
+        from = "'s note."
     }
 }
 
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
     utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || getVoice(ENGLISH);
-    target = language();
+    language();
 };
 
 // When a voice color object is loaded, the voice color is set to "Nanami" for Edge.
@@ -76,11 +79,16 @@ const timer = setInterval(v => {
 
         // Trimming the readout
         function speech() {
+            // Muted posts are not read out loud.
+            if (lane.querySelector('[class=transition]>div').style.display == 'none') {
+                return;
+            }
+
             // I'm reading it out now, and I'm going to stop in the middle.
             synth.cancel();
 
             // Nickname cutout
-            utter.text = lane.querySelector(".havbbuyv.nowrap").textContent + "さんのノート。";
+            utter.text = lane.querySelector(".havbbuyv.nowrap").textContent + from;
 
             // Notebook cutout (excluding CW)
             utter.text += lane.querySelector(".text>.havbbuyv").getAttribute("text")
