@@ -12,7 +12,7 @@ Misskey v11でモバイル版モードにしているときにCtrl+Enterでnote�
 ### Chromium系ブラウザの場合
 
 1. [MisskeyV11SendWithCtrlEnterForMobileMode.user.js](https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)をダウンロードします
-2. [設定 > 拡張機能](chrome://extensions/)をクリックして「拡張機能」ページを開き、「デベロッパーモード」または「開発者モード」のスイッチをオンにします
+2. アドレスバーに`chrome://extensions/`を貼り付け「拡張機能」ページを開き、「デベロッパーモード」または「開発者モード」のスイッチをオンにします
 3. ダウンロードした`MisskeyV11SendWithCtrlEnterForMobileMode.user.js`を「拡張機能」ページにドラッグ&ドロップします
 
 ### SafariやFirefoxの場合

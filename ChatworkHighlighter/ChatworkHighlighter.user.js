@@ -1,5 +1,5 @@
 /*
-Licence: MIT
+license: MIT
 
 Copyright 2022 hidao80
 

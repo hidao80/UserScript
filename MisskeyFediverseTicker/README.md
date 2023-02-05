@@ -17,6 +17,6 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyFedi
 
 ![image](https://user-images.githubusercontent.com/8155294/179437257-a32ccfd3-c154-498a-8fa9-a3d9c6fa0a7d.png)
 
-## Licence
+## license
 
 [MIT](/LICENSE)

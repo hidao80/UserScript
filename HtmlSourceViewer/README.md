@@ -19,6 +19,6 @@ Add "#-sv" to the URL fragment where you want to view the source to access it.
 
 e.g. https://hidao80.github.io/amazon-url-shortener/#-sv
 
-## Licence
+## license
 
 [MIT](/LICENSE)

@@ -15,16 +15,16 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MastodonKey
 
 ## How to customize
 
--   To change the filtered words, in the source, replace `■■■` in the source to replace it.  
+-   To change the filtered words, in the source, replace `■■■` in the source to replace it.
     You can also set an empty string.
--   If you do not want the phrase to be displayed, add it as `"keywords",` on the line following `keywords = [` in the source.  
+-   If you do not want the phrase to be displayed, add it as `"keywords",` on the line following `keywords = [` in the source.
     Keywords can be any string you do not want to display. 100 or so phrases should not affect the operation.
 
 ### Usage Notes
 
-The upgrade will overwrite locally customized keyword lists for filtering.  
+The upgrade will overwrite locally customized keyword lists for filtering.
 Please save your keyword list externally.
 
-## Licence
+## license
 
 [MIT](/LICENSE)

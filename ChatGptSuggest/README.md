@@ -27,7 +27,7 @@ Access ChatGPT and start typing in the input window, and the candidates of phras
 Use the `Tab` key to switch to a phrase you want to keep, and press `Shift + Enter` to complete the sentence.\
 Press `Enter` to submit.
 
-## Licence
+## license
 
 [MIT](/LICENSE)
 

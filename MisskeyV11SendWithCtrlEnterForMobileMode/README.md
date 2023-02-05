@@ -12,7 +12,7 @@ This is a UserScript that allows Ctrl+Enter to post a NOTE when in mobile versio
 ### For Chromium-based browsers
 
 1. Download [MisskeyV11SendWithCtrlEnterForMobileMode.user.js](https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js).
-2. Click [Settings > Extensions](chrome://extensions/) to open the "Extensions" page and turn on the "Developer mode" switch.
+2. Paste `chrome://extensions/` into the address bar, open the "Extensions" page, and turn on the "Developer Mode" or "Developer Mode" switch.
 3. Drag and drop the downloaded `MisskeyV11SendWithCtrlEnterForMobileMode.user.js` into the "Extensions" page.
 
 ### For Safari and Firefox
@@ -21,6 +21,6 @@ After installing the UserScript Manager extension, go to <https://github.com/hid
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)
 
-## Licence
+## license
 
 [MIT](/LICENSE)

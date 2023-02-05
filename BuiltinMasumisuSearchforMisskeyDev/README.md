@@ -31,6 +31,6 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/BuiltinMasu
 5. After installation, turn on the switch in the lower right corner of `BuiltinMasumisuSearchforMisskeyDev` that is added to the "Extensions" page.
 6. reload Misskey.dev to activate it.
 
-## Licence
+## license
 
 [MIT](/LICENSE)

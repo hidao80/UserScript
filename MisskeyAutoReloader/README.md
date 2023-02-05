@@ -13,7 +13,7 @@ After installing the UserScript Manager extension, go to https://github.com/hida
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
 
-## Licence
+## license
 
 [MIT](/LICENSE)
 

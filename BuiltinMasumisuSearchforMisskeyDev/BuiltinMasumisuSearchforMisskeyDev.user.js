@@ -5,7 +5,7 @@
 // @author      hidao80
 // @version     1.3
 // @namespace   https://github.com/hidao80/UserScript
-// @licence     MIT
+// @license     MIT
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js

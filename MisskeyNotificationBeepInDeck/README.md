@@ -17,6 +17,6 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNoti
 ## Attention
 
 Browser specifications do not allow sound to be played unless the button in the screen is operated more than once.
-## Licence
+## license
 
 [MIT](/LICENSE)

@@ -17,6 +17,6 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/TomatoAlarm
 
 The alarm will sound every 10 minutes after the "🍅Start🍅" button is pressed in the lower right corner of the screen.
 
-## Licence
+## license
 
 [MIT](/LICENSE)

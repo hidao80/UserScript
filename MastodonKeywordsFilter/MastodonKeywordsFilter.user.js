@@ -9,7 +9,7 @@
 // @author      hidao80
 // @version     1.2
 // @namespace   https://github.com/hidao80/UserScript
-// @licence     MIT
+// @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26d4.png
 // @run-at      document-end
 // @grant       none

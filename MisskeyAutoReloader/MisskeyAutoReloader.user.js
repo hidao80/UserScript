@@ -5,7 +5,7 @@
 // @author      hidao80
 // @version     1.4
 // @namespace   https://github.com/hidao80/UserScript
-// @licence     MIT
+// @license     MIT
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
 // @run-at      document-end
 // @grant       none

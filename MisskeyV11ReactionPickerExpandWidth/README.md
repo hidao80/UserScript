@@ -25,6 +25,6 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyV11R
 
 <img src="screen_shot.webp" width="300" />
 
-## Licence
+## license
 
 [MIT](/LICENSE)
