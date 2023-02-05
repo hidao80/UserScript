@@ -21,6 +21,16 @@ After installing the UserScript Manager extension, go to <https://github.com/hid
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
 
+### For Android-based OS
+
+1. install [Kiwi Browser[Go to Play Store]](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=ja) (for Chrome extension) (Chrome Extension can be used).
+2. in Chrome, select [BulletinMasumisuSearchforMisskeyDev](https://github.com/hidao80/UserScript/raw/main/BuiltinMasumisuSearchforMisskeyDev/Bu Download [BulletinMassumisuSearchforMisskeyDev.user.js) in Chrome.
+  For some reason, Kiwi Browser does not seem to be able to access the downloaded file.
+3. paste `chrome://extensions/` into the address bar of Kiwi Browser, open the "Extensions" page and turn on the "Developer Mode" switch.
+4. touch the `+(from .zip/.crx/.user.js)` button and select `BuiltinMassumisuSearchforMisskeyDev.user.js` downloaded from the file app. It will be installed in Kiwi Browser.
+5. After installation, turn on the switch in the lower right corner of `BuiltinMasumisuSearchforMisskeyDev` that is added to the "Extensions" page.
+6. reload Misskey.dev to activate it.
+
 ## Licence
 
 [MIT](/LICENSE)
