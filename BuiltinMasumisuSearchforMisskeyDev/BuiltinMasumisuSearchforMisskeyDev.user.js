@@ -3,8 +3,9 @@
 // @description Search for posts on Misskay.dev using Masumisearch.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.3.1
+// @version     1.3.2
 // @namespace   https://github.com/hidao80/UserScript
+// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license     MIT
 // @run-at      document-end
 // @grant       none
