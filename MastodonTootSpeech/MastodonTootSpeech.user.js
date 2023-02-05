@@ -7,7 +7,7 @@
 // @match       https://mstdn.sublimer.me/*
 // @match       https://social.vivaldi.net/*
 // @author      hidao80
-// @version     1.7
+// @version     1.7.1
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png

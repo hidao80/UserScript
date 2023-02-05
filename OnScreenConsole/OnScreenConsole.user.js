@@ -4,7 +4,7 @@
 // @match       http://*/*
 // @match       https://*/*
 // @author      hidao80
-// @version     1.3
+// @version     1.3.1
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5a5.png

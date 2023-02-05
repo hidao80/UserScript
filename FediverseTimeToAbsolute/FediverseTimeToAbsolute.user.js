@@ -10,7 +10,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.11
+// @version     1.11.1
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f552.png

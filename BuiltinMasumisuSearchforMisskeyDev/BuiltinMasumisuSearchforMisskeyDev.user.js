@@ -3,7 +3,7 @@
 // @description Search for posts on Misskay.dev using Masumisearch.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.3
+// @version     1.3.1
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @run-at      document-end

@@ -11,7 +11,7 @@
 // @match       https://misskey.noellabo.jp/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
-// @version     1.1
+// @version     1.1.1
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d2.png
