@@ -3,7 +3,7 @@
 // @description Widen the width of the reaction picker in Misskey v11.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1.1
+// @version     1.1.2
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f44d.png
@@ -18,6 +18,7 @@
 //   Copyright 2019 Twitter, Inc and other contributors
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
+
 function expandWidth() {
     const popover = document.querySelector('div[class*="popover isMobile"][data-v-0f5c3934=""]');
     if (popover) {
