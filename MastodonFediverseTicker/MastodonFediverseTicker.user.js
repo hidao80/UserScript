@@ -7,10 +7,10 @@
 // @match       https://mstdn.sublimer.me/*
 // @match       https://social.vivaldi.net/*
 // @author      hidao80
-// @version     1.0.1
+// @version     1.0.2
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6A9.png
+// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonFediverseTicker/MastodonFediverseTicker.user.js
