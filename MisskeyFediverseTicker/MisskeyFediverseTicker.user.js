@@ -5,10 +5,10 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.6.1
+// @version     1.6.2
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6A9.png
+// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png
 // @run-at      document-idle
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js
