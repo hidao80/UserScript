@@ -32,6 +32,12 @@ ChatGPTに簡易的な入力補完機能を追加します。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js)
 
+## [MisskeyAutoReloader](./MisskeyAutoReloader/README_ja.md)
+
+入力中の投稿や新規着信がなければ10分に一度再読込みします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
+
 ## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README_ja.md)
 
 Misskeyでの不快な単語をフィルタリングします。

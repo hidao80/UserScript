@@ -31,6 +31,12 @@ Add a simple input completion function to ChatGPT.
 
 [Click to install](https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js)
 
+## [MisskeyAutoReloader](./MisskeyAutoReloader/README.md)
+
+The system will reload once every 10 minutes if there are no posts or new incoming calls being typed.
+
+[Click to install](https://github.com/hidao80/UserScript/raw/main/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
+
 ## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README.md)
 
 Filter out offensive words in Misskey.
