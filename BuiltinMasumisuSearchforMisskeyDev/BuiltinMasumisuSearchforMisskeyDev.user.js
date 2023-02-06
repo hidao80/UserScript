@@ -3,7 +3,7 @@
 // @description Search for posts on Misskay.dev using Masumisearch.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.3.3
+// @version     1.4
 // @namespace   https://github.com/hidao80/UserScript
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license     MIT
@@ -33,7 +33,7 @@ function search(query) {
  * @returns {bool}
  */
 function isUserSearch(query) {
-    return /^\s*@.*/.test(query);
+    return /^\s*@.*/.test(query) || /^\s*#.*/.test(query) || /^\s*https?:\/\/.*/.test(query);
 }
 
 /**
