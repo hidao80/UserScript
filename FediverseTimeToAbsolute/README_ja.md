@@ -16,3 +16,7 @@ UserScript管理拡張機能をインストール後、https://github.com/hidao8
 ## ライセンス
 
 [MIT](/LICENSE)
+
+## スクリーンショット
+
+![image](https://user-images.githubusercontent.com/8155294/218209754-58522d7d-9b83-43b7-9e92-b3b710dfddc9.png)
