@@ -2,10 +2,8 @@
 // @name        MisskeyNotesSpeech
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
-// @match       https://misskey.io/*
-// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.10.1
+// @version     1.11
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -29,8 +27,8 @@ const GOOGLE_JAPANIESE = "Google 日本語";
 const ENGLISH = "Aria";
 const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
 const utter = new SpeechSynthesisUtterance();
-// utterrate = 1;
-// uttervolume = 20;
+utter.rate = 1.2;
+utter.volume = 0.5;
 let target = "Title of Socail Time Line";
 let from = "contributor's name";
 
@@ -64,7 +62,7 @@ const setVoice = () => {
 synth.onvoiceschanged = setVoice;
 
 const timer = setInterval(v => {
-    regexp = new RegExp(target, 'i')
+    const regexp = new RegExp(target, 'i')
     // Designation of lanes to watch for posts
     var lane = [...document.querySelectorAll(".round")];
     if (lane.length > 1) {
@@ -96,7 +94,7 @@ const timer = setInterval(v => {
                 .replace(/。+/g, '。')
                 .replace(/\`\`\`.+\`\`\`/g, ' ')
                 .replace(/\`/g, '')
-                .replace(/https?:\/\/[\w/:%#\$&\?\(\)~\.=\+\-]+/g, ' ');
+                .replace(/https?:\/\/([\w/:#\$&\?\(\)~\.=\+\-]|%[0-9a-fA-F]+)+/g, ' ');
 
             // Reading out notes
             synth.speak(utter);
