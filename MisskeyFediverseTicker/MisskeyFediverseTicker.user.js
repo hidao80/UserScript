@@ -2,10 +2,8 @@
 // @name        MisskeyFediverseTicker
 // @description Display the server to which the contributor belongs in an easily viewable manner.
 // @match       https://misskey.dev/*
-// @match       https://misskey.io/*
-// @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.6.2
+// @version     1.7
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png
@@ -33,6 +31,14 @@ const styles = [
         margin-bottom: 0.25rem;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000;
     }`,
+    `.transition header.header {
+        flex-wrap: nowrap !important;
+    }`,
+    `.transition header.header > .username, .transition header.header > .username > .mk-acct {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }`,
 ];
 
 for (let style of styles) {
@@ -54,7 +60,7 @@ function showTicker(note) {
 }
 
 function showTickerAll(column) {
-    const notes = column.querySelectorAll("header");
+    const notes = column.querySelectorAll(".main > header");
     for (const note of notes) {
         if (note.parentElement.querySelector(`.${CLASS_NAME}`) === null) {
             showTicker(note);
