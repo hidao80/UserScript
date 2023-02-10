@@ -3,7 +3,7 @@
 // @description Display the server to which the contributor belongs in an easily viewable manner.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.7
+// @version     1.7.1
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png
@@ -30,14 +30,6 @@ const styles = [
         padding: 0 0.5rem;
         margin-bottom: 0.25rem;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000;
-    }`,
-    `.transition header.header {
-        flex-wrap: nowrap !important;
-    }`,
-    `.transition header.header > .username, .transition header.header > .username > .mk-acct {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
     }`,
 ];
 

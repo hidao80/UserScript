@@ -10,7 +10,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.11.1
+// @version     1.12
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f552.png
@@ -89,6 +89,16 @@ const styles = [
         display: block;
         text-align: right;
         margin-left: auto;
+    }`,
+
+    // Common user ID shortening style within Misskey
+    `.transition header.header {
+        flex-wrap: nowrap !important;
+    }`,
+    `.transition header.header > .username, .transition header.header > .username > .mk-acct {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }`,
 ];
 
