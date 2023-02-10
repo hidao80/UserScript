@@ -16,3 +16,7 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/FediverseTi
 ## license
 
 [MIT](/LICENSE)
+
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/8155294/218209817-2e7f8ff0-e8ca-4ae1-b51e-81fdf8446f23.png)
