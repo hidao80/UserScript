@@ -9,7 +9,7 @@ When the posting range is "local only" in Misskey, it should be a different colo
 
 ## Install
 
-After installing the UserScript Manager extension ([Chromium-based](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)・[Firefox-based](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)・[Safari](https://apps.apple.com/us/app/userscripts/id1463298887)), go to https://github.com/hidao80/UserScript/blob/main/MiiskeyDifferentColorLocalOnly/MiiskeyDifferentColorLocalOnly.user.js and click the "Raw" button on the outer frame of the source code.
+After installing the UserScript Manager extension ([Chromium-based](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox-based](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/), [Safari](https://apps.apple.com/us/app/userscripts/id1463298887)), go to https://github.com/hidao80/UserScript/blob/main/MiiskeyDifferentColorLocalOnly/MiiskeyDifferentColorLocalOnly.user.js and click the "Raw" button on the outer frame of the source code.
 
 or [Click to install](https://github.com/hidao80/UserScript/raw/main/MiiskeyDifferentColorLocalOnly/MiiskeyDifferentColorLocalOnly.user.js)
 
