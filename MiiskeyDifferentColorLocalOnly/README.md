@@ -18,3 +18,6 @@ or [Click to install](https://github.com/hidao80/UserScript/raw/main/MiiskeyDiff
 [MIT](/LICENSE)
 
 ## Screenshot
+
+![1](https://user-images.githubusercontent.com/8155294/218248367-6fd9babe-f2bb-4000-a405-fc804cf8fe2e.png)
+![2](https://user-images.githubusercontent.com/8155294/218248273-696ed451-4b2d-4fad-bf40-7a638f2a256b.png)
