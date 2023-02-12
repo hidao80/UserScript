@@ -4,14 +4,14 @@
 // @match       http://*/*
 // @match       https://*/*
 // @author      hidao80
-// @version     1.3.1
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.3.2
+// @namespace   https://github.com/hidao80/UserScript/OnScreenConsole
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5a5.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/OnScreenConsole/OnScreenConsole.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

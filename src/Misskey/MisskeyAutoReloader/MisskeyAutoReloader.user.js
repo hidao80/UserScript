@@ -3,14 +3,14 @@
 // @description Reload once every 10 minutes if there are no posts being typed.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.4.1
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.4.2
+// @namespace   https://github.com/hidao80/UserScript/MisskeyAutoReloader
 // @license     MIT
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyAutoReloader/MisskeyAutoReloader.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyAutoReloader/MisskeyAutoReloader.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

@@ -3,14 +3,14 @@
 // @description When in mobile view of Misskey ver.11, Ctrl+Enter can be used to post a NOTE.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1.1
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.1.2
+// @namespace   https://github.com/hidao80/UserScript/MisskeyV11SendWithCtrlEnterForMobileMode
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e8.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

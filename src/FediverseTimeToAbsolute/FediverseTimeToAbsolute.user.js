@@ -10,14 +10,14 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.12
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.12.1
+// @namespace   https://github.com/hidao80/UserScript/FediverseTimeToAbsolute
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f552.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

@@ -3,14 +3,14 @@
 // @description ChatGPT prompt suggestion function
 // @match       https://chat.openai.com/chat
 // @author      hidao80
-// @version     1.0.1
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.0.2
+// @namespace   https://github.com/hidao80/UserScript/ChatGptSuggest
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5e3.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

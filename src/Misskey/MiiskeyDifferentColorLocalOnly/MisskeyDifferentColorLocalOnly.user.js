@@ -3,14 +3,14 @@
 // @description When the posting range is "local only" in Misskey, it should be a different color.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0
+// @version     1.0.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyDifferentColorLocalOnly
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

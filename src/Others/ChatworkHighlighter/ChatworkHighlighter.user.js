@@ -1,36 +1,23 @@
 /*
-license: MIT
-
-Copyright 2022 hidao80
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-/*
 I based my work on this article. <https://qiita.com/A-Ota/items/6a6cc8976aa3e5ae0f92>
 Thank you @A-Ota!
  */
-
 // ==UserScript==
-// @name        chatwork syntax highlighter
+// @name        ChatworkSyntaxHighlighter
 // @description Syntax highlighting is applied to the code notation in Chatwork.
 // @match       https://www.chatwork.com/
 // @author      hidao80
-// @version     1.0.1
-// @namespace   https://github.com/hidao80/UserScript
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/
+// @version     1.0.2
+// @namespace   https://github.com/hidao80/UserScript/ChatworkSyntaxHighlighter
+// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png
 // @run-at      document-end
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
 // @require     https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js#sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w==
 // @resource    style https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai.min.css#sha512-RLF8eOxhuwsRINc7r56dpl9a3VStqrXD+udWahutJrYdyh++2Ghnf+s4jFsOyryKZt/GNjPwbXVPH3MJpKrn2g==
 // @resource    default https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css#sha512-hasIneQUHlh06VNBe7f6ZcHmeRTLIaQWFd43YriJ0UND19bvYRauxthDg8E4eVNPm9bRUhr5JGeqH7FRFXQu5g==
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/ChatworkHighlighter/ChatworkHighlighter.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/ChatworkHighlighter/ChatworkHighlighter.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/ChatworkHighlighter/ChatworkHighlighter.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/ChatworkHighlighter/ChatworkHighlighter.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

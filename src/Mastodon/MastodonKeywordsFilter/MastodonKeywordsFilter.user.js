@@ -7,14 +7,14 @@
 // @match       https://mstdn.sublimer.me/*
 // @match       https://social.vivaldi.net/*
 // @author      hidao80
-// @version     1.2.1
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.2.2
+// @namespace   https://github.com/hidao80/UserScript/MastodonKeywordsFilter
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26d4.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

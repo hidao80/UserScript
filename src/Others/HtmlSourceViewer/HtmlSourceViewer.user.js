@@ -4,10 +4,10 @@
 // @match       http://*/*
 // @match       https://*/*
 // @author      hidao80
-// @version     1.2.2
-// @namespace   https://github.com/hidao80/UserScript
+// @version     1.2.3
+// @namespace   https://github.com/hidao80/UserScript/HtmlSourceViewer
 // @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4D6.pnf
+// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4D6.png
 // @run-at      document-end
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
@@ -15,8 +15,8 @@
 // @resource    shCoreDefault.css https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreDefault.min.css#sha512-m86ay46+VXJi/u/ARTNMtfjIXdW6ht5LULFIK1GvPRobUlQgRdZTs7f105BDB8pzFCxk/6nq5otE9j12Onkyow==
 // @require     https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js#sha512-Z5dAQyvO8EyY1cHQcqYTYL8z6PDjM0URql6AioNodsSxxTJS5Fqfujr+o/4ye2dLp0he1qAVTiZABTunv6oLow==
 // @require     https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js#sha512-XHSgk11LDMG/R4L6Tn9cl4xbwbO5dnsgJrtXd/oT6KVf00wqAog2wY8j3kySxmxRoiBAxON5lZZW9fqHj2CE7g==
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/HtmlSourceViewer/HtmlSourceViewer.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/HtmlSourceViewer/HtmlSourceViewer.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/HtmlSourceViewer/HtmlSourceViewer.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)
