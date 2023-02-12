@@ -1,4 +1,4 @@
-# # UserScript by hidao80（Others）
+# UserScript by hidao80（Others）
 
 [README 日本語版](./README_ja.md)
 

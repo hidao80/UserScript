@@ -1,4 +1,4 @@
-# # UserScript by hidao80 (Misskey-Mastodon dual-use)
+# UserScript by hidao80 (Misskey-Mastodon dual-use)
 
 [README 日本語版](./README_ja.md)
 

@@ -1,4 +1,4 @@
-# # UserScript by hidao80（For Misskey）
+# UserScript by hidao80（For Misskey）
 
 [README 日本語版](./README_ja.md)
 
@@ -11,19 +11,19 @@
 
 When searching for posts on Misskey.dev, use [Masumisu Search](https://masmis-search.ja-jp.org/ui) instead of Misskey's search function.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
 
 ## [MisskeyAutoReloader](./MisskeyAutoReloader/README_ja.md)
 
 When the posting range is "local only" in Misskey, it should be a different color.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
 
 ## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README_ja.md)
 
 Display the server to which the contributor belongs in an easily viewable manner.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js)
 
 ## [MisskeyKeywordsFilter](./MisskeyKeywordsFilter/README_ja.md)
 
