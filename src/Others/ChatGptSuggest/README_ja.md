@@ -14,7 +14,7 @@ ChatGPTのプロンプトに入力するオススメのフレーズの候補を�
 UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][firefox-extension], [Safari][safari-extension]）をインストール後、[ソースコード][source]に移動して、インストールボタンをクリックします。
 
 [chrome-extension]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Tampermonkey"
-[firefox-extension]: https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/ "Tampermonkey"
+[firefox-extension]: https://addons.mozilla.org/ja/firefox/addon/tampermonkey/ "Tampermonkey"
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
 [source]: https://github.com/hidao80/UserScript/raw/main/ChatGptSuggest/ChatGptSuggest.user.js "Source code"
 
