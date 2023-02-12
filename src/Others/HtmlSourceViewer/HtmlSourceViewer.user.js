@@ -4,10 +4,10 @@
 // @match       http://*/*
 // @match       https://*/*
 // @author      hidao80
-// @version     1.2.3
+// @version     1.2.4
 // @namespace   https://github.com/hidao80/UserScript/HtmlSourceViewer
 // @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4D6.png
+// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png
 // @run-at      document-end
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
