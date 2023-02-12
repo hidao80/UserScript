@@ -3,7 +3,7 @@
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.11.1
+// @version     1.12
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -18,6 +18,8 @@
 //   Copyright 2019 Twitter, Inc and other contributors
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
+
+console.debug('[MisskeyNotesSpeech]: script started.');
 
 // Initialization of reading voice
 const synth = window.speechSynthesis;
@@ -76,10 +78,26 @@ const timer = setInterval(v => {
         setVoice();
 
         // Trimming the readout
-        function speech() {
+        function speech(mutations) {
             // Muted posts are not read out loud.
             if (lane.querySelector('[class=transition]>div').style.display == 'none') {
+                console.debug('[MisskeyNotesSpeech]: added item is muted note.');
                 return;
+            }
+
+            const nodeArray = [...lane.querySelectorAll('span[class="reaction"]')];
+            for (const mutation of mutations) {
+                // Do not read out when a node is deleted
+                if (mutation.addedNodes.length == 0) {
+                    console.debug('[MisskeyNotesSpeech]: Remove items.');
+                    return;
+                }
+
+                // When reactions are added, they are not read out loud.
+                if (nodeArray.filter(v => v == mutation.addedNodes).length) {
+                    console.debug('[MisskeyNotesSpeech]: added item is reaction.');
+                    return;
+                }
             }
 
             // I'm reading it out now, and I'm going to stop in the middle.
@@ -101,6 +119,7 @@ const timer = setInterval(v => {
         }
 
         // Call the read function when a post is added.
+        console.debug('[MisskeyNotesSpeech]: get ready.');
         const targetLane = lane.querySelector(".transition.notes") ?? lane.querySelector(".transition");
         (new MutationObserver(speech)).observe(targetLane, { childList: true });
     }
