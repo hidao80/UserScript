@@ -1,6 +1,6 @@
 # hidao80のUserScript（Misskey・Mastodon兼用）
 
-[README English](./README_ja.md)
+[README English](./README.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)

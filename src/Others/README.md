@@ -1,6 +1,6 @@
-# hidao80のUserScript（Others）
+# # UserScript by hidao80（Others）
 
-[README English](./README_ja.md)
+[README 日本語版](./README_ja.md)
 
 [![UserScript](https://img.shields.io/badge/Framework-UserScript-blue.svg)](https://en.wikipedia.org/wiki/Userscript)
 [![License](https://img.shields.io/github/license/hidao80/UserScript)](/LICENSE)
