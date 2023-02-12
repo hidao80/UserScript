@@ -11,7 +11,7 @@
 
 When searching for posts on Misskey.dev, use [Masumisu Search](https://masmis-search.ja-jp.org/ui) instead of Misskey's search function.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
 
 ## [MisskeyAutoReloader](./MisskeyAutoReloader/README_ja.md)
 
