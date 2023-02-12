@@ -15,9 +15,15 @@ When searching for posts on Misskey.dev, use [Masumisu Search](https://masmis-se
 
 ## [MisskeyAutoReloader](./MisskeyAutoReloader/README_ja.md)
 
-When the posting range is "local only" in Misskey, it should be a different color.
+The system will reload once every 10 minutes if there are no posts or new incoming calls being typed.
 
 [Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
+
+## [MisskeyDifferentColorLocalOnly](./MisskeyDifferentColorLocalOnly/README_ja.md)
+
+When the posting range is "local only" in Misskey, it should be a different color.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js)
 
 ## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README_ja.md)
 

@@ -19,6 +19,12 @@ Misskey.devで投稿検索をするとき、Misskeyの検索機能ではなく[�
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
 
+## [MisskeyDifferentColorLocalOnly](./MisskeyDifferentColorLocalOnly/README_ja.md)
+
+入力中の投稿や新規着信がなければ10分に一度再読込みします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js)
+
 ## [MisskeyFediverseTicker](./MisskeyFediverseTicker/README_ja.md)
 
 投稿者が所属するサーバーを見やすく表示します。
