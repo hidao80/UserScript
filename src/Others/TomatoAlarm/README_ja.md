@@ -16,7 +16,7 @@ UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][fir
 [chrome-extension]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Tampermonkey"
 [firefox-extension]: https://addons.mozilla.org/ja/firefox/addon/tampermonkey/ "Tampermonkey"
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
-[source]: https://github.com/hidao80/UserScript/raw/main/TomatoAlarm/TomatoAlarm.user.js "Source code"
+[source]: https://github.com/hidao80/UserScript/raw/main/src/Others/TomatoAlarm/TomatoAlarm.user.js "Source code"
 
 ## 使い方
 

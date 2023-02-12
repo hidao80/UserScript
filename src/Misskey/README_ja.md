@@ -34,28 +34,28 @@ Misskeyでの不快な単語をフィルタリングします。
 バージョンアップにより、ローカルでカスタマイズしたフィルタリング対象キーワードリストが上書きされます。
 キーワードリストを外部に保存しておいてください。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
 
 ## [MisskeyNotesSpeech](./MisskeyNotesSpeech/README_ja.md)
 
 Speech APIを使って、Misskeyのソーシャルタイムラインを読み上げるUserScriptです。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
 
 ## [MisskeyNotificationBeepInDeck](./MisskeyNotificationBeepInDeck/README_ja.md)
 
 Misskeyでデッキを表示しているときにも通知音を鳴らすUserScriptです。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
 ## [MisskeyV11ReactionPickerExpandWidth](./MisskeyV11ReactionPickerExpandWidth/README_ja.md)
 
 Misskey v11でモバイル版モードにしているときにリアクションパレットを画面下部に表示させるUserScriptです。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
 
 ## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README_ja.md)
 
 Misskey v11でモバイル版モードにしているときにCtrl+Enterでnoteを投稿できるようにします。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)

@@ -29,28 +29,28 @@ Display the server to which the contributor belongs in an easily viewable manner
 
 Filter out offensive words in Misskey.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
 
 ## [MisskeyNotesSpeech](./MisskeyNotesSpeech/README_ja.md)
 
 UserScript to read out Misskey's social timeline using the Speech API.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
 
 ## [MisskeyNotificationBeepInDeck](./MisskeyNotificationBeepInDeck/README_ja.md)
 
 UserScript that sounds a notification sound even when the deck is displayed in Misskey.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
 ## [MisskeyV11ReactionPickerExpandWidth](./MisskeyV11ReactionPickerExpandWidth/README_ja.md)
 
 UserScript to display the reaction palette at the bottom of the screen when in mobile version mode with Misskey v11.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
 
 ## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README_ja.md)
 
 This is a UserScript that allows Ctrl+Enter to post a NOTE when in mobile version mode in Misskey v11.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)

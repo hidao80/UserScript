@@ -16,7 +16,7 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 [chrome-extension]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Tampermonkey"
 [firefox-extension]: https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/ "Tampermonkey"
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
-[source]: https://github.com/hidao80/UserScript/raw/main/MastodonFediverseTicker/MastodonFediverseTicker.user.js "Source code"
+[source]: https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonFediverseTicker/MastodonFediverseTicker.user.js "Source code"
 
 ## Screen shot
 

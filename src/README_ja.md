@@ -11,4 +11,4 @@
 
 Fediverseの投稿時間に絶対表記を追加するUserScriptです。
 
-[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)

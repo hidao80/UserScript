@@ -11,4 +11,4 @@
 
 UserScript to add absolute notation to Fediverse's posting time.
 
-[Click here to install](https://github.com/hidao80/UserScript/raw/main/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
