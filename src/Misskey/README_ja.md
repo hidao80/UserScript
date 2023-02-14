@@ -49,6 +49,12 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
+## [MisskeyV11CustomEmojiRender](./MisskeyV11CustomEmojiRender/README_ja.md)
+
+読み込めなかったカスタム絵文字のロードを再試行します。（Misskey.dev専用）
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11CustomEmojiRender/MisskeyV11CustomEmojiRender.user.js)
+
 ## [MisskeyV11ReactionPickerExpandWidth](./MisskeyV11ReactionPickerExpandWidth/README_ja.md)
 
 Misskey v11でモバイル版モードにしているときにリアクションパレットを画面下部に表示させるUserScriptです。
