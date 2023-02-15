@@ -4,14 +4,14 @@
 // @match       https://*/*
 // @match       http://*/*
 // @author      hidao80
-// @version     1.0
+// @version     1.0.1
 // @namespace   https://github.com/hidao80/UserScript/UrlSticky
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d1.png
 // @run-at      document-end
 // @grant       GM_registerMenuCommand
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/UrlSticky/UrlSticky.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/UrlSticky/UrlSticky.user.js
+// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js
 // ==/UserScript==
 //
 // Contoributers magasine
