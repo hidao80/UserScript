@@ -42,3 +42,9 @@ Enlarge the text area.
 In the manner of the Pomodoro Technique, an alarm (the sound of a wind chime) is sounded once every 10 minutes after the start button is pressed.
 
 [Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Others/TomatoAlarm/TomatoAlarm.user.js)
+
+## [UrlSticky](./UrlSticky/README_ja.md)
+
+Displays stickies tied to a url in the screen; anything copied on the web can be pasted.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js)

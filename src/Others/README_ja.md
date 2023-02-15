@@ -42,3 +42,9 @@ Chatworkのコード表記にシンタックスハイライトをかけます。
 ポモドーロテクニックの要領で、スタートボタンを押してから10分に一度アラーム（風鈴の音）を鳴らします。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Others/TomatoAlarm/TomatoAlarm.user.js)
+
+## [UrlSticky](./UrlSticky/README_ja.md)
+
+URLに紐付いた付箋を画面内に表示する。Webでコピーしたものは何でも貼り付けられる。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js)
