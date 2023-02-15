@@ -20,6 +20,10 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 
 ## Screenshot
 
+![image](https://user-images.githubusercontent.com/8155294/218999968-7de0c9b7-aaa8-49ed-8f4d-93dd47b8308e.png)
+![image](https://user-images.githubusercontent.com/8155294/219000245-09c37ec6-8291-42bc-9cc5-ddc02abc508a.png)
+
+
 ## Usage
 
 1. click the icon of UserScript management extension to display the menu.
