@@ -11,7 +11,7 @@
 // @match       https://misskey.noellabo.jp/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
-// @version     1.1.2
+// @version     1.2
 // @namespace   https://github.com/hidao80/UserScript/SnsTextAreaEnlargement
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d2.png
@@ -36,6 +36,11 @@ const styles = [
     // for tweetdeck
     `.compose-text {
         resize: vertical;
+    }`,
+
+    // for Misskey
+    `.form > textarea {
+        height: 30vh;
     }`,
 ];
 
