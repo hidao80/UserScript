@@ -3,7 +3,7 @@
 // @description Reload once every 10 minutes if there are no posts being typed.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.4.2
+// @version     1.4.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyAutoReloader
 // @license     MIT
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
@@ -70,7 +70,7 @@
             // Stop waiting for the monitored timeline to be drawn
             clearInterval(timer);
 
-            const waitMillisec = 1_800_000;  // 30 mins.
+            const waitMillisec = 600_000;  // 10 mins.
             reloadTimerId = setInterval(reload, waitMillisec);
 
             const observer = new MutationObserver(resetTimer);
