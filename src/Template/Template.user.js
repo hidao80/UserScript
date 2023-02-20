@@ -19,3 +19,10 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
+'use strict';
+
+/** Constant variable */
+// When debugging: DEBUG = !false;
+const DEBUG = false;
+const SCRIPT_NAME = 'Template';
+DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
