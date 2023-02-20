@@ -61,6 +61,12 @@ Misskey v11でモバイル版モードにしているときにリアクション
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
 
+## [MisskeyV11RemoteCustomEmojiMarker](./MisskeyV11RemoteCustomEmojiMarker/README.md)
+
+Misskey v11で、リモートカスタム絵文字のリアクションが目立つようにします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11RemoteCustomEmojiMarker/MisskeyV11RemoteCustomEmojiMarker.user.js)
+
 ## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README_ja.md)
 
 Misskey v11でモバイル版モードにしているときにCtrl+Enterでnoteを投稿できるようにします。

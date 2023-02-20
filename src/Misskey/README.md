@@ -61,6 +61,12 @@ UserScript to display the reaction palette at the bottom of the screen when in m
 
 [Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
 
+## [MisskeyV11RemoteCustomEmojiMarker](./MisskeyV11RemoteCustomEmojiMarker/README.md)
+
+Make remote custom emoji reactions prominent in Misskey v11.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11RemoteCustomEmojiMarker/MisskeyV11RemoteCustomEmojiMarker.user.js)
+
 ## [MisskeyV11SendWithCtrlEnterForMobileMode](./MisskeyV11SendWithCtrlEnterForMobileMode/README.md)
 
 This is a UserScript that allows Ctrl+Enter to post a NOTE when in mobile version mode in Misskey v11.
