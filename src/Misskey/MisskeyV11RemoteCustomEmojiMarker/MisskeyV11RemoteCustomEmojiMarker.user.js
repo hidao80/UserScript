@@ -30,7 +30,7 @@ const SCRIPT_NAME = 'MisskeyV11RemoteCustomEmojiMarker';
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
 const styles = [`
-.mk-reactions-viewer > span.reaction > img[titl*="@"]:not(img[title$="@.:"]) {
+.mk-reactions-viewer > span.reaction > img[title*="@"]:not(img[title$="@.:"]) {
     opacity: 0.6;
 }
 `];
