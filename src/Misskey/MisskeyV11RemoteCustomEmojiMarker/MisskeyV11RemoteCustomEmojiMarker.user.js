@@ -3,7 +3,7 @@
 // @description Make remote custom emoji reactions prominent in Misskey v11.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0
+// @version     1.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11RemoteCustomEmojiMarker
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e1.png
