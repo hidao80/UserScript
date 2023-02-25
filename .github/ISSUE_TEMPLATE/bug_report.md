@@ -7,8 +7,12 @@ assignees: ''
 
 ---
 
+## Target UserScript name 対象となるUserScriptの名前
+
+
 ### Describe the bug バグを説明する
 A clear and concise description of what the bug is. バグが何であるかを明確かつ簡潔に説明します。
+
 
 ### To Reproduce 再現させる方法
 Steps to reproduce the behavior 動作を再現するための手順:
@@ -20,8 +24,10 @@ Steps to reproduce the behavior 動作を再現するための手順:
 ### Expected behavior 期待される動作
 A clear and concise description of what you expected to happen. 期待される動作を簡潔明瞭に記述してください。
 
+
 ### Screenshots スクリーンショット
 If applicable, add screenshots to help explain your problem. 該当する場合、問題の説明に役立つスクリーンショットを追加してください。
+
 
 ### Desktop (please complete the following information): デスクトップ（以下の情報を入力してください）。
  - OS: [e.g. iOS]
