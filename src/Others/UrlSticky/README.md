@@ -26,6 +26,7 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 - Even if the sticky is hidden, its content will not disappear.
 - The page changes for each URL.
 - Images and tables can also be pasted.
+
 ## Screenshot
 
 ![image](https://user-images.githubusercontent.com/8155294/219000245-09c37ec6-8291-42bc-9cc5-ddc02abc508a.png)
