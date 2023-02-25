@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        MisskeyNotesSpeech
+// @name        Misskey notes speech
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.14
+// @version     1.15
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -19,7 +19,13 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-console.debug('[MisskeyNotesSpeech]: script started.');
+'use strict';
+
+/** Constant variable */
+// When debugging: DEBUG = !false;
+const DEBUG = false;
+const SCRIPT_NAME = 'Misskey notes speech';
+DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
 // Initialization of reading voice
 const synth = window.speechSynthesis;
@@ -27,7 +33,7 @@ const WIN = "Kyoko";
 const EDGE = "Nanami";
 const GOOGLE_JAPANIESE = "Google 日本語";
 const ENGLISH = "Aria";
-const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
+const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0) ?? synth.getVoices()[0];
 const utter = new SpeechSynthesisUtterance();
 utter.rate = 1.2;
 utter.volume = 0.5;
@@ -79,47 +85,50 @@ const timer = setInterval(v => {
 
         // Trimming the readout
         function speech(mutations) {
-            // Muted posts are not read out loud.
-            if (lane.querySelector('.article').style.display == 'none') {
-                console.debug('[MisskeyNotesSpeech]: added item is muted note.');
-                return;
-            }
-
-            const nodeArray = [...lane.querySelectorAll('span.reaction')];
-            for (const mutation of mutations) {
-                // Do not read out when a node is deleted
-                if (mutation.addedNodes.length == 0) {
-                    console.debug('[MisskeyNotesSpeech]: Remove items.');
+            // Waiting for DOM rendering
+            setTimeout(() => {
+                // Muted posts are not read out loud.
+                if (lane.querySelector('.article').style.display == 'none') {
+                    DEBUG && console.debug(`[${SCRIPT_NAME}]: added item is muted note.`);
                     return;
                 }
 
-                // When reactions are added, they are not read out loud.
-                if (nodeArray.filter(v => v == mutation.addedNodes).length) {
-                    console.debug('[MisskeyNotesSpeech]: added item is reaction.');
-                    return;
+                const nodeArray = [...lane.querySelectorAll('span.reaction')];
+                for (const mutation of mutations) {
+                    // Do not read out when a node is deleted
+                    if (mutation.addedNodes.length == 0) {
+                        DEBUG && console.debug(`[${SCRIPT_NAME}]: Remove items.`);
+                        return;
+                    }
+
+                    // When reactions are added, they are not read out loud.
+                    if (nodeArray.filter(v => v == mutation.addedNodes).length) {
+                        DEBUG && console.debug(`[${SCRIPT_NAME}]: added item is reaction.`);
+                        return;
+                    }
                 }
-            }
 
-            // I'm reading it out now, and I'm going to stop in the middle.
-            synth.cancel();
+                // I'm reading it out now, and I'm going to stop in the middle.
+                synth.cancel();
 
-            // Nickname cutout
-            utter.text = lane.querySelector(".havbbuyv.nowrap").textContent + from;
+                // Nickname cutout
+                utter.text = lane.querySelector(".havbbuyv.nowrap").textContent + from;
 
-            // Notebook cutout (excluding CW)
-            utter.text += lane.querySelector(".text>.havbbuyv").getAttribute("text")
-                .replace(/\n/g, '。')
-                .replace(/。+/g, '。')
-                .replace(/\`\`\`.+\`\`\`/g, ' ')
-                .replace(/\`/g, '')
-                .replace(/https?:\/\/([\w\/:#\$&\?\(\)~\.=\+\-,]|\%[0-9a-fA-F]+)+/g, ' ');
+                // Notebook cutout (excluding CW)
+                utter.text += lane.querySelector(".text>.havbbuyv").getAttribute("text")
+                    .replace(/\n/g, '。')
+                    .replace(/。+/g, '。')
+                    .replace(/\`\`\`.+\`\`\`/g, ' ')
+                    .replace(/\`/g, '')
+                    .replace(/https?:\/\/([\w\/:#\$&\?\(\)~\.=\+\-,]|\%[0-9a-fA-F]+)+/g, ' ');
 
-            // Reading out notes
-            synth.speak(utter);
+                // Reading out notes
+                synth.speak(utter);
+            }, 500, mutations);
         }
 
         // Call the read function when a post is added.
-        console.debug('[MisskeyNotesSpeech]: get ready.');
+        DEBUG && console.debug(`[${SCRIPT_NAME}]: get ready.`);
         const targetLane = lane.querySelector(".transition.notes") ?? lane.querySelector(".transition");
         (new MutationObserver(speech)).observe(targetLane, { childList: true });
     }
