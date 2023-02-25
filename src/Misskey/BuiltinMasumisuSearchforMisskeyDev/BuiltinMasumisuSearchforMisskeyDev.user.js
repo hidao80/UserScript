@@ -3,7 +3,7 @@
 // @description Search for posts on Misskay.dev using Masmis-search.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.6.1
+// @version     1.6.2
 // @namespace   https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license     MIT
@@ -23,7 +23,7 @@
 
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_NAME = 'Builtin Masmis-Search for for Misskey.dev';
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
