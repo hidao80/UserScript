@@ -21,7 +21,7 @@ Misskey.devで投稿検索をするとき、Misskeyの検索機能ではなく[�
 
 ## [MisskeyDifferentColorLocalOnly](./MisskeyDifferentColorLocalOnly/README_ja.md)
 
-入力中の投稿や新規着信がなければ10分に一度再読込みします。
+Misskeyで投稿範囲が「ローカルのみ」のときは違う色にします。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js)
 
