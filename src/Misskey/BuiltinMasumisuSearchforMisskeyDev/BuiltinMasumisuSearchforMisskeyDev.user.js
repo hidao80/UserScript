@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        BuiltinMasumisuSearchforMisskeyDev
-// @description Search for posts on Misskay.dev using Masumisearch.
+// @name        Builtin Masmis-Search for for Misskey.dev
+// @description Search for posts on Misskay.dev using Masmis-search.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.5.1
+// @version     1.6
 // @namespace   https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license     MIT
@@ -19,6 +19,14 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
+'use strict';
+
+/** Constant variable */
+// When debugging: DEBUG = !false;
+const DEBUG = !false;
+const SCRIPT_NAME = 'Builtin Masmis-Search for for Misskey.dev';
+DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
+
 /**
  * Open a separate window for search and search in Masumisu-search.
  * @param {*} query search string
@@ -32,7 +40,7 @@ function search(query) {
  * @param {*} query search string
  * @returns {bool}
  */
-function isUserSearch(query) {
+function isNotNotesSearch(query) {
     return /^\s*@.*/.test(query) || /^\s*#.*/.test(query) || /^\s*https?:\/\/.*/.test(query);
 }
 
@@ -40,12 +48,20 @@ function isUserSearch(query) {
  * Override the search window execution event whenever something is drawn on the screen.
  * If the flag has already been overwritten, nothing is done.
  */
-function MasumisuSearch() {
-    const input = document.querySelector("input[type=search]") || document.querySelector("[class=input]>input");
-    if (input && !input.dataset.isSearchDisabled) {
+function MasmisSearch() {
+    // Get locale-specific "search" string from local storage
+    const labelSearch = JSON.parse(localStorage.getItem('locale')).common?.search;
+    const dialogTitle = document.querySelector(".modal.modal header")?.textContent;
+    DEBUG && console.debug(`labelSearch: ${labelSearch}, dialogTitle: ${dialogTitle}`);
+
+    const desktopModeSearchForm = document.querySelector("input[type=search]");
+    const MobileModeSearchForm = document.querySelector("[class=input]>input");
+    const input = desktopModeSearchForm || labelSearch == dialogTitle && MobileModeSearchForm;
+
+    if (input) {
         input.addEventListener("change", (e) => {
             // For user search, do not use Masumisu Search.
-            if (!isUserSearch(input.value)) {
+            if (!isNotNotesSearch(input.value)) {
                 e.stopImmediatePropagation();
                 e.stopPropagation();
                 search(input.value);
@@ -58,7 +74,7 @@ function MasumisuSearch() {
         // Disable search events
         input.addEventListener("search", (e) => {
             // For user search, do not use Masumisu Search.
-            if (!isUserSearch(input.value)) {
+            if (!isNotNotesSearch(input.value)) {
                 e.stopImmediatePropagation();
                 e.stopPropagation();
             }
@@ -66,7 +82,7 @@ function MasumisuSearch() {
         // Disable keydown events
         input.addEventListener("keydown", (e) => {
             // For user search, do not use Masumisu Search.
-            if (!isUserSearch(input.value)) {
+            if (!isNotNotesSearch(input.value)) {
                 e.stopImmediatePropagation();
                 e.stopPropagation();
             }
@@ -74,7 +90,7 @@ function MasumisuSearch() {
         // Disable submit events
         document.querySelector("form")?.addEventListener("submit", (e) => {
             // For user search, do not use Masumisu Search.
-            if (!isUserSearch(input.value)) {
+            if (!isNotNotesSearch(input.value)) {
                 e.stopImmediatePropagation();
                 e.stopPropagation();
             }
@@ -84,6 +100,6 @@ function MasumisuSearch() {
 }
 
 // Watch for the submit text area to be drawn.
-new MutationObserver(MasumisuSearch).observe(document.body, {
+new MutationObserver(MasmisSearch).observe(document.body, {
     childList: true,
 });
