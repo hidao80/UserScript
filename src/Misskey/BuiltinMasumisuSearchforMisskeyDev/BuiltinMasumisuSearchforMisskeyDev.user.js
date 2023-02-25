@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        Builtin Masmis-Search for for Misskey.dev
+// @name        Builtin Masmis-Search for Misskey.dev
 // @description Search for posts on Misskay.dev using Masmis-search.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.6
+// @version     1.6.1
 // @namespace   https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license     MIT
