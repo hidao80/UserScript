@@ -3,7 +3,7 @@
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.15
+// @version     1.15.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -33,15 +33,7 @@ const WIN = "Kyoko";
 const EDGE = "Nanami";
 const GOOGLE_JAPANIESE = "Google 日本語";
 const ENGLISH = "Aria";
-const getVoice = (n) => {
-    // If there is no specified synthesized voice, the first synthesized voice found is used.
-    const voice  = synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
-    if  (voice.length) {
-        return synth.getVoices()[0];
-    } else {
-        return voice;
-    }
-};
+const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
 const utter = new SpeechSynthesisUtterance();
 utter.rate = 1.2;
 utter.volume = 0.5;
@@ -70,7 +62,7 @@ function language() {
 
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
-    utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || getVoice(ENGLISH);
+    utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || getVoice(ENGLISH) || synth.getVoices()[0];
     language();
 };
 
