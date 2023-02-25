@@ -23,6 +23,7 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 
 - Click \[Tumpermonkey\]->\[Url Sticky\]in the context menu (right-click menu).
     If the sticky is not displayed, it will be shown; if it is already displayed, the sticky will be hidden.
+- You can also hide it with the `Esc` key.
 - Even if the sticky is hidden, its content will not disappear.
 - The page changes for each URL.
 - Images and tables can also be pasted.
