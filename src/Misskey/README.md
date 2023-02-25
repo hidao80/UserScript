@@ -49,6 +49,12 @@ UserScript that sounds a notification sound even when the deck is displayed in M
 
 [Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
 
+## [MisskeyReactionViewForTouchDevices](./MisskeyReactionViewForTouchDevices/README.md)
+
+You will also be able to see who has reacted on your phone or tablet.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js)
+
 ## [MisskeyV11CustomEmojiRender](./MisskeyV11CustomEmojiRender/README.md)
 
 Retry to load custom emoji that could not be loaded, for Misskey.dev only.
