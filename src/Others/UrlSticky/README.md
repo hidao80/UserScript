@@ -18,20 +18,17 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
 [source]: https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js "Source code"
 
-## Screenshot
-
-![image](https://user-images.githubusercontent.com/8155294/218999968-7de0c9b7-aaa8-49ed-8f4d-93dd47b8308e.png)
-![image](https://user-images.githubusercontent.com/8155294/219000245-09c37ec6-8291-42bc-9cc5-ddc02abc508a.png)
-
 
 ## Usage
 
-1. click the icon of UserScript management extension to display the menu.
-2. display the menu item "Show/Hidden Switch (0)" and click it or press the `0` key to display a sticky note on the right side of the screen.
-3. click the menu item "Show/Hidden Switch (0)" again or enter the `Esc` key to hide it.
-
+- Click \[Tumpermonkey\]->\[Url Sticky\]in the context menu (right-click menu).
+    If the sticky is not displayed, it will be shown; if it is already displayed, the sticky will be hidden.
+- Even if the sticky is hidden, its content will not disappear.
 - The page changes for each URL.
 - Images and tables can also be pasted.
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/8155294/219000245-09c37ec6-8291-42bc-9cc5-ddc02abc508a.png)
 
 ## License
 

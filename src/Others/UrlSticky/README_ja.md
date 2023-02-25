@@ -1,4 +1,4 @@
-# URL付箋
+# URLふせん
 
 [README English](./README.md)
 
@@ -20,16 +20,14 @@ UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][fir
 
 ## 使い方
 
-1. UserScript管理拡張機能のアイコンをクリックし、メニューを表示する。
-2. メニュー項目「Show/Hidden Switch (0)」を表示させ、クリックするか「0」キーを押すと画面右に付箋が表示される。
-3. もう一度メニュー項目「Show/Hidden Switch (0)」をクリックするか、`Esc`キーを入力すると非表示になる。
-
+- コンテクストメニュー（右クリックで出るメニュー）から\[Tumpermonkey\]->\[Url Sticky\]をクリックします。
+    表示されていなければ付箋が表示され、すでに表示されていればふせんが非表示になります。
+- ふせんが非表示になっても内容は消えません。
 - URLごとにページが変わります。
 - 画像や表も貼り付けできます。
 
 ## スクリーンショット
 
-![image](https://user-images.githubusercontent.com/8155294/218999968-7de0c9b7-aaa8-49ed-8f4d-93dd47b8308e.png)
 ![image](https://user-images.githubusercontent.com/8155294/219000245-09c37ec6-8291-42bc-9cc5-ddc02abc508a.png)
 
 ## ライセンス
