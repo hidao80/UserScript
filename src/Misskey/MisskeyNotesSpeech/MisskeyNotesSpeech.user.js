@@ -33,7 +33,15 @@ const WIN = "Kyoko";
 const EDGE = "Nanami";
 const GOOGLE_JAPANIESE = "Google 日本語";
 const ENGLISH = "Aria";
-const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0) ?? synth.getVoices()[0];
+const getVoice = (n) => {
+    // If there is no specified synthesized voice, the first synthesized voice found is used.
+    const voice  = synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
+    if  (voice.length) {
+        return synth.getVoices()[0];
+    } else {
+        return voice;
+    }
+};
 const utter = new SpeechSynthesisUtterance();
 utter.rate = 1.2;
 utter.volume = 0.5;
