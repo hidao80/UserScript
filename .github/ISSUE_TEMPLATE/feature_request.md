@@ -1,7 +1,7 @@
 ---
 name: Feature request 機能リクエスト
 about: Suggest an idea for this project このプロジェクトにアイデアを提案する
-title: ''
+title: '[request] '
 labels: 'enhancement'
 assignees: 'hidao80'
 
