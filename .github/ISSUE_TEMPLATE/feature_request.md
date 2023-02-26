@@ -11,7 +11,7 @@ assignees: 'hidao80'
 **対象となるUserScriptの名前**
 
 
-**Is your feature request related to a problem? Please describe. ** A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]\
+**Is your feature request related to a problem? Please describe.** A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]\
 **あなたの機能リクエストは問題に関連していますか？説明してください。** 何が問題なのか、明確かつ簡潔な説明。例 私はいつも[...]のときにイライラしています。
 
 
