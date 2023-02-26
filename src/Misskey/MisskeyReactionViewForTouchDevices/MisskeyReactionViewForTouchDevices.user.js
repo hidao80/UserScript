@@ -128,12 +128,12 @@ function observerCallback() {
                                     DEBUG && console.debug({emojiName});
                                     DEBUG && console.debug({emoji});
                                     if (emoji) {
-                                        innerHtml += `<br>${emoji}をリアクション：`;
+                                        innerHtml += `<br>${emoji}：`;
                                     } else {
                                         let url;
                                         // For custom pictograms instead of emoji
                                         if (!(/[a-zA-Z0-9-_\.\[\]\(\)]+/.test(emojiName))) {
-                                            innerHtml += `<br>${emojiName}をリアクション：`;
+                                            innerHtml += `<br>${emojiName}：`;
                                         } else {
                                             // Loading custom emojis
                                             let promises = [];
@@ -146,14 +146,14 @@ function observerCallback() {
                                             url = urls.find(v => v);
                                             DEBUG && console.debug(url);
                                             if (url) {
-                                                innerHtml += `<br><img src="${url}" style="width: 24px">をリアクション：`;
+                                                innerHtml += `<br><img src="${url}" style="width: 24px">：`;
                                             } else {
-                                                innerHtml += `<br>????をリアクション：`;
+                                                innerHtml += `<br>????：`;
                                             }
                                         }
                                     }
                                 }
-                                innerHtml += `<nobr><img src="${item.user.avatarUrl}" style="width: 24px">${item.user.name ?? item.user.username}</nobr>&nbsp;`;
+                                innerHtml += `<nobr><img src="${item.user.avatarUrl}" style="width:24px;border-radius:100%">${item.user.name ?? item.user.username}</nobr>&nbsp;`;
                             }
 
                             // Create reaction output pane
