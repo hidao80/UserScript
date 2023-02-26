@@ -10,7 +10,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.12.1
+// @version     1.13
 // @namespace   https://github.com/hidao80/UserScript/FediverseTimeToAbsolute
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f552.png
@@ -33,6 +33,30 @@ const styles = [
     }`,
     `article time::after {
         content: ")";
+    }`,
+
+    // Misskey desktop version note details
+    `.mk-note-detail article .info time::before {
+        content: attr(title) " (";
+    }`,
+    `.mk-note-detail article .info time::after {
+        content: ")";
+    }`,
+
+    // Misskey mobile version notes in profile
+    `.mk-note-detail .reply-to .info time::before {
+        content: attr(title) " (";
+    }`,
+    `.mk-note-detail article .info time::after {
+        content: ")";
+    }`,
+
+    // Misskey mobile version note details
+    `.mk-note-detail article time::before {
+        content: "";
+    }`,
+    `.mk-note-detail article time::after {
+        content: "";
     }`,
 
     // for Mastodon
