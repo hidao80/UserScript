@@ -1,7 +1,7 @@
 ---
 name: Bug report 不具合報告
 about: Create a report to help us improve 改善のため
-title: ''
+title: '[bug] '
 labels: 'bug'
 assignees: 'hidao80'
 
