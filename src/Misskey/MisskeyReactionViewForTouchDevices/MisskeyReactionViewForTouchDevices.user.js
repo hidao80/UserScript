@@ -3,7 +3,7 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.5
+// @version     1.6
 // @namespace   https://github.com/hidao80/UserScript/MisskeyReactionViewForTouchDevices
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4dc.png
 // @license     MIT
@@ -148,7 +148,7 @@ function observerCallback() {
                                             if (url) {
                                                 innerHtml += `<br><img src="${url}" style="width: 24px">：`;
                                             } else {
-                                                innerHtml += `<br>????：`;
+                                                innerHtml += `<br>${emojiName}：`;
                                             }
                                         }
                                     }
