@@ -3,7 +3,7 @@
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.16
+// @version     1.17
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -23,7 +23,8 @@
 
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = false;
+const DEBUG = !false;
+const SCRIPT_CLASS = 'us-hidao80-speech';
 const SCRIPT_NAME = 'Misskey notes speech';
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
@@ -77,28 +78,18 @@ const timer = setInterval(v => {
         clearInterval(timer);
 
         // Trimming the readout
-        function speech(mutations) {
+        function speech() {
             // Waiting for DOM rendering
             setTimeout(() => {
                 // Muted posts are not read out loud.
-                if (targetLane.querySelector('.article').style.display == 'none') {
-                    DEBUG && console.debug(`[${SCRIPT_NAME}]: added item is muted note.`);
-                    return;
-                }
+                const article = targetLane.querySelector(`.article`);
 
-                const nodeArray = [...targetLane.querySelectorAll('span.reaction')];
-                for (const mutation of mutations) {
-                    // Do not read out when a node is deleted
-                    if (mutation.addedNodes.length == 0) {
-                        DEBUG && console.debug(`[${SCRIPT_NAME}]: Remove items.`);
-                        return;
-                    }
+                if (article?.className.indexOf(SCRIPT_CLASS) < 0) {
+                    // Click on a post to stop reading it.
+                    article.classList.add(SCRIPT_CLASS);
+                    article.addEventListener('click', () => synth.cancel());
 
-                    // When reactions are added, they are not read out loud.
-                    if (nodeArray.filter(v => v == mutation.addedNodes).length) {
-                        DEBUG && console.debug(`[${SCRIPT_NAME}]: added item is reaction.`);
-                        return;
-                    }
+                    DEBUG && console.debug('set speech cancel.');
                 }
 
                 // I'm reading it out now, and I'm going to stop in the middle.
@@ -117,11 +108,13 @@ const timer = setInterval(v => {
 
                 // Reading out notes
                 synth.speak(utter);
-            }, 500, mutations);
+            }, 1_000);
         }
 
         // Call the read function when a post is added.
         DEBUG && console.debug(`[${SCRIPT_NAME}]: get ready.`);
         (new MutationObserver(speech)).observe(targetLane, { childList: true });
+
+        speech()
     }
 }, 1_000);

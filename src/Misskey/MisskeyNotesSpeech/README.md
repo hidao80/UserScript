@@ -18,6 +18,11 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
 [source]: https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js "Source code"
 
+## Hou to use
+
+Automatically reads new posts as they appear.\
+Clicking on a post that is being read cancels the reading.
+
 ## License
 
 [MIT](/LICENSE)
