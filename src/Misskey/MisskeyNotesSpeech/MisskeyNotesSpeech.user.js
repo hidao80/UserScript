@@ -23,7 +23,7 @@
 
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_CLASS = 'us-hidao80-speech';
 const SCRIPT_NAME = 'Misskey notes speech';
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
