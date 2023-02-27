@@ -3,7 +3,7 @@
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.17
+// @version     1.18
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -84,7 +84,12 @@ const timer = setInterval(v => {
                 // Muted posts are not read out loud.
                 const article = targetLane.querySelector(`.article`);
 
-                if (article?.className.indexOf(SCRIPT_CLASS) < 0) {
+                if (!article?.parentElement || article.parentElement.style.display == 'none') {
+                    // I don't read muted posts.
+                    return;
+                }
+
+                if (article.className.indexOf(SCRIPT_CLASS) < 0) {
                     // Click on a post to stop reading it.
                     article.classList.add(SCRIPT_CLASS);
                     article.addEventListener('click', () => synth.cancel());
@@ -108,7 +113,7 @@ const timer = setInterval(v => {
 
                 // Reading out notes
                 synth.speak(utter);
-            }, 1_000);
+            }, 1_500);
         }
 
         // Call the read function when a post is added.
