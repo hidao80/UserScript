@@ -55,6 +55,12 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js)
 
+## [MisskeyV11BackToTop](./MisskeyV11BackToTop/README_ja.md)
+
+Misskey v11にて、先頭に戻るボタンを追加する。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js)
+
 ## [MisskeyV11CustomEmojiRender](./MisskeyV11CustomEmojiRender/README_ja.md)
 
 読み込めなかったカスタム絵文字のロードを再試行します。（Misskey.dev専用）

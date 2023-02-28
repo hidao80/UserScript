@@ -55,6 +55,12 @@ You will also be able to see who has reacted on your phone or tablet.
 
 [Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js)
 
+## [MisskeyV11BackToTop](./MisskeyV11BackToTop/README.md)
+
+In Misskey v11, add a button to go back to the top.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js)
+
 ## [MisskeyV11CustomEmojiRender](./MisskeyV11CustomEmojiRender/README.md)
 
 Retry to load custom emoji that could not be loaded, for Misskey.dev only.
