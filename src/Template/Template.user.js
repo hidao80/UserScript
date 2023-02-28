@@ -24,5 +24,6 @@
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
+const SCRIPT_CLASS = 'us-hidao80-Template';
 const SCRIPT_NAME = 'Template';
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
