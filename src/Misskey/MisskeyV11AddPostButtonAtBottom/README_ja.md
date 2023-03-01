@@ -20,6 +20,8 @@ UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][fir
 
 ## スクリーンショット
 
+<img src="https://user-images.githubusercontent.com/8155294/222289336-fabd6ada-6e16-43ed-b692-29ec38a6ce9e.png" width=300>
+
 ## ライセンス
 
 [MIT](/LICENSE)
