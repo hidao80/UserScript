@@ -55,9 +55,15 @@ Misskeyでデッキを表示しているときにも通知音を鳴らすUserScr
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js)
 
+## [MisskeyV11AddPostButtonAtBottom](./MisskeyV11AddPostButtonAtBottom/README_ja.md)
+
+Misskey v11にて、ホームレイアウトのときだけ新規投稿ボタンを画面左下隅に追加します。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11AddPostButtonAtBottom/MisskeyV11AddPostButtonAtBottom.user.js)
+
 ## [MisskeyV11BackToTop](./MisskeyV11BackToTop/README_ja.md)
 
-Misskey v11にて、先頭に戻るボタンを追加する。
+Misskey v11にて、先頭に戻るボタンを追加します。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js)
 
