@@ -3,7 +3,7 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.6
+// @version     1.6.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyReactionViewForTouchDevices
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4dc.png
 // @license     MIT
@@ -75,7 +75,7 @@ function observerCallback() {
                 button.innerHTML = buttonIcon;
 
                 if (elem.querySelector('.mk-reactions-viewer')?.innerHTML.length) {
-                    const footer = elem.querySelector('footer');
+                    const footer = elem.querySelector('.main > footer');
                     footer.appendChild(button);
 
                     button.addEventListener('click', e => {
