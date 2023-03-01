@@ -56,7 +56,7 @@ button.innerHTML = `<svg data-v-7ba7654b="" data-v-0d3234f7="" aria-hidden="true
 
 // Call submit button click when clicked.
 button.onclick = () => {
-    document.querySelector('.content > button:not(.nav)').click();
+    document.querySelector('.content > button:not(.nav)')?.click() ?? document.querySelector('.note > button')?.click();
 };
 
 // Processing starts after the timeline has been drawn.
