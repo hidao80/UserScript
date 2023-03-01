@@ -3,7 +3,7 @@
 // @description Summary of this script
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0
+// @version     1.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11BackToTop
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2b06.png
@@ -23,7 +23,7 @@
 
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_CLASS = 'us-hidao80-MisskeyV11BackToTop';
 const SCRIPT_NAME = 'MisskeyV11BackToTop';
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
@@ -44,6 +44,7 @@ button.href = "#" + TOP_ANCHOR_ID;
 const div = document.createElement("div");
 div.classList.add(SCRIPT_CLASS, 'pagetop__arrow');
 
+const theme = JSON.parse(localStorage.getItem('theme'));
 const styles = [
     `.content.top {
         scroll-behavior: smooth;
@@ -61,8 +62,7 @@ const styles = [
         position: fixed;
         right: 30px;
         bottom: 30px;
-        background: ${JSON.parse(localStorage.getItem('theme')).primary};
-        border: solid 2px #000;
+        background: ${theme.primary};
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -72,8 +72,8 @@ const styles = [
     `.${SCRIPT_CLASS}.pagetop__arrow {
         height: 10px;
         width: 10px;
-        border-top: 3px solid #000;
-        border-right: 3px solid #000;
+        border-top: 3px solid ${theme.primaryForeground};
+        border-right: 3px solid ${theme.primaryForeground};
         transform: translateY(20%) rotate(-45deg);
     }`
 ];
