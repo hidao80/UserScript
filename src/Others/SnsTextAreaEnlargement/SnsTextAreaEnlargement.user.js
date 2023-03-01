@@ -11,7 +11,7 @@
 // @match       https://misskey.noellabo.jp/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
-// @version     1.2
+// @version     1.2.1
 // @namespace   https://github.com/hidao80/UserScript/SnsTextAreaEnlargement
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d2.png
@@ -26,6 +26,15 @@
 //   Copyright 2019 Twitter, Inc and other contributors
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
+
+'use strict';
+
+/** Constant variable */
+// When debugging: DEBUG = !false;
+const DEBUG = false;
+const SCRIPT_CLASS = 'us-hidao80-SnsTextAreaEnlargement';
+const SCRIPT_NAME = 'SnsTextAreaEnlargement';
+DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
 const styles = [
     // for Mastodon
@@ -63,7 +72,7 @@ setTimeout(() => {
     }
 
     const ua = window.navigator.userAgent.toLowerCase();
-    console.log(ua);
+    DEBUG && console.log(ua);
 
     if (ua.indexOf("iphone") !== -1 || ua.indexOf("ipad") !== -1) {
         for (let style of iosStyles) {
