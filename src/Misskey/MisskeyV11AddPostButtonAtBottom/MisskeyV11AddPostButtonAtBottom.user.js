@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Add a new post button for Misskey v11
-// @description Add a New Post button at the bottom for Misskey v11.
+// @description In Misskey v11, add a new post button to the lower left corner of the screen only when in the home layout.
 // @match       https://misskey.dev/*
 // @author      hidao80
 // @version     1.0
