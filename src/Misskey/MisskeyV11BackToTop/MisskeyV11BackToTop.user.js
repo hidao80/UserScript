@@ -3,7 +3,7 @@
 // @description Summary of this script
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1
+// @version     1.2
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11BackToTop
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2b06.png
@@ -94,4 +94,4 @@ setTimeout(() => {
     for (let style of styles) {
         usableSheet.insertRule(style, usableSheet.cssRules.length);
     }
-}, 1_000);
+}, 1_500);

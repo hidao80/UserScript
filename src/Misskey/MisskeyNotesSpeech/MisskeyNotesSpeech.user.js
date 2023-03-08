@@ -3,7 +3,7 @@
 // @description UserScript to read out Misskey's social timeline using the Speech API.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.18
+// @version     1.19
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -122,4 +122,4 @@ const timer = setInterval(v => {
 
         speech()
     }
-}, 1_000);
+}, 1_500);

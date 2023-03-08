@@ -3,7 +3,7 @@
 // @description Search for posts on Misskay.dev using Masmis-search.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.6.2
+// @version     1.7
 // @namespace   https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license     MIT
@@ -100,6 +100,8 @@ function MasmisSearch() {
 }
 
 // Watch for the submit text area to be drawn.
-new MutationObserver(MasmisSearch).observe(document.body, {
-    childList: true,
-});
+setTimeout(() => {
+    new MutationObserver(MasmisSearch).observe(document.body, {
+        childList: true,
+    });
+}, 1_500);
