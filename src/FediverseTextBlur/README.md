@@ -18,6 +18,11 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
 [source]: https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js "Source code"
 
+## Usage
+
+- Click \[Tumpermonkey\]->\[Url Sticky\]in the context menu (right-click menu).
+    If no blur is in effect, the text will be blurred; if it is already blurred, the text will be unblurred.
+
 ## Screenshot
 
 ## License
