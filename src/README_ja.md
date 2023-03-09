@@ -12,3 +12,9 @@
 Fediverseの投稿時間に絶対表記を追加するUserScriptです。
 
 [ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
+
+## [FediverseTextBlur](./FediverseTextBlur/README_ja.md)
+
+Misskey v11とMastodonで投稿とユーザ名のテキストをぼかします。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js)
