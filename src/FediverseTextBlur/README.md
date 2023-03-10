@@ -20,7 +20,7 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 
 ## Usage
 
-- Click \[Tumpermonkey\]->\[Url Sticky\]in the context menu (right-click menu).
+- Click \[Tumpermonkey\]->\[Fediverse text blur\]in the context menu (right-click menu).
     If no blur is in effect, the text will be blurred; if it is already blurred, the text will be unblurred.
 
 ## Screenshot

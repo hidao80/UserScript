@@ -20,7 +20,7 @@ UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][fir
 
 ## 使い方
 
-- コンテクストメニュー（右クリックで出るメニュー）から\[Tumpermonkey\]->\[Url Sticky\]をクリックします。
+- コンテクストメニュー（右クリックで出るメニュー）から\[Tumpermonkey\]->\[Fediverse text blur\]をクリックします。
     ぼかしが効いていなければテキストにぼかしが入り、すでにぼかしが入っていればテキストのぼかしがなくなります。
 
 ## スクリーンショット
