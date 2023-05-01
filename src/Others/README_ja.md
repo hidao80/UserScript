@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [ブラウザバックレコメンド無効化](./BrowserBackRecommendDisabler/README_ja.md)
+
+ブラウザバックで表示される、サイト流出を防止するページへの遷移を防止します。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Others/BrowserBackRecommendDisabler/BrowserBackRecommendDisabler.user.js)
+
 ## [ChatGPTSuggest](./ChatGptSuggest/README_ja.md)
 
 ChatGPTに簡易的な入力補完機能を追加します。

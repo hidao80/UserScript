@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [rowser back recommend disabler](./BrowserBackRecommendDisabler/README_ja.md)
+
+Prevent transitions to pages that prevent site leakage displayed in the browser back.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Others/BrowserBackRecommendDisabler/BrowserBackRecommendDisabler.user.js)
+
 ## [ChatGPTSuggest](./ChatGptSuggest/README_ja.md)
 
 Suggested phrases to be entered at the ChatGPT prompt will be displayed and completed.
