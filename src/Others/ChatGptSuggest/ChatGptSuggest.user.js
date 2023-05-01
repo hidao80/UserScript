@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name        ChatGptSuggest
+// @name        ChatGpt Suggest
+// @name:ja     ChatGPTサジェスト
 // @description ChatGPT prompt suggestion function
 // @match       https://chat.openai.com/chat
 // @author      hidao80
-// @version     1.0.2
+// @version     1.0.3
 // @namespace   https://github.com/hidao80/UserScript/ChatGptSuggest
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5e3.png

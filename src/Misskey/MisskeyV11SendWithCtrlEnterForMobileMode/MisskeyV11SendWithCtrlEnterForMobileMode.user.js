@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name        MisskeyV11SendWithCtrlEnterForMobileMode
+// @name        Misskey v11 Send With Ctrl Enter For Mobile Mode
+// @name:ja     Ctrl+Enterで送信する（Misskey v11 モバイル版モード用）
 // @description When in mobile view of Misskey ver.11, Ctrl+Enter can be used to post a NOTE.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1.2
+// @version     1.1.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11SendWithCtrlEnterForMobileMode
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e8.png

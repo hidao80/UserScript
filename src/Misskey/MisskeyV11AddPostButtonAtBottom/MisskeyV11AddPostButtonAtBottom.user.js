@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name        Add a new post button for Misskey v11
+// @name:ja     Misskey v11向け新規投稿ボタンを追加
 // @description In Misskey v11, add a new post button to the lower left corner of the screen only when in the home layout.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1
+// @version     1.1.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11AddPostButtonAtBottom
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/270f.png

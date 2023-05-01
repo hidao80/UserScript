@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name        Back to top for Misskey v11
+// @name:ja     Misskey v11向け先頭に戻るボタン追加
 // @description Summary of this script
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.2
+// @version     1.2.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11BackToTop
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2b06.png

@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name        MastodonFediverseTicker
+// @name        Mastodon Fediverse Ticker
+// @name:ja     Mastodon fediverse ティッカー
 // @description Display the server to which the contributor belongs in an easily viewable manner.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
@@ -7,7 +8,7 @@
 // @match       https://mstdn.sublimer.me/*
 // @match       https://social.vivaldi.net/*
 // @author      hidao80
-// @version     1.0.3
+// @version     1.0.4
 // @namespace   https://github.com/hidao80/UserScript/MastodonFediverseTicker
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png

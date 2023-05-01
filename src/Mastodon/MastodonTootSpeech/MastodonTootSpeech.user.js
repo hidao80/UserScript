@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name        MastodonTootSpeach
+// @name        Mastodon Toot Speach
+// @name:ja     Mastodon toot読み上げ
 // @description UserScript that uses the Speech API to read out new toots in Mastodon's home timeline.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
@@ -7,7 +8,7 @@
 // @match       https://mstdn.sublimer.me/*
 // @match       https://social.vivaldi.net/*
 // @author      hidao80
-// @version     1.7.2
+// @version     1.7.3
 // @namespace   https://github.com/hidao80/UserScript/MastodonTootSpeach
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png

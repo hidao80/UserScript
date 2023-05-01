@@ -1,9 +1,11 @@
 // ==UserScript==
-// @name        MisskeyAutoReloader
+// @name        Misskey Auto Reloader
+// @name:ja     Misskey 自動リロード
 // @description Reload once every 10 minutes if there are no posts being typed.
 // @match       https://misskey.dev/*
+// @match       https://msky.work/*
 // @author      hidao80
-// @version     1.4.3
+// @version     1.4.4
 // @namespace   https://github.com/hidao80/UserScript/MisskeyAutoReloader
 // @license     MIT
 // @icon        https://twemoji.maxcdn.com/v/latest/72x72/1f552.png

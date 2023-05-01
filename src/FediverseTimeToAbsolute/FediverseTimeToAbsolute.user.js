@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name        FediverseTimeToAbsolute
+// @name        Fediverse Time ToAbsolute
+// @name:ja     Fediverse絶対時刻
 // @description Change time to absolute notation UserScript for Fediverse.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
@@ -10,7 +11,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.13
+// @version     1.13.1
 // @namespace   https://github.com/hidao80/UserScript/FediverseTimeToAbsolute
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f552.png

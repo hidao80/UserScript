@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name        MisskeyNotificationBeepInDeck
+// @name        Misskey Notification Beep In Deck
+// @name:ja     Misskey通知音（デッキレイアウト用）
 // @description UserScript that sounds a notification sound even when the deck is displayed in Misskey.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.8.2
+// @version     1.8.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotificationBeepInDeck
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f514.png

@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name        SnsTextAreaEnlargement
+// @name:ja     SNSテキストエリア拡大
 // @description Enlarge the text area.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
@@ -9,9 +10,10 @@
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
+// @match       https://msku.work/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
-// @version     1.2.1
+// @version     1.2.2
 // @namespace   https://github.com/hidao80/UserScript/SnsTextAreaEnlargement
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d2.png

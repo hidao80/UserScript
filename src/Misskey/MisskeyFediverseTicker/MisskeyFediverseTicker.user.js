@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name        MisskeyFediverseTicker
+// @name        Misskey Fediverse Ticker
+// @name:ja     Misskey fediverseティッカー
 // @description Display the server to which the contributor belongs in an easily viewable manner.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.7.2
+// @version     1.7.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyFediverseTicker
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png

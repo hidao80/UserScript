@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name        MisskeyKeywordsFilter
+// @name        Misskey Keywords Filter
+// @name:ja     Misskey キーワードフィルター
 // @description Filter out offensive words in Misskey.
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
+// @match       https://msky.work/*
 // @author      hidao80
-// @version     1.5.2
+// @version     1.5.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyKeywordsFilter
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26d4.png

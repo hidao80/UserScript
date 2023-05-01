@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name        TomatoAlarm
+// @name        Tomato Alarm
+// @name:ja     トマトアラーム
 // @description In the manner of the Pomodoro Technique, an alarm (the sound of a wind chime) is sounded once every 10 minutes after the start button is pressed.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.2.1
+// @version     1.2.2
 // @namespace   https://github.com/hidao80/UserScript
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f345.png

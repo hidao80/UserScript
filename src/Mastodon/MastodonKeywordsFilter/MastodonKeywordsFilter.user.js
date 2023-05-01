@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name        MastodonKeywordsFilter
+// @name        Mastodon Keywords Filter
+// @name:ja     Mastodon キーワードフィルター
 // @description Filter out offensive words in Misskey.
 // @match       https://fedibird.com/*
 // @match       https://mstdn.jp/*
@@ -7,7 +8,7 @@
 // @match       https://mstdn.sublimer.me/*
 // @match       https://social.vivaldi.net/*
 // @author      hidao80
-// @version     1.2.2
+// @version     1.2.3
 // @namespace   https://github.com/hidao80/UserScript/MastodonKeywordsFilter
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26d4.png

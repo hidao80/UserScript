@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name        MisskeyDifferentColorLocalOnly
+// @name        Misskey Different Color Local Only
+// @name:ja     Misskeyだけ「ローカルのみ」の投稿範囲アイコンに違う色を付ける
 // @description When the posting range is "local only" in Misskey, it should be a different color.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0.1
+// @version     1.0.2
 // @namespace   https://github.com/hidao80/UserScript/MisskeyDifferentColorLocalOnly
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
