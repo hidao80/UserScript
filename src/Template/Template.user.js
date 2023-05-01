@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name        Template
+// @name:ja     テンプレート
 // @description Summary of this script
 // @match       https://misskey.dev/*
 // @author      hidao80
@@ -24,6 +25,16 @@
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
-const SCRIPT_CLASS = 'us-hidao80-Template';
-const SCRIPT_NAME = 'Template';
-DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
+const SCRIPT_NAME = 'Browser back recommend disabler';
+/** Suppress debug printing unless in debug mode */
+const console = {};
+["log","debug","warn","info","error"].forEach(method => {
+    console[method] = DEBUG ? window.console[method] : function(){};
+});
+/** The script name is converted to a hexadecimal hash */
+const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
+
+console.debug(`[${SCRIPT_NAME}]: HASH = ${HASH}`);
+console.debug(`[${SCRIPT_NAME}]: Script Loading...`);
+
+/** Individual script body */
