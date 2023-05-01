@@ -7,7 +7,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
-## [rowser back recommend disabler](./BrowserBackRecommendDisabler/README_ja.md)
+## [Browser back recommend disabler](./BrowserBackRecommendDisabler/README_ja.md)
 
 Prevent transitions to pages that prevent site leakage displayed in the browser back.
 
