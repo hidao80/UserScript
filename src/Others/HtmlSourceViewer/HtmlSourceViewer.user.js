@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name        HtmlSourceViewer
+// @name        Html Source Viewer
 // @name:ja     Htmlソースビューアー
 // @description Displays the HTML source of the page being viewed, with syntax highlighting for non-iOS/iPadOS.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.2.5
+// @version     1.2.6
 // @namespace   https://github.com/hidao80/UserScript/HtmlSourceViewer
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png

@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name        OnScreenConsole
+// @name        On Screen Console
 // @name:ja     画面上のコンソール
 // @description Display the contents of the browser's developer tools console on the screen
 // @match       *://*/*
 // @author      hidao80
-// @version     1.3.3
+// @version     1.3.4
 // @namespace   https://github.com/hidao80/UserScript/OnScreenConsole
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5a5.png
