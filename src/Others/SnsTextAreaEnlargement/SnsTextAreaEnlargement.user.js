@@ -10,7 +10,7 @@
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
-// @match       https://msku.work/*
+// @match       https://msky.work/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
 // @version     1.2.3
