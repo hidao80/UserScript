@@ -79,9 +79,4 @@ function blur() {
     }
 }
 
-// Tap with three fingers to toggle enable/disable.
-document.body.addEventListener("touchstart", e => {
-    if (e.touches.length == 3) {
-        blur();
-    }
-});
+blur();
