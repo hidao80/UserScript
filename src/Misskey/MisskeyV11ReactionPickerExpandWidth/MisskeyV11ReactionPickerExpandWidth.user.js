@@ -4,7 +4,7 @@
 // @description Widen the width of the reaction picker in Misskey v11.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.2.2
+// @version     1.3.0
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11ReactionPickerExpandWidth
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f44d.png
