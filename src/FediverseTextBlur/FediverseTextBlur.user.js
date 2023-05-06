@@ -1,15 +1,12 @@
 // ==UserScript==
 // @name        Fediverse text blur
 // @name:ja     Misskey & Mastodon テキストぼかし
-// @description Blur text in Misskey v11 and Mastodon.
+// @description Blur text in Misskey v11 and Mastodon. Not available in Misskey v13.
 // @match       https://misskey.dev/*
-// @match       https://msky.work/*
-// @match       https://misskey.noellabo.jp/*
-// @match       https://misskey.systems/*
 // @match       https://fedibird.com/*
 // @match       https://vivaldi.social.net/*
 // @author      hidao80
-// @version     1.1.0
+// @version     1.1.1
 // @namespace   https://github.com/hidao80/UserScript/FediverseTextBlur
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
