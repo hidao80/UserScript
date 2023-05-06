@@ -21,7 +21,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 function expandWidth() {
-    const popover = document.querySelector('div[class*="popover isMobile"][data-v-0f5c3934]');
+    const popover = document.querySelector('div[class*="popover isMobile"]');
     if (popover) {
         const styles = {
             "position": "fixed",
