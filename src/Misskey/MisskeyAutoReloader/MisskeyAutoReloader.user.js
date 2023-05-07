@@ -33,7 +33,7 @@ const console = {};
 /** The script name is converted to a hexadecimal hash */
 const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
 /** Alias for querySelectorAll */
-const $ = (e){const n=document.querySelectorAll(e);return 1==n.length?n[0]:n}
+const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n}
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 /** Main */
@@ -49,10 +49,10 @@ const timer = setInterval(() => {
         clearInterval(timer);
 
         // If the post is not in the process of being typed, reload.
-        reloadTimerId = setInterval(() => {
+        setInterval(() => {
             if (document.activeElement == document.body) {
                 location.reload();
             }
-        }, 600_000);  // 10 mins.
+        }, 600_000); // 10 mins.
     }
 }, 700);
