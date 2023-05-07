@@ -1,17 +1,18 @@
 // ==UserScript==
-// @name        Misskey notes speech
-// @name:ja     Misskey note読み上げ
-// @description UserScript to read out Misskey's social timeline using the Speech API.
-// @match       https://misskey.dev/*
-// @author      hidao80
-// @version     1.19.1
-// @namespace   https://github.com/hidao80/UserScript/MisskeyNotesSpeech
-// @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
-// @run-at      document-end
-// @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
+// @name           Misskey notes speech
+// @description    UserScript to read out Misskey's social timeline using the Speech API.
+// @name:ja        Misskey note読み上げ
+// @description:ja Speech APIを使ってMisskeyのソーシャルタイムラインを読み上げるUserScriptです。
+// @match          https://misskey.dev/*
+// @author         hidao80
+// @version        1.20.0
+// @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
+// @license        MIT
+// @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
+// @run-at         document-end
+// @grant          none
+// @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)
@@ -25,9 +26,16 @@
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
-const SCRIPT_CLASS = 'us-hidao80-speech';
 const SCRIPT_NAME = 'Misskey notes speech';
-DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
+/** Suppress debug printing unless in debug mode */
+const console = {};
+["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
+/** The script name is converted to a hexadecimal hash */
+const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
+/** Alias for querySelectorAll */
+const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n};
+console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
+
 
 // Initialization of reading voice
 const synth = window.speechSynthesis;
@@ -72,6 +80,9 @@ const setVoice = () => {
 synth.onvoiceschanged = setVoice;
 setVoice();
 
+// Clicking in the screen cancels the reading.
+document.body.addEventListener('click', () => synth.cancel());
+
 const timer = setInterval(v => {
     const targetLane = document.querySelector(".transition.notes") ?? document.querySelector(".transition");
 
@@ -79,38 +90,27 @@ const timer = setInterval(v => {
         clearInterval(timer);
 
         // Trimming the readout
-        function speech() {
+        function speech(mutationList, observer) {
+            const firstArticle = targetLane.querySelector("article");
+            const article = Array.from(mutationList ?? [], mutation => mutation.addedNodes).filter(nodeList => Array.from(nodeList ?? [], node => node.querySelector('article'))[0] == firstArticle);
+            if (!article || article.length == 0) {
+                return;
+            }
+
             // Waiting for DOM rendering
             setTimeout(() => {
-                // Muted posts are not read out loud.
-                const article = targetLane.querySelector(`.article`);
-
-                if (!article?.parentElement || article.parentElement.style.display == 'none') {
-                    // I don't read muted posts.
-                    return;
-                }
-
-                if (article.className.indexOf(SCRIPT_CLASS) < 0) {
-                    // Click on a post to stop reading it.
-                    article.classList.add(SCRIPT_CLASS);
-                    article.addEventListener('click', () => synth.cancel());
-
-                    DEBUG && console.debug('set speech cancel.');
-                }
-
                 // I'm reading it out now, and I'm going to stop in the middle.
                 synth.cancel();
 
                 // Nickname cutout
-                utter.text = targetLane.querySelector(".havbbuyv.nowrap").textContent + from;
+                utter.text = firstArticle.querySelector(".havbbuyv.nowrap").textContent + from;
+
+                // CW cutout
+                const cw = removeSymbols(firstArticle.querySelector(".cw>.havbbuyv.text")?.getAttribute("text"));
+                utter.text += (cw ?? "") + "。";
 
                 // Notebook cutout (excluding CW)
-                utter.text += targetLane.querySelector(".text>.havbbuyv").getAttribute("text")
-                    .replace(/\n/g, '。')
-                    .replace(/。+/g, '。')
-                    .replace(/\`\`\`.+\`\`\`/g, ' ')
-                    .replace(/\`/g, '')
-                    .replace(/https?:\/\/([\w\/:#\$&\?\(\)~\.=\+\-,]|\%[0-9a-fA-F]+)+/g, ' ');
+                utter.text += removeSymbols(firstArticle.querySelector(".text>.havbbuyv").getAttribute("text"));
 
                 // Reading out notes
                 synth.speak(utter);
@@ -118,9 +118,25 @@ const timer = setInterval(v => {
         }
 
         // Call the read function when a post is added.
-        DEBUG && console.debug(`[${SCRIPT_NAME}]: get ready.`);
+        console.debug(`[${SCRIPT_NAME}]: get ready.`);
         (new MutationObserver(speech)).observe(targetLane, { childList: true });
 
         speech()
     }
 }, 1_500);
+
+/**
+ * Remove symbols and codes from the string that are not needed for reading.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+function removeSymbols(text) {
+    return text && text.replace(/\n/g, '。') // Exclude new lines
+    .replace(/。+/g, '。') // Exclude Japanese periods
+    .replace(/\`\`\`.+\`\`\`/g, ' ') // Exclude code
+    .replace(/\\[a-zA-Z0-9_-](\{.*\})*/g, ' ') // Exclude MathJax(KaTeX)
+    .replace(/https?:\/\/([\w\/:#\$&\?\(\)~\.=\+\-,]|\%[0-9a-fA-F]+)+/g, ' ') // Exclude URL
+    .replace(/[_+*'"`$%&\-^\\@;:,./=~|[\](){}<>]/g, ' ') // Exclude symbols. Only # is an exception.
+    ;
+}
