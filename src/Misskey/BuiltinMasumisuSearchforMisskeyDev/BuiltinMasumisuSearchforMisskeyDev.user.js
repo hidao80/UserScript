@@ -1,18 +1,18 @@
 // ==UserScript==
-// @name        Builtin Masmis-Search for Misskey.dev
-// @name:ja     ますみすサーチ内蔵 for Misskey.dev
-// @description Search for posts on Misskay.dev using Masmis-search.
-// @match       https://misskey.dev/*
-// @match       https://msky.work/*
-// @author      hidao80
-// @version     1.7.1
-// @namespace   https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
-// @license     MIT
-// @run-at      document-end
-// @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js
+// @name           Builtin Masmis-Search for Misskey.dev
+// @description    Search for posts on Misskay.dev using Masmis-search.
+// @name:ja        ますみすサーチ内蔵 for Misskey.dev
+// @description:ja ますみすサーチでMisskay.devの投稿を検索することができます。
+// @match          https://misskey.dev/*
+// @author         hidao80
+// @version        1.7.2
+// @namespace      https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
+// @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
+// @license        MIT
+// @run-at         document-end
+// @grant          none
+// @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)
@@ -27,8 +27,14 @@
 // When debugging: DEBUG = !false;
 const DEBUG = false;
 const SCRIPT_NAME = 'Builtin Masmis-Search for for Misskey.dev';
-DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
+/** Suppress debug printing unless in debug mode */
+const console = {};
+["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
+/** The script name is converted to a hexadecimal hash */
+const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
+console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
+/** Main */
 /**
  * Open a separate window for search and search in Masumisu-search.
  * @param {*} query search string
@@ -54,7 +60,7 @@ function MasmisSearch() {
     // Get locale-specific "search" string from local storage
     const labelSearch = JSON.parse(localStorage.getItem('locale')).common?.search;
     const dialogTitle = document.querySelector(".modal.modal header")?.textContent;
-    DEBUG && console.debug(`labelSearch: ${labelSearch}, dialogTitle: ${dialogTitle}`);
+    console.debug(`labelSearch: ${labelSearch}, dialogTitle: ${dialogTitle}`);
 
     const desktopModeSearchForm = document.querySelector("input[type=search]");
     const MobileModeSearchForm = document.querySelector("[class=input]>input");

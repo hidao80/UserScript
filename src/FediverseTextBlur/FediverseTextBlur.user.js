@@ -1,19 +1,22 @@
 // ==UserScript==
-// @name        Fediverse text blur
-// @name:ja     Misskey & Mastodon テキストぼかし
-// @description Blur text in Misskey v11 and Mastodon. Not available in Misskey v13.
-// @match       https://misskey.dev/*
-// @match       https://fedibird.com/*
-// @match       https://vivaldi.social.net/*
-// @author      hidao80
-// @version     1.1.1
-// @namespace   https://github.com/hidao80/UserScript/FediverseTextBlur
-// @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
-// @run-at      document-end
-// @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js
+// @name           Fediverse text blur
+// @name:ja        Misskey & Mastodon テキストぼかし
+// @description    Blur text in Misskey v11 and Mastodon. Not available in Misskey v13.
+// @description:ja Misskey v11とMastodonのテキストをぼかします。Misskey v13では利用できません。
+// @match          https://misskey.dev/*
+// @match          https://msky.work/*
+// @match          https://misskey.noellabo.jp/*
+// @match          https://fedibird.com/*
+// @match          https://vivaldi.social.net/*
+// @author         hidao80
+// @version        1.2.0
+// @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
+// @license        MIT
+// @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
+// @run-at         document-end
+// @grant          none
+// @updateURL      https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)
@@ -26,54 +29,55 @@
 
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_NAME = 'Fediverse Text Blur';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log","debug","warn","info","error"].forEach(method => {
-    console[method] = DEBUG ? window.console[method] : function(){};
-});
+["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
 const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
+console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
-console.debug(`[${SCRIPT_NAME}]: HASH = ${HASH}`);
-console.debug(`[${SCRIPT_NAME}]: Script Loading...`);
-
-
+/** Main */
 const styles = [
+    // for v11
     `article .havbbuyv,
     article .status__content,
+    article .username,
     .reply-to .havbbuyv,
     .reply-to .content,
+    .reply-to .username,
     article .display-name {
+        filter: blur(5px);
+    }`,
+    // for v11. Eliminated side effects of v13 required settings
+    `article header .info > span,
+    article footer span,
+    article header time > span {
+        filter: none;
+    }`,
+    // for v13
+    `article header > a,
+    article header > .xBLVI,
+    article header + div,
+    article .display-name,
+    article span,
+    .xBwhh > span,
+    .x22gY > span,
+    .x3YLY header > a,
+    .x3YLY header > a + div,
+    .x3YLY header + div,
+    ._panel.notification header > a,
+    ._panel.notification header + div {
         filter: blur(5px);
     }`,
 ];
 
-let indexes = JSON.parse(localStorage.getItem(HASH + '_cssRules_indexes') || '[]');
-console.debug(`[${SCRIPT_NAME}]: init indexes:`);
-console.debug(indexes);
+// Wait for content to complete loading.
+setTimeout(() => {
+    const usableSheet = [...document.styleSheets].slice(-1)[0];
 
-// Style is a later winner, so send and add
-const usableSheet = [...document.styleSheets].slice(-1)[0];
-
-function blur() {
-    if (indexes.length > 0) {
-        for (const index of indexes) {
-            usableSheet.deleteRule(index);
-        }
-        localStorage.setItem(HASH + '_cssRules_indexes', '[]');
-        console.debug(`[${SCRIPT_NAME}]: styles deleted.`);
-    } else {
-        const index = usableSheet.cssRules.length;
-        for (let style of styles) {
-            indexes.push(index);
-            usableSheet.insertRule(style, index);
-        }
-        localStorage.setItem(HASH + '_cssRules_indexes', JSON.stringify(indexes));
-        console.debug(`[${SCRIPT_NAME}]: styles added.`);
-        console.debug(indexes);
+    for (let style of styles) {
+        usableSheet.insertRule(style, usableSheet.cssRules.length);
     }
-}
-
-blur();
+}, 500);
