@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name           Misskey notes speech
-// @description    UserScript to read out Misskey's social timeline using the Speech API.
-// @name:ja        Misskey note読み上げ
-// @description:ja Speech APIを使ってMisskeyのソーシャルタイムラインを読み上げるUserScriptです。
+// @name           Mei v11 notes speech
+// @description    UserScript to read out Mei v11's social timeline using the Speech API.
+// @name:ja        めいv11 note読み上げ
+// @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.20.0
+// @version        1.21.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -93,7 +93,7 @@ const timer = setInterval(v => {
         function speech(mutationList, observer) {
             const firstArticle = targetLane.querySelector("article");
             const article = Array.from(mutationList ?? [], mutation => mutation.addedNodes).filter(nodeList => Array.from(nodeList ?? [], node => node.querySelector('article'))[0] == firstArticle);
-            if (!article || article.length == 0) {
+            if (!article || article.length == 0 || article.style?.display == "none") {
                 return;
             }
 
