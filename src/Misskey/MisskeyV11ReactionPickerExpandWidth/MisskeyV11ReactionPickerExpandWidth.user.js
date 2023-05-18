@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name           Misskey v11 Reaction Picker Expand Width
-// @description    Widen the width of the reaction picker in Misskey v11.
-// @name:ja        リアクションパレットを画面下部に表示させる（Misskey v11 モバイル版モード用）
-// @description:ja Misskey v11のリアクションピッカーの幅を画面いっぱいに広くします。
+// @name           Mei v11 Reaction Picker Expand Width
+// @description    Widen the width of the reaction picker in Mei v11.
+// @name:ja        リアクションパレットを画面下部に表示させる（めいv11 モバイル版モード用）
+// @description:ja めいv11のリアクションピッカーの幅を画面いっぱいに広くします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.4.0
+// @version        1.5.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyV11ReactionPickerExpandWidth
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f44d.png
@@ -44,12 +44,19 @@ const styles = [
         transition: 0s;
         animation: none;
         transform: none !important;
+        width: 100%;
+    }`,
+    `div.buttons {
+        width: 100% !important;
+        padding: 0;
+    }`,
+    // Widen the text box as much as possible.
+    `div.popover.isMobile>.buttons>.text>input {
+        flex: 1;
     }`,
     `div.popover.isMobile,
-    div.buttons,
-    div.buttons div,
-    div.text:not([type]),
-    div.text:not([type]) input {
+    div.popover.isMobile>.text,
+    div.buttons div {
         width: 100% !important;
     }`,
 ];
