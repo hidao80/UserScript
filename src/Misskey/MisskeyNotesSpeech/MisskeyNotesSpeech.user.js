@@ -93,7 +93,7 @@ const timer = setInterval(v => {
         function speech(mutationList, observer) {
             const firstArticle = targetLane.querySelector("article");
             const article = Array.from(mutationList ?? [], mutation => mutation.addedNodes).filter(nodeList => Array.from(nodeList ?? [], node => node.querySelector('article'))[0] == firstArticle);
-            if (!article || article.length == 0 || article.style?.display == "none") {
+            if (!article || article.length == 0 || article[0][0].style.display == "none") {
                 return;
             }
 
