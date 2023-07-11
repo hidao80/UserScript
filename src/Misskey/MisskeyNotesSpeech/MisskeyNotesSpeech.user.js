@@ -75,7 +75,7 @@ function language() {
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
     if (language() === "ja") {
-        utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || synth.getVoices()[0];
+        utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || null;
     }
 };
 
