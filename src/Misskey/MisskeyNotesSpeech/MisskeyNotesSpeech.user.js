@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.0.0
+// @version        2.1.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -41,6 +41,9 @@ console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 const synth = window.speechSynthesis;
 const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
 const utter = new SpeechSynthesisUtterance();
+const WIN = "Kyoko";
+const EDGE = "Nanami";
+const GOOGLE_JAPANIESE = "Google 日本語";
 utter.rate = 1.2;
 utter.volume = 0.5;
 let target = "Title of Socail Time Line";
@@ -66,11 +69,14 @@ function language() {
         from = "'s note."
     }
     utter.lang = locale;
+    return lang;
 }
 
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
-    language();
+    if (language() === "ja") {
+        utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || synth.getVoices()[0];
+    }
 };
 
 // When a voice color object is loaded, the voice color is set to "Nanami" for Edge.
