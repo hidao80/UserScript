@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.22.0
+// @version        2.0.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -39,10 +39,6 @@ console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 // Initialization of reading voice
 const synth = window.speechSynthesis;
-const WIN = "Kyoko";
-const EDGE = "Nanami";
-const GOOGLE_JAPANIESE = "Google 日本語";
-const ENGLISH = "Aria";
 const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
 const utter = new SpeechSynthesisUtterance();
 utter.rate = 1.2;
@@ -56,10 +52,11 @@ let from = "contributor's name";
  * @returns {string} Current language
  */
 function language() {
-    const lang = ((window.navigator.languages && window.navigator.languages[0]) ||
+    const locale = ((window.navigator.languages && window.navigator.languages[0]) ||
         window.navigator.language ||
         window.navigator.userLanguage ||
-        window.navigator.browserLanguage).slice(0, 2);
+        window.navigator.browserLanguage);
+    const lang = locale.slice(0, 2);
 
     if (lang == "ja") {
         target = /ソーシャル/;
@@ -68,11 +65,11 @@ function language() {
         target = /[Ss]ocial/;
         from = "'s note."
     }
+    utter.lang = locale;
 }
 
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
-    utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || getVoice(ENGLISH) || synth.getVoices()[0];
     language();
 };
 
