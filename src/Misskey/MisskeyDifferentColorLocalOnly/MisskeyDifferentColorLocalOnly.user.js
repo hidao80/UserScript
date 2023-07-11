@@ -4,7 +4,7 @@
 // @description When the posting range is "local only" in Misskey, it should be a different color.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0.2
+// @version     1.0.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyDifferentColorLocalOnly
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
@@ -25,7 +25,7 @@ const styles = [
     `.popover > div:nth-child(n+5) {
         color: var(--noteActionsReactionHover) !important;
     }`,
-    `.form:has(.local-only) .visibility > span, .mk-post-form-window--body:has(.local-only) .visibility > span {
+    `.visibility > span, .visibility > span {
         padding: 3px;
         border: solid 3px var(--noteActionsReactionHover);
         border-radius: 4px;
