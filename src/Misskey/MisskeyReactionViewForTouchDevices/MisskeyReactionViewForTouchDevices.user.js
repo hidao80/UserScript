@@ -4,7 +4,7 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.6.2
+// @version     1.6.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyReactionViewForTouchDevices
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4dc.png
 // @license     MIT
@@ -180,7 +180,7 @@ function observerCallback() {
 const buttonIcon = `<svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="width: 1em; height: 1em; opacity: 1;" xml:space="preserve">
 <g>
 <style type="text/css">
-	.st0{fill:${JSON.parse(localStorage.getItem('theme')).noteActions};}
+	.st0{fill:${JSON.parse(localStorage.getItem('theme')).noteActions}; margin-right: 28px;}
 </style>
 	<path class="st0" d="M40.252,14.489C18.019,14.489,0,32.507,0,54.741c0,22.233,18.019,40.252,40.252,40.252
 		c22.225,0,40.252-18.019,40.252-40.252C80.504,32.507,62.477,14.489,40.252,14.489z"></path>
