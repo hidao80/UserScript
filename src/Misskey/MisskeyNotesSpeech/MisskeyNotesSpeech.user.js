@@ -44,6 +44,7 @@ const utter = new SpeechSynthesisUtterance();
 const WIN = "Kyoko";
 const EDGE = "Nanami";
 const GOOGLE_JAPANIESE = "Google 日本語";
+const FIREFOX = "日本語 (日本)";
 utter.rate = 1.2;
 utter.volume = 0.5;
 let target = "Title of Socail Time Line";
@@ -75,7 +76,7 @@ function language() {
 // Voice tones are given priority to those found from left to right.
 const setVoice = () => {
     if (language() === "ja") {
-        utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(WIN) || null;
+        utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(FIREFOX) || getVoice(WIN) || null;
     }
 };
 
