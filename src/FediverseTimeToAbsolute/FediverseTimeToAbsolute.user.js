@@ -6,13 +6,12 @@
 // @match       https://mstdn.jp/*
 // @match       https://pawoo.net/*
 // @match       https://mstdn.sublimer.me/*
-// @match       https://social.vivaldi.net/*
 // @match       https://misskey.dev/*
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @match       https://msky.work/*
 // @author      hidao80
-// @version     1.13.1
+// @version     1.14.0
 // @namespace   https://github.com/hidao80/UserScript/FediverseTimeToAbsolute
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f552.png
