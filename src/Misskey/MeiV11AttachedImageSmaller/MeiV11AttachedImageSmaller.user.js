@@ -5,7 +5,7 @@
 // @description:ja 添付画像のプレビューを小さくします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.0.0
+// @version        1.0.1
 // @namespace      https://github.com/hidao80/UserScript/MeiV11AttachedImageSmaller
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cf.png
@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -60,3 +60,4 @@ const timer = setInterval(v => {
         update()
     }
 }, 1_500);
+})();

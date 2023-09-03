@@ -4,7 +4,7 @@
 // @description Prevent transitions to pages that prevent site leakage displayed in the browser back.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.0.1
+// @version     1.0.2
 // @namespace   https://github.com/hidao80/UserScript/BrowserBackRecommendDisabler
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6ab.png
@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -43,3 +43,4 @@ if ($._data($(window).get(0), "events")?.popstate?.length) {
     console.debug(`[${SCRIPT_NAME}]: popstate off.`);
     $(window).off("popstate");
 }
+})();

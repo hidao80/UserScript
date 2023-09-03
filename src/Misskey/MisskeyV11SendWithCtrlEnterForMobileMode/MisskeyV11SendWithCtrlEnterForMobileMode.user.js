@@ -5,7 +5,7 @@
 // @description:ja Misskey ver.11のモバイルビューで、Ctrl+EnterでNOTEを投稿できるようにしました。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.2.0
+// @version        1.2.1
 // @namespace      https://github.com/hidao80/UserScript/MisskeyV11SendWithCtrlEnterForMobileMode
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e8.png
@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -42,3 +42,4 @@ document.body.addEventListener("keydown", e => {
         document.querySelector('button[class="cancel"]')?.click();
     }
 });
+})();

@@ -1,17 +1,18 @@
 // ==UserScript==
-// @name        Template
-// @name:ja     テンプレート
-// @description Summary of this script
-// @match       https://misskey.dev/*
-// @author      hidao80
-// @version     1.0
-// @namespace   https://github.com/hidao80/UserScript/Template
-// @license     MIT
-// @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
-// @run-at      document-end
-// @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Template/Template.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Template/Template.user.js
+// @name           Template
+// @name:ja        テンプレート
+// @description    Summary of this script
+// @description:ja このスクリプトの概要
+// @match          https://misskey.dev/*
+// @author         hidao80
+// @version        1.0.0
+// @namespace      https://github.com/hidao80/UserScript/Template
+// @license        MIT
+// @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
+// @run-at         document-end
+// @grant          none
+// @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Template/Template.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Template/Template.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)
@@ -21,20 +22,19 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
 const SCRIPT_NAME = 'Browser back recommend disabler';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log","debug","warn","info","error"].forEach(method => {
-    console[method] = DEBUG ? window.console[method] : function(){};
-});
+["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
 const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
-
-console.debug(`[${SCRIPT_NAME}]: HASH = ${HASH}`);
-console.debug(`[${SCRIPT_NAME}]: Script Loading...`);
+/** Alias for querySelectorAll */
+const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n};
+console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 /** Individual script body */
+})();

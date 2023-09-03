@@ -9,7 +9,7 @@
 // @match          https://fedibird.com/*
 // @match          https://vivaldi.social.net/*
 // @author         hidao80
-// @version        1.2.0
+// @version        1.2.1
 // @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
@@ -27,6 +27,7 @@
 
 'use strict';
 
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -81,3 +82,4 @@ setTimeout(() => {
         usableSheet.insertRule(style, usableSheet.cssRules.length);
     }
 }, 500);
+})();
