@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [Mei v11 attached image smaller](./MeiV11AttachedImageSmaller/README_ja.md)
+
+Make the preview of the attached image smaller.
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11AttachedImageSmaller/MeiV11AttachedImageSmaller.user.js)
+
 ## [BuiltinMasumisuSearchforMisskeyDev](./BuiltinMasumisuSearchforMisskeyDev/README.md)
 
 When searching for posts on Misskey.dev, use [Masumisu Search](https://masmis-search.ja-jp.org/ui) instead of Misskey's search function.
