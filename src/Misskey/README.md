@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [Mei v11 emojis palette for movile text area](./MeiV11EmojisPaletteForMovileTextArea/README.md)
+
+Add emojis palette to mobile text area of Mei v11 home layout.
+
+[Click here to install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.user.js)
+
 ## [Mei v11 attached image smaller](./MeiV11AttachedImageSmaller/README.md)
 
 Make the preview of the attached image smaller.

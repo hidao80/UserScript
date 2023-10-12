@@ -7,6 +7,12 @@
 ![GitHub Stars](https://img.shields.io/github/stars/hidao80/UserScript?style=social)
 ![GitHub Watchers](https://img.shields.io/github/watchers/hidao80/UserScript?style=social)
 
+## [めいv11 モバイル用テキストエリアの絵文字パレット](./MeiV11EmojisPaletteForMovileTextArea/README_ja.md)
+
+めいv11用のモバイル版ホームレイアウトのテキストエリアに絵文字パレットを追加します。
+
+[ここをクリックしてインストール](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.user.js)
+
 ## [めいv11 添付画像縮小](./MeiV11AttachedImageSmaller/README_ja.md)
 
 添付画像のプレビューを小さくします。
