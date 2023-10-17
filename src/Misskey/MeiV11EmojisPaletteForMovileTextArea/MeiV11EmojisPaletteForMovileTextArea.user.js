@@ -5,7 +5,7 @@
 // @description:ja めいv11用のモバイル版ホームレイアウトのテキストエリアに絵文字パレットを追加します。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        0.3.3
+// @version        0.3.5
 // @namespace      https://github.com/hidao80/UserScript/MeiV11EmojisPaletteForMovileTextArea
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f0cf.png
@@ -40,12 +40,12 @@ console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 const styles = [
     `@font-face {
-        font-family: "Emoji-hidao-user-script";
-        src: local("Noto Color Emoji");
-        unicode-range: /*U+23, U+2A, U+30-39,*/ U+A9, U+AE, U+200D, U+203C, U+2049, U+20E3, U+2122, U+2139, U+2194-2199, U+21A9-21AA, U+231A-231B, U+2328, U+23CF, U+23E9-23F3, U+23F8-23FA, U+24C2, U+25AA-25AB, U+25B6, U+25C0, U+25FB-25FE, U+2600-2604, U+260E, U+2611, U+2614-2615, U+2618, U+261D, U+2620, U+2622-2623, U+2626, U+262A, U+262E-262F, U+2638-263A, U+2640, U+2642, U+2648-2653, U+2660, U+2663, U+2665-2666, U+2668, U+267B, U+267F, U+2692-2697, U+2699, U+269B-269C, U+26A0-26A1, U+26AA-26AB, U+26B0-26B1, U+26BD-26BE, U+26C4-26C5, U+26C8, U+26CE-26CF, U+26D1, U+26D3-26D4, U+26E9-26EA, U+26F0-26F5, U+26F7-26FA, U+26FD, U+2702, U+2705, U+2708-270D, U+270F, U+2712, U+2714, U+2716, U+271D, U+2721, U+2728, U+2733-2734, U+2744, U+2747, U+274C, U+274E, U+2753-2755, U+2757, U+2763-2764, U+2795-2797, U+27A1, U+27B0, U+27BF, U+2934-2935, U+2B05-2B07, U+2B1B-2B1C, U+2B50, U+2B55, U+3030, U+303D, U+3297, U+3299, U+FE0F, U+1F004, U+1F0CF, U+1F170-1F171, U+1F17E-1F17F, U+1F18E, U+1F191-1F19A, U+1F1E6-1F1FF, U+1F201-1F202, U+1F21A, U+1F22F, U+1F232-1F23A, U+1F250-1F251, U+1F300-1F321, U+1F324-1F393, U+1F396-1F397, U+1F399-1F39B, U+1F39E-1F3F0, U+1F3F3-1F3F5, U+1F3F7-1F4FD, U+1F4FF-1F53D, U+1F549-1F54E, U+1F550-1F567, U+1F56F-1F570, U+1F573-1F57A, U+1F587, U+1F58A-1F58D, U+1F590, U+1F595-1F596, U+1F5A4-1F5A5, U+1F5A8, U+1F5B1-1F5B2, U+1F5BC, U+1F5C2-1F5C4, U+1F5D1-1F5D3, U+1F5DC-1F5DE, U+1F5E1, U+1F5E3, U+1F5E8, U+1F5EF, U+1F5F3, U+1F5FA-1F64F, U+1F680-1F6C5, U+1F6CB-1F6D2, U+1F6E0-1F6E5, U+1F6E9, U+1F6EB-1F6EC, U+1F6F0, U+1F6F3-1F6F8, U+1F910-1F93A, U+1F93C-1F93E, U+1F940-1F945, U+1F947-1F94C, U+1F950-1F96B, U+1F980-1F997, U+1F9C0, U+1F9D0-1F9E6, U+E0062-E0063, U+E0065, U+E0067, U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
+        font-family: 'hidao-userscript-color-emoji';
+        src: local('Noto Color Emoji'), local('Apple Color Emoji'),
+        unicode-range: U+1F300-1F6A3, U+1F700-1F773, U+1F780-1F7D4, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F900-1F90B, U+1F910-1F93E, U+1F940-1F970, U+1F973-1F976, U+1F97A-1F97C, U+1F97E-1F97F, U+1F980-1F991, U+1F9C0, U+1F9D0-1F9E6, U+1F9F0-1F9F9, U+1F9FF, U+1FA00-1FA6D, U+1FA70-1FA74, U+1FA78-1FA7A, U+1FA80-1FA86, U+1FA90-1FAA8, U+1FAB0-1FAB6, U+1FAC0-1FAC2, U+1FAD0-1FAD6, U+1FAE0-1FAEB, U+1FAF0-1FAF4, U+1FBC0-1FBE6, U+1FC2D, U+1FCC0-1FCC7, U+1FCE0-1FCE7, U+1FD00-1FD3E, U+1FD50-1FD88, U+1FD90-1FDCB, U+1FDD0-1FDE4, U+1FDF0-1FE4B, U+1FE50-1FE52, U+1FE54-1FE57, U+1FE5A, U+1FE5C, U+1FE5E, U+1FE64-1FE6E, U+1FE70-1FE74, U+1FE76-1FEFC, U+1FF01-1FF1E, U+1FF24-1FF44, U+1FF48-1FF60, U+1FF63-1FF64, U+1FF68-1FF6C, U+1FF71-1FF7E, U+1FF83-1FF8F, U+1FF93-1FF98, U+1FF9B-1FFA8, U+1FFAB-1FFBE, U+1FFC2-1FFC7, U+1FFCB-1FFE4, U+1FFE8, U+20000-2A6D6, U+2A700-2B734, U+2B740-2B81D, U+2B820-2CEA1, U+2CEB0-2EBE0, U+2EBE1-2EBEA, U+2EBEC-2EDEF, U+2ED01-2ED0D, U+2ED12, U+2ED20-2ED23, U+2ED25-2ED27, U+2ED3E, U+2ED40-2ED5E, U+2ED60-2ED65, U+2ED70-2ED7F, U+2EDA0-2EDA7, U+2EDB0-2EDBF, U+2EDC1-2EDC7, U+2EDD0-2EDDF, U+2EE80-2EEA1, U+2EEA2, U+2EEA4, U+2EEA5, U+2EEA8, U+2EEAB, U+2EEAE, U+2EEB0, U+2EEB5, U+2EEB9, U+2EEBA, U+2EEBD, U+2EEBF, U+2EEC5, U+2EECE, U+2EED0-2EED1, U+2EED4, U+2EED7, U+2EEDB, U+2EEDF, U+2EEE3, U+2EEE7, U+2EEEB, U+2EEEF, U+2EEF3, U+2EEF7, U+2EEFB, U+2EEFF, U+2EF03, U+2EF07, U+2EF0B, U+2EF0F, U+2EF13, U+2EF17, U+2EF1B, U+2EF1F, U+2EF23, U+2EF27, U+2EF2B, U+2EF2F, U+2EF33, U+2EF37, U+2EF3B, U+2EF3F, U+2EF43, U+2F800-2FA1D;
     }`,
     `.noto-color-emoji {
-        font-family: "Emoji-hidao-user-script", sans-serif
+        font-family: "hidao-userscript-color-emoji", sans-serif
     }`,
 ];
 
@@ -78,8 +78,8 @@ function main() {
     $('textarea')?.classList.add("noto-color-emoji");
 }
 function switchingTabs(e) {
-    e.target.style.opacity = 1;
     [...$(".tab")].map(v => { v.style.opacity = 0.65 });
+    e.target.style.opacity = 1;
     [...$(".table")].map(v => { v.style.display = "none" });
     $(".table." + e.target.dataset.category).style.display = "block";
 }
@@ -108,7 +108,7 @@ function loadEmoji(emoji, category) {
         span.innerHTML = emoji[0];
     }
     span.addEventListener("click", () => {
-        // 閉じコロンがついていると絵文字展開候補がひとつだけの状態で表示されない
+        // With a closing colon, only one candidate for pictogram expansion is not displayed.
         const emojiString = category === "custom" ? ":" + emoji[1] + ": " : emoji[0];
         const textArea = $("textarea");
         const cursorPosition = textArea.selectionStart;
@@ -123,8 +123,8 @@ function loadEmoji(emoji, category) {
         const inputEvent = new Event('input', { bubbles: true });
         textArea.dispatchEvent(inputEvent);
 
-        // 絵文字パレットを使ったフラグ
-        // このフラグが立っているときはmk-autocomplete要素が作成されると同時に削除する
+        // Flag with emoji palette.
+        // When this flag is set, the mk-autocomplete element is deleted as soon as it is created.
         $('div.palette').dataset.use = true;
     });
     table.appendChild(span);
