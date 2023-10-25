@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.2.1
+// @version        2.3.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -142,6 +142,7 @@ function removeSymbols(text) {
     .replace(/\\[a-zA-Z0-9_-](\{.*\})*/g, ' ') // Exclude MathJax(KaTeX)
     .replace(/https?:\/\/([\w\/:#\$&\?\(\)~\.=\+\-,]|\%[0-9a-fA-F]+)+/g, ' ') // Exclude URL
     .replace(/[_+*'"`$%&\-^\\@;:,./=~|[\](){}<>]/g, ' ') // Exclude symbols. Only # is an exception.
+    .replace(/\p{Emoji}/gu, '') // Exclude emoji
     ;
 }
 })();
