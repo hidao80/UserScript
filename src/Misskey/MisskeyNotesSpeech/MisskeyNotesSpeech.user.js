@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.4.1
+// @version        2.4.4
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -25,15 +25,16 @@
 (async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = false;
+const DEBUG = !false;
 const SCRIPT_NAME = 'Misskey notes speech';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
-/** The script name is converted to a hexadecimal hash */
+["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));/** The script name is converted to a hexadecimal hash */
+/** indolence.js */
+const $$new=e=>document.createElement(e);
+const $$one=e=>document.querySelector(e);
+const $$all=e=>document.querySelectorAll(e);
 const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
-/** Alias for querySelectorAll */
-const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n};
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 
@@ -96,24 +97,38 @@ const timer = setInterval(v => {
 
         // Trimming the readout
         function speech(mutationList, observer) {
-            const firstArticle = targetLane.querySelector("article");
-            const article = Array.from(mutationList ?? []).filter(mutation => mutation?.addedNodes?.firstElementChild === firstArticle)[0];
-            console.debug("article?.style?.display: " + article?.style?.display);
-            if (!!article?.style?.display && article.style.display == "none") {
-                return;
+            const firstArticle = $$one("div.note:not([style*='none'])>article");
+            console.debug(firstArticle);
+            console.debug(mutationList);
+            const mutationRecord = Array.from(mutationList ?? []).filter(mutationRecord => !(mutationRecord?.addedNodes[0] instanceof Comment) && mutationRecord?.addedNodes[0]?.style?.display != "none")[0];
+            console.debug(mutationRecord);
+            let article;
+            if (mutationRecord) {
+                const note = mutationRecord.addedNodes[0];
+                console.debug(note);
+                article = note?.querySelector("div.note:not([style*='none'])>article");
+                if (article != firstArticle) {
+                    return;
+                }
+            } else {
+                if ($$one("div.note").style?.display == "none") {
+                    return;
+                }
+                article = firstArticle;
             }
+            console.debug(article);
 
             // Waiting for DOM rendering
             setTimeout(() => {
                 // Nickname cutout
-                utter.text = firstArticle.querySelector(".havbbuyv.nowrap").textContent + from;
+                utter.text = article.querySelector(".havbbuyv.nowrap").textContent + from;
 
                 // CW cutout
-                const cw = removeSymbols(firstArticle.querySelector(".cw>.havbbuyv.text")?.getAttribute("text"));
+                const cw = removeSymbols(article.querySelector(".cw>.havbbuyv.text")?.getAttribute("text"));
                 utter.text += (cw ?? "") + "。";
 
                 // Notebook cutout (excluding CW)
-                utter.text += removeSymbols(firstArticle.querySelector(".text>.havbbuyv").getAttribute("text"));
+                utter.text += removeSymbols(article.querySelector(".text>.havbbuyv").getAttribute("text"));
 
                 // If it is identical to the previous sentence, skip it.
                 if (lastSpeeched === utter.text) return;
