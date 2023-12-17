@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.4.0
+// @version        2.4.1
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -25,7 +25,7 @@
 (async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_NAME = 'Misskey notes speech';
 /** Suppress debug printing unless in debug mode */
 const console = {};
@@ -89,6 +89,7 @@ document.body.addEventListener('click', () => synth.cancel());
 
 const timer = setInterval(v => {
     const targetLane = document.querySelector(".transition.notes") ?? document.querySelector(".transition");
+    let lastSpeeched;
 
     if (targetLane) {
         clearInterval(timer);
@@ -96,17 +97,14 @@ const timer = setInterval(v => {
         // Trimming the readout
         function speech(mutationList, observer) {
             const firstArticle = targetLane.querySelector("article");
-            console.debug(firstArticle);
-            const article = Array.from(mutationList ?? []).filter(mutation => mutation.addedNodes[0].firstElementChild === firstArticle)[0];
-            if (!article?.style?.display && article?.style?.display == "none") {
+            const article = Array.from(mutationList ?? []).filter(mutation => mutation?.addedNodes?.firstElementChild === firstArticle)[0];
+            console.debug("article?.style?.display: " + article?.style?.display);
+            if (!!article?.style?.display && article.style.display == "none") {
                 return;
             }
 
             // Waiting for DOM rendering
             setTimeout(() => {
-                // I'm reading it out now, and I'm going to stop in the middle.
-                synth.cancel();
-
                 // Nickname cutout
                 utter.text = firstArticle.querySelector(".havbbuyv.nowrap").textContent + from;
 
@@ -117,8 +115,16 @@ const timer = setInterval(v => {
                 // Notebook cutout (excluding CW)
                 utter.text += removeSymbols(firstArticle.querySelector(".text>.havbbuyv").getAttribute("text"));
 
+                // If it is identical to the previous sentence, skip it.
+                if (lastSpeeched === utter.text) return;
+
+                // Cancel speak
+                synth.cancel();
+
                 // Reading out notes
                 synth.speak(utter);
+
+                lastSpeeched = utter.text;
             }, 1_500);
         }
 
