@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name           Mei v11 notes speech
-// @description    UserScript to read out Mei v11's social timeline using the Speech API.
 // @name:ja        めいv11 note読み上げ
+// @description    UserScript to read out Mei v11's social timeline using the Speech API.
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.3.2
+// @version        2.4.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -25,7 +25,7 @@
 (async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = false;
+const DEBUG = !false;
 const SCRIPT_NAME = 'Misskey notes speech';
 /** Suppress debug printing unless in debug mode */
 const console = {};
@@ -96,8 +96,9 @@ const timer = setInterval(v => {
         // Trimming the readout
         function speech(mutationList, observer) {
             const firstArticle = targetLane.querySelector("article");
-            const article = Array.from(mutationList ?? [], mutation => mutation.addedNodes).filter(nodeList => Array.from(nodeList ?? [], node => node.querySelector('article'))[0] == firstArticle);
-            if (!article || article.length == 0 || article[0][0].style.display == "none") {
+            console.debug(firstArticle);
+            const article = Array.from(mutationList ?? []).filter(mutation => mutation.addedNodes[0].firstElementChild === firstArticle)[0];
+            if (!article?.style?.display && article?.style?.display == "none") {
                 return;
             }
 
