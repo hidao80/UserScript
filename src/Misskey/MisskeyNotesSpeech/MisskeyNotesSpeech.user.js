@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.4.5
+// @version        2.5.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -133,10 +133,12 @@ const timer = setInterval(v => {
                 utter.text += removeSymbols(article.querySelector(".text>.havbbuyv").getAttribute("text"));
 
                 // If it is identical to the previous sentence, skip it.
-                if (lastSpeeched === utter.text) return;
+                if (localStorage.getItem("lastSpeeched") === utter.text) return;
 
                 // Reading out notes
                 synth.speak(utter);
+
+                localStorage.setItem("lastSpeeched", utter.text);
             }, 1_500);
         }
 
