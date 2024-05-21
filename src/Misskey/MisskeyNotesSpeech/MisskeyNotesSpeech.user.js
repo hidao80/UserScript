@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.5.0
+// @version        2.5.1
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -34,7 +34,9 @@ const console = {};
 const $$new=e=>document.createElement(e);
 const $$one=e=>document.querySelector(e);
 const $$all=e=>document.querySelectorAll(e);
-const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
+const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
+/** Alias for querySelectorAll */
+const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n};
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 

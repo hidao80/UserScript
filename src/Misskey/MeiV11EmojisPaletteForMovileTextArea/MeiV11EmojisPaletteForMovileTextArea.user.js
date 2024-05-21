@@ -5,7 +5,7 @@
 // @description:ja めいv11用のモバイル版ホームレイアウトのテキストエリアに絵文字パレットを追加します。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        0.3.6
+// @version        0.3.7
 // @namespace      https://github.com/hidao80/UserScript/MeiV11EmojisPaletteForMovileTextArea
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f0cf.png

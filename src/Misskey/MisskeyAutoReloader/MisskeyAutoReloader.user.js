@@ -5,7 +5,7 @@
 // @description:ja 入力中の投稿がない場合は、10分に1回リロードします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.5.1
+// @version        1.5.2
 // @namespace      https://github.com/hidao80/UserScript/MisskeyAutoReloader
 // @license        MIT
 // @icon           https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
@@ -31,7 +31,7 @@ const SCRIPT_NAME = 'Misskey Auto Reloader';
 const console = {};
 ["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
-const HASH = await (async (t=SCRIPT_NAME) => {const e=(new TextEncoder).encode(t),n=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(n)).map((t=>t.toString(16).padStart(2,"0"))).join("").slice(0,10)})();
+const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
 /** Alias for querySelectorAll */
 const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n}
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
