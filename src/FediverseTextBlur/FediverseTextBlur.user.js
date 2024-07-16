@@ -7,9 +7,9 @@
 // @match          https://msky.work/*
 // @match          https://misskey.noellabo.jp/*
 // @match          https://fedibird.com/*
-// @match          https://vivaldi.social.net/*
+// @match          https://social.vivaldi.net/*
 // @author         hidao80
-// @version        1.2.2
+// @version        1.2.3
 // @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
