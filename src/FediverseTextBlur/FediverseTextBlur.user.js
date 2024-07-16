@@ -8,6 +8,7 @@
 // @match          https://misskey.noellabo.jp/*
 // @match          https://fedibird.com/*
 // @match          https://social.vivaldi.net/*
+// @match          https://freakmix.com/*
 // @author         hidao80
 // @version        1.2.４
 // @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
