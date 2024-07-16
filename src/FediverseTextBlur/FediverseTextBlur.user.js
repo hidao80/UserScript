@@ -9,7 +9,7 @@
 // @match          https://fedibird.com/*
 // @match          https://social.vivaldi.net/*
 // @author         hidao80
-// @version        1.2.3
+// @version        1.2.４
 // @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
