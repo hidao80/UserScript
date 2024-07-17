@@ -10,6 +10,7 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @match       https://msky.work/*
+// @match       https://social.vivaldi.net/*
 // @author      hidao80
 // @version     1.14.0
 // @namespace   https://github.com/hidao80/UserScript/FediverseTimeToAbsolute
