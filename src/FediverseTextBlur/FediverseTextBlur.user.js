@@ -10,7 +10,7 @@
 // @match          https://social.vivaldi.net/*
 // @match          https://freakmix.com/*
 // @author         hidao80
-// @version        1.2.４
+// @version        1.2.６
 // @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
@@ -26,9 +26,8 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
+(() => {
 'use strict';
-
-(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -37,7 +36,7 @@ const SCRIPT_NAME = 'Fediverse Text Blur';
 const console = {};
 ["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
-const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
+const HASH = Math.abs(Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0)), 0).toString(16);
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 /** Main */
