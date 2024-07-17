@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name           Misskey v11 Send With Ctrl Enter For Mobile Mode
-// @description    When in mobile view of Misskey ver.11, Ctrl+Enter can be used to post a NOTE.
 // @name:ja        Ctrl+Enterで送信する（Misskey v11 モバイル版モード用）
+// @description    When in mobile view of Misskey ver.11, Ctrl+Enter can be used to post a NOTE.
 // @description:ja Misskey ver.11のモバイルビューで、Ctrl+EnterでNOTEを投稿できるようにしました。
 // @match          https://misskey.dev/*
-// @match          http://hidao-hm90.local/*
 // @author         hidao80
-// @version        1.2.2
+// @version        1.2.3
 // @namespace      https://github.com/hidao80/UserScript/MisskeyV11SendWithCtrlEnterForMobileMode
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e8.png
@@ -22,8 +21,8 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
+(() => {
 'use strict';
-(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -32,12 +31,13 @@ const SCRIPT_NAME = 'Misskey v11 Send With Ctrl Enter For Mobile Mode';
 const console = {};
 ["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
-const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
+const HASH = Math.abs(Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0)).toString(16);
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 /** Main */
 document.body.addEventListener("keydown", e => {
-    if (e.ctrlKey && e.key === "Enter") {
+    // For macOS, enable sending with Cmd+Enter.
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
         document.querySelector('button[class="submit"]')?.click();
     } else if (e.key === "Escape") {
         document.querySelector('button[class="cancel"]')?.click();
