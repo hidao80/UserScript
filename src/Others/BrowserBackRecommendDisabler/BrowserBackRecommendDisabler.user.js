@@ -29,9 +29,9 @@ const DEBUG = false;
 const SCRIPT_NAME = 'Browser back recommend disabler';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log","debug","warn","info","error"].forEach(method => console[m]=DEBUG?window.console[m]:function(){};
+["log","debug","warn","info","error"].forEach(m=>console[m]=DEBUG?window.console[m]:function(){});
 /** The script name is converted to a hexadecimal hash */
-const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
+const HASH = Array.from(SCRIPT_NAME).reduce((h,c)=>(h<<5)-h+c.charCodeAt(0),0).toString(16);
 
 console.debug(`[${SCRIPT_NAME}]: HASH = ${HASH}`);
 console.debug(`[${SCRIPT_NAME}]: Script Loading...`);
