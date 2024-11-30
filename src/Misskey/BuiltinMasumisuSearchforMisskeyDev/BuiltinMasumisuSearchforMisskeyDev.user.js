@@ -5,7 +5,7 @@
 // @description:ja ますみすサーチでMisskay.devの投稿を検索することができます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.7.4
+// @version        1.8.0
 // @namespace      https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license        MIT
@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-(async () => {
+
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -113,4 +113,4 @@ setTimeout(() => {
         childList: true,
     });
 }, 1_500);
-})();
+

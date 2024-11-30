@@ -5,7 +5,7 @@
 // @description:ja このスクリプトの概要
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.0.1
+// @version        1.0.2
 // @namespace      https://github.com/hidao80/UserScript/Template
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-(async () => {
+
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -32,9 +32,10 @@ const console = {};
 ["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
 const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
-/** Alias for querySelectorAll */
-const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n};
+/** Alias */
+const $$new = (tagName) => document.createElement(tagName);
+const $$one = (selector) => document.querySelector(selector);
+const $$all = (selector) => document.querySelectorAll(selector);
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 /** Individual script body */
-})();

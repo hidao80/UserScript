@@ -4,7 +4,7 @@
 // @description Prevent transitions to pages that prevent site leakage displayed in the browser back.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.0.3
+// @version     1.0.4
 // @namespace   https://github.com/hidao80/UserScript/BrowserBackRecommendDisabler
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6ab.png
@@ -22,16 +22,14 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-(async () => {
+
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
 const SCRIPT_NAME = 'Browser back recommend disabler';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log","debug","warn","info","error"].forEach(method => {
-    console[method] = DEBUG ? window.console[method] : function(){};
-});
+["log","debug","warn","info","error"].forEach(method => console[m]=DEBUG?window.console[m]:function(){};
 /** The script name is converted to a hexadecimal hash */
 const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
 
@@ -43,4 +41,3 @@ if ($._data($(window).get(0), "events")?.popstate?.length) {
     console.debug(`[${SCRIPT_NAME}]: popstate off.`);
     $(window).off("popstate");
 }
-})();
