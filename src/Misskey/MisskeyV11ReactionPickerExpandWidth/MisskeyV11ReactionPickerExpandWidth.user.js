@@ -5,7 +5,7 @@
 // @description:ja めいv11のリアクションピッカーの幅を画面いっぱいに広くします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.6.3
+// @version        1.6.4
 // @namespace      https://github.com/hidao80/UserScript/MisskeyV11ReactionPickerExpandWidth
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f44d.png
@@ -21,9 +21,8 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-(()=>{
-/** Constant variable */
+(async () => {
+    /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
 const SCRIPT_NAME = 'Misskey v11 Reaction Picker Expand Width';

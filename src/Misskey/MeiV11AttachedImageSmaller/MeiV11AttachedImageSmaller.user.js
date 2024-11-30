@@ -5,7 +5,7 @@
 // @description:ja 添付画像のプレビューを小さくします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.1.1
+// @version        1.1.2
 // @namespace      https://github.com/hidao80/UserScript/MeiV11AttachedImageSmaller
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cf.png
@@ -21,8 +21,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-(()=>{
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;

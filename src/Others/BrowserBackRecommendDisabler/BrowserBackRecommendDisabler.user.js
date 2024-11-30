@@ -4,7 +4,7 @@
 // @description Prevent transitions to pages that prevent site leakage displayed in the browser back.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.0.6
+// @version     1.0.7
 // @namespace   https://github.com/hidao80/UserScript/BrowserBackRecommendDisabler
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6ab.png
@@ -21,8 +21,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-(()=>{
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
