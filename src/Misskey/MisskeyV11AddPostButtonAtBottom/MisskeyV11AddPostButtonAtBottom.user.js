@@ -4,7 +4,7 @@
 // @description In Misskey v11, add a new post button to the lower left corner of the screen only when in the home layout.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1.1
+// @version     1.2.0
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11AddPostButtonAtBottom
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/270f.png
@@ -20,8 +20,8 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
 
+(async() => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -66,3 +66,4 @@ setTimeout(() => {
     // Wait a moment, as calling it immediately will overwrite the drawing on the screen.
     document.body.appendChild(button);
 }, 1_500);
+})();

@@ -4,7 +4,7 @@
 // @description Retry to load custom emoji that could not be loaded, for Misskey.dev only.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0.1
+// @version     1.1.0
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11CustomEmojiRender
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f60a.png
 // @license     MIT
@@ -20,8 +20,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-
+(async() => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -71,3 +70,4 @@ function callbackLoadImages() {
 
 // Monitor whether emoji are drawn or not.
 (new MutationObserver(callbackLoadImages)).observe(document.body, { childList: true });
+})();

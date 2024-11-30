@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.6.2
+// @version        2.7.0
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -24,7 +24,7 @@
 (async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_NAME = 'Misskey notes speech';
 /** Suppress debug printing unless in debug mode */
 const console = {};

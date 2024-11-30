@@ -4,7 +4,7 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.6.3
+// @version     1.7.0
 // @namespace   https://github.com/hidao80/UserScript/MisskeyReactionViewForTouchDevices
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4dc.png
 // @license     MIT
@@ -20,8 +20,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-
+(async() => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -1942,3 +1941,4 @@ const emojiDict = {
     "united_nations": "🇺🇳",
     "pirate_flag": "🏴‍☠️"
 }
+})();

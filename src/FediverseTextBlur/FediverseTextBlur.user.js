@@ -10,7 +10,7 @@
 // @match          https://social.vivaldi.net/*
 // @match          https://freakmix.com/*
 // @author         hidao80
-// @version        1.2.６
+// @version        1.2.7
 // @namespace      https://github.com/hidao80/UserScript/FediverseTextBlur
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png
@@ -26,8 +26,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-(() => {
-'use strict';
+(async() => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;

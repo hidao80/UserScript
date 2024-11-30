@@ -4,7 +4,7 @@
 // @description Displays stickies tied to a url in the screen; anything copied on the web can be pasted.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.1.1
+// @version     1.2.0
 // @namespace   https://github.com/hidao80/UserScript/UrlSticky
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d1.png
@@ -22,15 +22,14 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
 
-/** Constant variable */
+(async() => {
+    /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = false;
-const SCRIPT_NAME = 'Url Sticky';
-DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
+    const DEBUG = false;
+    const SCRIPT_NAME = 'Url Sticky';
+    DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
-(() => {
     // First 8 characters of md5 hash of "url-sticky" is "10b58878"
     const ELEMENT_ID = "sticky_10b58878";
     const STORAGE_KEY = "url-sticky contents";

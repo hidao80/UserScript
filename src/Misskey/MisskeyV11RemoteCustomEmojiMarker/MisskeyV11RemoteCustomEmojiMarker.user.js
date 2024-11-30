@@ -4,7 +4,7 @@
 // @description Make remote custom emoji reactions prominent in Misskey v11.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.3.1
+// @version     1.4.0
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11RemoteCustomEmojiMarker
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e1.png
@@ -22,8 +22,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-
+(async() => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -51,3 +50,4 @@ function callback() {
 
 // Monitor whether emoji are drawn or not.
 (new MutationObserver(callback)).observe(document.body, { childList: true });
+})();

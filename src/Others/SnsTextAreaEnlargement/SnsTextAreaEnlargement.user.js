@@ -13,7 +13,7 @@
 // @match       https://msky.work/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
-// @version     1.2.3
+// @version     1.3.0
 // @namespace   https://github.com/hidao80/UserScript/SnsTextAreaEnlargement
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d2.png
@@ -29,8 +29,7 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
-
+(async() => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -88,3 +87,4 @@ setTimeout(() => {
         }
     }
 }, 500);
+})();

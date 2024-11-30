@@ -5,7 +5,7 @@
 // @description:ja めいv11用のモバイル版ホームレイアウトのテキストエリアに絵文字パレットを追加します。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        0.3.7
+// @version        0.4.0
 // @namespace      https://github.com/hidao80/UserScript/MeiV11EmojisPaletteForMovileTextArea
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f0cf.png
@@ -21,15 +21,15 @@
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
-'use strict';
 
+(async () => {
 /** Constant variable */
 // When debugging: DEBUG = !false;
-const DEBUG = !false;
+const DEBUG = false;
 const SCRIPT_NAME = 'Mei v11 emojis palette for movile text area';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log", "debug", "warn", "info", "error"].map((o => { console[o] = DEBUG ? window.console[o] : function () { } }));
+["log", "debug", "warn", "info", "error"].map((o => {console[o]=DEBUG?window.console[o]:function(){}}));
 /** The script name is converted to a hexadecimal hash */
 const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
 /** Alias for querySelectorAll */
@@ -294,3 +294,4 @@ const tabIcons = {
     "symbols": "❤️",
     "flags": "🇯🇵",
 };
+})();
