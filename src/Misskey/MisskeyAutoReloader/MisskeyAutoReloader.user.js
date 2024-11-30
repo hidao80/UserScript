@@ -5,7 +5,7 @@
 // @description:ja 入力中の投稿がない場合は、10分に1回リロードします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.6.0
+// @version        1.6.1
 // @namespace      https://github.com/hidao80/UserScript/MisskeyAutoReloader
 // @license        MIT
 // @icon           https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
