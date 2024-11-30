@@ -5,7 +5,7 @@
 // @description:ja めいv11のリアクションピッカーの幅を画面いっぱいに広くします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.6.0
+// @version        1.6.1
 // @namespace      https://github.com/hidao80/UserScript/MisskeyV11ReactionPickerExpandWidth
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f44d.png
@@ -28,7 +28,7 @@ const DEBUG = false;
 const SCRIPT_NAME = 'Misskey v11 Reaction Picker Expand Width';
 /** Suppress debug printing unless in debug mode */
 const console = {};
-["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
+["log","debug","warn","info","error"].forEach(o=>{console[o]=DEBUG?window.console[o]:function(){}});
 /** The script name is converted to a hexadecimal hash */
 const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
