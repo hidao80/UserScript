@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(()=>{
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -39,3 +39,5 @@ const $$all = (selector) => document.querySelectorAll(selector);
 console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
 /** Individual script body */
+
+})();

@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(()=>{
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -41,3 +41,4 @@ if ($._data($(window).get(0), "events")?.popstate?.length) {
     console.debug(`[${SCRIPT_NAME}]: popstate off.`);
     $(window).off("popstate");
 }
+})();

@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(()=>{
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = false;
@@ -60,3 +60,4 @@ const timer = setInterval(v => {
         update()
     }
 }, 1_500);
+})();

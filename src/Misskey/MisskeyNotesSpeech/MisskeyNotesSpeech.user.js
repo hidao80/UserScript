@@ -22,7 +22,7 @@
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
 
 'use strict';
-
+(()=>{
 /** Constant variable */
 // When debugging: DEBUG = !false;
 const DEBUG = !false;
@@ -172,3 +172,4 @@ function removeSymbols(text) {
     .replace(/(?=[^\d#])\p{Emoji}/gu, '') // Exclude emoji
     ;
 }
+})();
