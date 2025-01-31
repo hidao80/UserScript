@@ -16,7 +16,7 @@ UserScriptマネージャー拡張機能（[Chromiumベース][chrome-extension]
 [chrome-extension]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Tampermonkey"
 [firefox-extension]: https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/ "Tampermonkey"
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
-[source]: https://github.com/hidao80/UserScript/raw/main/src/MeiV11ReloadButton/MeiV11ReloadButton.user.js "Source code"
+[source]: https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.user.js "Source code"
 
 ## ライセンス
 
