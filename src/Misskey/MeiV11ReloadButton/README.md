@@ -1,4 +1,4 @@
-# MeiV11ReloadButton
+# Mei v11 reload button
 
 [README 日本語版](./README_ja.md)
 
@@ -16,7 +16,7 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 [chrome-extension]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Tampermonkey"
 [firefox-extension]: https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/ "Tampermonkey"
 [safari-extension]: https://apps.apple.com/us/app/userscripts/id1463298887 "UserScripts"
-[source]: https://github.com/hidao80/UserScript/raw/main/src/MeiV11ReloadButton/MeiV11ReloadButton.user.js "Source code"
+[source]: https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.user.js "Source code"
 
 ## License
 
@@ -24,6 +24,6 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 
 ### License of twemoji
 
-Copyright 2019 Twitter, Inc and other contributors\
-Code licensed under the MIT License: <http://opensource.org/licenses/MIT>\
+Copyright 2019 Twitter, Inc and other contributors  
+Code licensed under the MIT License: <http://opensource.org/licenses/MIT>  
 Graphics licensed under CC-BY 4.0: <https://creativecommons.org/licenses/by/4.0/>
