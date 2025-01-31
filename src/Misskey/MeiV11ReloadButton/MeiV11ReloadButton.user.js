@@ -5,7 +5,7 @@
 // @description:ja めいv11の画面内で強制的にリロードさせるボタンを表示します。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.0.0
+// @version        1.0.1
 // @namespace      https://github.com/hidao80/UserScript/MeiV11ReloadButton
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f504.png
 // @license        MIT
@@ -24,8 +24,8 @@
 (async () => {
     /** Constant variable */
     // When debugging: DEBUG = !false;
-    const DEBUG = !false;
-    const SCRIPT_NAME = 'Misskey Auto Reloader';
+    const DEBUG = false;
+    const SCRIPT_NAME = 'Mei v11 reload button';
     /** Suppress debug printing unless in debug mode */
     const console = {};
     ["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
@@ -34,7 +34,7 @@
     /** Alias for querySelectorAll */
     const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n}
     console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
-    
+
     /** Main */
     // Create an element to be a new post button.
     const button = document.createElement("button");
@@ -44,7 +44,7 @@
         width: "50px",
         position: "fixed",
         right: "30px",
-        bottom: "30px",
+        bottom: "100px",
         color: JSON.parse(localStorage.getItem('theme')).primaryForeground,
         background: JSON.parse(localStorage.getItem('theme')).primary,
         borderRadius: "50%",
@@ -53,7 +53,7 @@
         alignItems: "center",
         zIndex: 1030,
     });
-    
+
     // Draw the button design
     button.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw">
@@ -62,12 +62,12 @@
         <path d="M3 22v-6h6"></path>
         <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
     </svg>`;
-    
+
     // Process when the button is clicked
     button.addEventListener("click", () => {
         location.reload();
     });
-    
+
     // Processing starts after the timeline has been drawn.
     setTimeout(() => {
         // Add the created element to the screen.
