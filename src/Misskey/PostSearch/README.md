@@ -23,8 +23,8 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 1. Enter the URL of your JSON file containing posts in the top input field
 2. Type your search query in the search box
 3. Results will be displayed automatically, sorted by date in descending order
-4. The interface collapses to a bento icon when focus is lost
-5. Click the bento icon to expand the search interface
+4. The interface will hide when focus is lost
+5. Triple tap anywhere on the page to show the interface again
 
 ## License
 
