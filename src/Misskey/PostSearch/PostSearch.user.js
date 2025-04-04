@@ -2,7 +2,7 @@
 // @name         Misskey v11 Post Log Search
 // @name:ja      Misskey v11 投稿ログ検索
 // @namespace    https://github.com/hidao80
-// @version      0.1.0
+// @version      1.0.0
 // @description  Search through Misskey v11 posts via API
 // @description:ja Misskey v11の投稿をAPI経由で検索
 // @icon         https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f50d.png
@@ -64,7 +64,7 @@
                 padding: 10px;
                 border-radius: 8px;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                z-index: 2147483647;
+                z-index: 5020;
                 font-family: sans-serif;
                 max-width: calc(100% - 20px);
                 box-sizing: border-box;
@@ -79,6 +79,11 @@
             const TAP_THRESHOLD = 500; // milliseconds between taps
 
             document.addEventListener('click', (e) => {
+                // Don't process if clicking on or within the search interface
+                if (searchContainer.contains(e.target)) {
+                    return;
+                }
+
                 const currentTime = new Date().getTime();
                 const timeDiff = currentTime - lastTapTime;
 
@@ -86,21 +91,16 @@
                     tapCount++;
                     if (tapCount === 3) {
                         // Triple tap detected
-                        searchContainer.style.display = 'block';
-                        searchInput.focus();
+                        searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
+                        if (searchContainer.style.display === 'block') {
+                            searchInput.focus();
+                        }
                         tapCount = 0;
                     }
                 } else {
                     tapCount = 1;
                 }
                 lastTapTime = currentTime;
-            });
-
-            // Hide on focus out
-            searchContainer.addEventListener('focusout', (e) => {
-                if (!searchContainer.contains(e.relatedTarget)) {
-                    searchContainer.style.display = 'none';
-                }
             });
 
             searchContainer.addEventListener('mouseenter', () => {
@@ -111,20 +111,89 @@
                 searchContainer.style.opacity = '0.9';
             });
 
+            // Container for URL input and toggle button
+            const urlContainer = $$new('div');
+            urlContainer.style.cssText = `
+                width: 100%;
+                margin-bottom: 10px;
+                display: flex;
+                gap: 8px;
+            `;
+
             // Create JSON URL input
             const jsonUrlInput = $$new('input');
             jsonUrlInput.type = 'text';
-            jsonUrlInput.placeholder = 'JSONファイルのURL（省略可）...';
-            // 保存されたJSONのURLを読み込む
+            jsonUrlInput.placeholder = 'JSON ファイルの URL（任意）...';
+            jsonUrlInput.style.cssText = `
+                flex-grow: 1;
+                height: 36px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+                background: white;
+                margin: 0;
+            `;
+
+            // Create toggle button
+            const toggleButton = $$new('button');
+            toggleButton.textContent = '非表示';
+            toggleButton.style.cssText = `
+                padding: 0 12px;
+                height: 36px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background: white;
+                cursor: pointer;
+                font-size: 14px;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+            `;
+
+            toggleButton.addEventListener('mouseenter', () => {
+                toggleButton.style.backgroundColor = '#f0f0f0';
+            });
+
+            toggleButton.addEventListener('mouseleave', () => {
+                toggleButton.style.backgroundColor = 'white';
+            });
+
+            // Toggle functionality
+            toggleButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isEnabled = !jsonUrlInput.disabled;
+                jsonUrlInput.disabled = isEnabled;
+                
+                if (isEnabled) {
+                    // Hide & disable
+                    jsonUrlInput.value = '';
+                    toggleButton.textContent = '表示';
+                    jsonUrlInput.style.backgroundColor = '#f5f5f5';
+                    jsonUrlInput.style.color = '#999';
+                } else {
+                    // Show & enable
+                    toggleButton.textContent = '非表示';
+                    jsonUrlInput.style.backgroundColor = 'white';
+                    jsonUrlInput.style.color = 'black';
+                    // Restore saved URL if exists
+                    const savedJsonUrl = localStorage.getItem(`${SCRIPT_NAME}-jsonUrl`);
+                    if (savedJsonUrl) {
+                        jsonUrlInput.value = savedJsonUrl;
+                    }
+                }
+            });
+
+            // Load saved JSON URL
             const savedJsonUrl = localStorage.getItem(`${SCRIPT_NAME}-jsonUrl`);
             if (savedJsonUrl) {
                 jsonUrlInput.value = savedJsonUrl;
             }
 
-            // URLが変更されたら保存
+            // Save URL when changed
             jsonUrlInput.addEventListener('change', () => {
                 const url = jsonUrlInput.value.trim();
-                if (url) {
+                if (url && !jsonUrlInput.disabled) {
                     localStorage.setItem(`${SCRIPT_NAME}-jsonUrl`, url);
                     console.debug(`[${SCRIPT_NAME}]: Saved JSON URL to localStorage`);
                 } else {
@@ -133,22 +202,161 @@
                 }
             });
 
-            jsonUrlInput.style.cssText = `
-                width: 300px;
-                padding: 8px;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
+            // Create help icon
+            const helpIcon = $$new('button');
+            helpIcon.type = 'button';
+            helpIcon.innerHTML = `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                </svg>`;
+            helpIcon.style.cssText = `
+                cursor: pointer;
+                flex-shrink: 0;
+                color: #666;
+                padding: 6px;
                 border-radius: 4px;
+                transition: all 0.2s ease;
+                height: 36px;
+                width: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 box-sizing: border-box;
-                font-size: 14px;
-                transition: all 0.3s ease;
+                border: 1px solid #ccc;
+                background: white;
             `;
+
+            helpIcon.addEventListener('mouseenter', () => {
+                helpIcon.style.backgroundColor = '#f0f0f0';
+            });
+
+            helpIcon.addEventListener('mouseleave', () => {
+                helpIcon.style.backgroundColor = 'white';
+            });
+
+            // Create help modal
+            const helpModal = $$new('div');
+            helpModal.id = `${SCRIPT_NAME}-help-modal`;
+            helpModal.style.cssText = `
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100dvw;
+                height: 100dvh;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 5050;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+
+            const helpContent = $$new('div');
+            helpContent.style.cssText = `
+                position: relative;
+                width: 90%;
+                max-width: 90%;
+                margin: 40px auto;
+                max-height: 90%;
+                height: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                transform: translateY(-20px);
+                transition: transform 0.3s ease;
+                overflow-y: scroll;
+            `;
+
+            helpContent.innerHTML = `
+                <h2 style="margin-top: 0; margin-bottom: 20px; color: #333;">投稿検索の使い方</h2>
+                <div style="color: #666; line-height: 1.6;">
+                    <h3 style="color: #333; margin: 16px 0 8px;">検索インターフェースの表示</h3>
+                    <p>ページ上の任意の場所をトリプルクリックすると、検索インターフェースの表示/非表示を切り替えられます。</p>
+
+                    <h3 style="color: #333; margin: 16px 0 8px;">JSONファイルの設定</h3>
+                    <ol>
+                        <li>投稿をJSONファイルとしてエクスポートし、アクセス可能な場所にホストします。Misskey内の自分のストレージ内でも構いません。</li>
+                        <li>入力フィールドにJSONファイルのURLを入力します</li>
+                        <li>URLは自動的に保存され、次回以降も使用できます</li>
+                    </ol>
+                    <h3 style="color: #333; margin: 16px 0 8px;">JSONフォーマット</h3>
+                    <p>JSONファイルは以下の構造を持つ投稿オブジェクトの配列である必要があります：</p>
+                    <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto;">[
+    {
+        "text": "投稿内容",
+        "createdAt": "2023-01-01T00:00:00.000Z"
+    },
+    ...
+]</pre>
+
+                    <h3 style="color: #333; margin: 16px 0 8px;">投稿の検索</h3>
+                    <ol>
+                    <li>検索ボックスに検索キーワードを入力します</li>
+                    <li>入力に応じて結果が自動的に更新されます</li>
+                    <li>結果は日付の降順で表示されます</li>
+                    </ol>
+                    <h3 style="color: #333; margin: 16px 0 8px;">URL入力オプション</h3>
+                    <p>非表示/表示ボタンを使用して、URL入力を一時的に無効にできます</p>
+                </div>
+                <button style="
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: none;
+                    border: none;
+                    font-size: 24px;
+                    cursor: pointer;
+                    color: #666;
+                    padding: 5px;
+                    line-height: 1;
+                ">×</button>
+            `;
+
+            // Close button click handler
+            const closeButton = helpContent.querySelector('button');
+            closeButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                helpModal.style.opacity = '0';
+                helpContent.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    helpModal.style.display = 'none';
+                }, 300);
+            });
+
+            // Handle help icon click
+            const showHelp = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                helpModal.style.display = 'block';
+                requestAnimationFrame(() => {
+                    helpModal.style.opacity = '1';
+                    helpContent.style.transform = 'translateY(0)';
+                });
+            };
+
+            helpIcon.onclick = showHelp;
+
+            // Close modal on background click
+            helpModal.addEventListener('click', (e) => {
+                if (e.target === helpModal) {
+                    closeButton.click();
+                }
+            });
+
+            helpModal.appendChild(helpContent);
+            document.body.appendChild(helpModal);
+
+            searchContainer.style.width = '300px';
+
+            urlContainer.appendChild(jsonUrlInput);
+            urlContainer.appendChild(toggleButton);
+            urlContainer.appendChild(helpIcon);
 
             const searchInput = $$new('input');
             searchInput.type = 'text';
             searchInput.placeholder = '投稿を検索...';
             searchInput.style.cssText = `
-                width: 300px;
+                width: 100%;
                 padding: 8px;
                 margin-bottom: 10px;
                 border: 1px solid #ccc;
@@ -163,12 +371,12 @@
                 max-height: 400px;
                 overflow-y: auto;
                 font-size: 14px;
-                width: 300px;
+                width: 100%;
                 box-sizing: border-box;
                 transition: all 0.3s ease;
             `;
 
-            searchContainer.appendChild(jsonUrlInput);
+            searchContainer.appendChild(urlContainer);
             searchContainer.appendChild(searchInput);
             searchContainer.appendChild(resultsContainer);
             document.body.appendChild(searchContainer);
@@ -184,28 +392,28 @@
                     console.debug(`[${SCRIPT_NAME}]: Searching for: ${query}`);
                     
                     let jsonData = null;
-                    const jsonUrl = jsonUrlInput.value.trim();
+                    const jsonUrl = localStorage.getItem(`${SCRIPT_NAME}-jsonUrl`);
                     
                     if (jsonUrl) {
                         try {
                             const jsonText = await readFile(jsonUrl);
                             
                             try {
-                                // Content-Typeをチェック
+                                // Check Content-Type
                                 if (jsonText.startsWith('<!DOCTYPE html>') || jsonText.startsWith('<html>')) {
-                                    throw new Error('HTMLファイルが指定されました。JSONファイルを指定してください。');
+                                    throw new Error('HTMLファイルが指定されています。JSONファイルを指定してください。');
                                 }
                                 
-                                // JSONとしてパース
+                                // Parse as JSON
                                 jsonData = JSON.parse(jsonText);
                                 
-                                // データの形式を確認
+                                // Validate data format
                                 if (typeof jsonData !== 'object') {
                                     throw new Error('不正なJSONフォーマットです');
                                 }
                             } catch (parseError) {
                                 console.error(`[${SCRIPT_NAME}]: JSON parse error:`, parseError);
-                                throw new Error('JSONファイルの解析に失敗しました。正しいJSONファイルを指定してください。');
+                                throw new Error('JSONファイルのパースに失敗しました。有効なJSONファイルを指定してください。');
                             }
                             console.debug(`[${SCRIPT_NAME}]: Loaded and validated JSON data from URL`);
                         } catch (error) {
@@ -215,22 +423,22 @@
                         }
                     }
                     if (!jsonData) {
-                        throw new Error('検索するには、JSONファイルのURLを指定してください');
+                        throw new Error('検索するJSONファイルのURLを指定してください');
                     }
 
                     if (!Array.isArray(jsonData)) {
                         throw new Error('JSONファイルは投稿データの配列である必要があります');
                     }
 
-                    // JSON内の投稿を検索
+                    // Search posts in JSON data
                     const searchResults = jsonData.filter(post => {
-                        // 投稿の本文がない場合はスキップ
+                        // Skip posts without text content
                         if (!post.text) return false;
                         
-                        // 大文字小文字を区別せずに検索
+                        // Case-insensitive search
                         return post.text.toLowerCase().includes(query.toLowerCase());
                     })
-                    // 日付で降順ソート
+                    // Sort by date in descending order
                     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
                     console.debug(`[${SCRIPT_NAME}]: Found ${searchResults.length} results`);
@@ -297,9 +505,9 @@
     });
 
     /**
-     * ファイルを読み込む関数
-     * @param {string} url - ファイルのURL
-     * @returns {Promise<string>} - ファイルの内容
+     * Function to load file
+     * @param {string} url - URL of the file
+     * @returns {Promise<string>} - File contents
      */
     function readFile(url) {
         return new Promise((resolve, reject) => {
