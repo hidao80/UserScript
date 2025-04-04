@@ -20,11 +20,26 @@ After installing the UserScript Manager extension ([Chromium-based][chrome-exten
 
 ## How to use
 
-1. Enter the URL of your JSON file containing posts in the top input field
-2. Type your search query in the search box
-3. Results will be displayed automatically, sorted by date in descending order
-4. The interface will hide when focus is lost
-5. Triple tap anywhere on the page to show the interface again
+1. Triple-click anywhere on the page to open the search interface
+2. Enter the URL of your JSON file containing posts in the top input field (URLs are saved for future use)
+3. Type your search query in the search box
+4. Results will be displayed automatically, sorted by date in descending order
+5. Use the Hide/Show button to toggle JSON URL input visibility
+6. Click the help icon (?) for detailed instructions
+
+## JSON File Format
+
+The JSON file should be an array of post objects with the following structure:
+
+```json
+[
+    {
+        "text": "Post content",
+        "createdAt": "2023-01-01T00:00:00.000Z"
+    },
+    ...
+]
+```
 
 ## License
 
