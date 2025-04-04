@@ -16,7 +16,7 @@ UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][fir
 [chrome-extension]: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Tampermonkey"
 [firefox-extension]: https://addons.mozilla.org/ja/firefox/addon/tampermonkey/ "Tampermonkey"
 [safari-extension]: https://apps.apple.com/jp/app/userscripts/id1463298887 "UserScripts"
-[source]: https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11PostSearch/misskey-v11-post-search.user.js "ソースコード"
+[source]: https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11PostSearch/PostSearch.user.js "ソースコード"
 
 ## 使い方
 
