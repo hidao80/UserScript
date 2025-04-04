@@ -10,8 +10,8 @@
 // @match        https://misskey.dev/*
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
-// @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js
+// @updateURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js
+// @downloadURL  https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js
 // ==/UserScript==
 
 (function() {
@@ -56,27 +56,6 @@
             // Create search interface
             const searchContainer = $$new('div');
             searchContainer.id = `${SCRIPT_NAME}-search`;
-            // ベントーアイコン作成
-            const bentoIcon = $$new('div');
-            bentoIcon.innerHTML = `
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="4" y="4" width="4" height="4" rx="1"/>
-                    <rect x="10" y="4" width="4" height="4" rx="1"/>
-                    <rect x="16" y="4" width="4" height="4" rx="1"/>
-                    <rect x="4" y="10" width="4" height="4" rx="1"/>
-                    <rect x="10" y="10" width="4" height="4" rx="1"/>
-                    <rect x="16" y="10" width="4" height="4" rx="1"/>
-                    <rect x="4" y="16" width="4" height="4" rx="1"/>
-                    <rect x="10" y="16" width="4" height="4" rx="1"/>
-                    <rect x="16" y="16" width="4" height="4" rx="1"/>
-                </svg>
-            `;
-            bentoIcon.style.cssText = `
-                cursor: pointer;
-                display: none;
-                color: #666;
-            `;
-
             searchContainer.style.cssText = `
                 position: fixed;
                 top: 10px;
@@ -91,33 +70,38 @@
                 box-sizing: border-box;
                 opacity: 0.9;
                 transition: all 0.3s ease;
-                min-width: 40px;
-                min-height: 40px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                display: none;
             `;
 
-            let isCollapsed = false;
-            const collapse = () => {
-                isCollapsed = true;
-                searchContainer.style.width = '40px';
-                searchContainer.style.height = '40px';
-                bentoIcon.style.display = 'block';
-                jsonUrlInput.style.display = 'none';
-                searchInput.style.display = 'none';
-                resultsContainer.style.display = 'none';
-            };
+            // Triple tap detection
+            let lastTapTime = 0;
+            let tapCount = 0;
+            const TAP_THRESHOLD = 500; // milliseconds between taps
 
-            const expand = () => {
-                isCollapsed = false;
-                searchContainer.style.width = '';
-                searchContainer.style.height = '';
-                bentoIcon.style.display = 'none';
-                jsonUrlInput.style.display = 'block';
-                searchInput.style.display = 'block';
-                resultsContainer.style.display = 'block';
-            };
+            document.addEventListener('click', (e) => {
+                const currentTime = new Date().getTime();
+                const timeDiff = currentTime - lastTapTime;
+
+                if (timeDiff < TAP_THRESHOLD) {
+                    tapCount++;
+                    if (tapCount === 3) {
+                        // Triple tap detected
+                        searchContainer.style.display = 'block';
+                        searchInput.focus();
+                        tapCount = 0;
+                    }
+                } else {
+                    tapCount = 1;
+                }
+                lastTapTime = currentTime;
+            });
+
+            // Hide on focus out
+            searchContainer.addEventListener('focusout', (e) => {
+                if (!searchContainer.contains(e.relatedTarget)) {
+                    searchContainer.style.display = 'none';
+                }
+            });
 
             searchContainer.addEventListener('mouseenter', () => {
                 searchContainer.style.opacity = '1';
@@ -126,23 +110,6 @@
             searchContainer.addEventListener('mouseleave', () => {
                 searchContainer.style.opacity = '0.9';
             });
-
-            // フォーカス管理
-            searchContainer.addEventListener('focusout', (e) => {
-                if (!searchContainer.contains(e.relatedTarget)) {
-                    collapse();
-                }
-            });
-
-            bentoIcon.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (isCollapsed) {
-                    expand();
-                    searchInput.focus();
-                }
-            });
-
-            searchContainer.insertBefore(bentoIcon, searchContainer.firstChild);
 
             // Create JSON URL input
             const jsonUrlInput = $$new('input');
