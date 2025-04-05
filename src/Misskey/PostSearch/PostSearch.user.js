@@ -2,7 +2,7 @@
 // @name         Misskey v11 Post Log Search
 // @name:ja      Misskey v11 投稿ログ検索
 // @namespace    https://github.com/hidao80
-// @version      1.0.3
+// @version      1.0.4
 // @description  Search through Misskey v11 posts via API
 // @description:ja Misskey v11の投稿をAPI経由で検索
 // @icon         https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f50d.png
@@ -16,7 +16,6 @@
 
 'use strict';
 (v => {
-    if (!isRun) return;
     /** Constant variable */
     // When debugging: DEBUG = !false;
     const DEBUG = false;
