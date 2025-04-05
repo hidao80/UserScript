@@ -2,7 +2,7 @@
 // @name         Misskey v11 Post Log Search
 // @name:ja      Misskey v11 投稿ログ検索
 // @namespace    https://github.com/hidao80
-// @version      1.0.1
+// @version      1.0.3
 // @description  Search through Misskey v11 posts via API
 // @description:ja Misskey v11の投稿をAPI経由で検索
 // @icon         https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f50d.png
@@ -14,28 +14,31 @@
 // @downloadURL  https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.min.user.js
 // ==/UserScript==
 
-(function() {
+'use strict';
+(v => {
+    if (!isRun) return;
     /** Constant variable */
     // When debugging: DEBUG = !false;
-    const DEBUG = !false;
+    const DEBUG = false;
     const SCRIPT_NAME = 'MissQueryUS';
     /** Suppress debug printing unless in debug mode */
     const console = {};
-    ["log","debug","warn","info","error"].forEach((o=>{console[o]=DEBUG?window.console[o]:function(){}}));
+    ["log", "debug", "warn", "info", "error"].forEach((o => { console[o] = DEBUG ? window.console[o] : function () { } }));
     /** The script name is converted to a hexadecimal hash */
     /** indolence.js */
-    const $$new=e=>document.createElement(e);
-    const $$one=e=>document.querySelector(e);
-    const $$all=e=>document.querySelectorAll(e);
+    const $$new = e => document.createElement(e);
+    const $$one = e => document.querySelector(e);
+    const $$all = e => document.querySelectorAll(e);
     const HASH = Array.from(SCRIPT_NAME).reduce((hash, character) => (hash << 5) - hash + character.charCodeAt(0), 0).toString(16);
     /** Alias for querySelectorAll */
-    const $ = (e)=>{const n=document.querySelectorAll(e);return 1==n.length?n[0]:n};
+    const $ = (e) => { const n = document.querySelectorAll(e); return 1 == n.length ? n[0] : n };
     console.debug(`[${SCRIPT_NAME}]: Script Loading... [HASH = ${HASH}]`);
 
     // Initialize search interface when DOM is ready
     function initializeSearchInterface() {
-        // Don't add search interface if it already exists
-        if ($$one(`#${SCRIPT_NAME}-search`)) {
+        // Only create the interface if it doesn't exist yet
+        const existingInterface = $$one(`#${SCRIPT_NAME}-search`);
+        if (existingInterface) {
             console.debug(`[${SCRIPT_NAME}]: Search interface already exists`);
             return;
         }
@@ -50,7 +53,8 @@
         }
 
         // Use misskey.dev as the instance URL
-        const instanceUrl = 'https://misskey.dev';
+        const url = new URL(location.href);
+        const instanceUrl = `${url.protocol}//${url.hostname}`;
 
         try {
             // Create search interface
@@ -73,43 +77,27 @@
                 display: none;
             `;
 
-            // Triple tap detection
-            let lastTapTime = 0;
-            let tapCount = 0;
-            const TAP_THRESHOLD = 500; // milliseconds between taps
+            // Long press detection
+            const LONG_PRESS_DURATION = 500; // milliseconds
+            let pressTimer = null; // Timer for long press
+            let isPressed = false; // Flag to track if the user is pressing
+            let startX, startY; // Variables to store the starting position of the press
+            const MOVE_THRESHOLD = 10; // Threshold for detecting movement
 
-            document.addEventListener('click', (e) => {
-                // Don't process if clicking on or within the search interface
-                if (searchContainer.contains(e.target)) {
-                    return;
-                }
-
-                const currentTime = new Date().getTime();
-                const timeDiff = currentTime - lastTapTime;
-
-                if (timeDiff < TAP_THRESHOLD) {
-                    tapCount++;
-                    if (tapCount === 3) {
-                        // Triple tap detected
-                        searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
-                        if (searchContainer.style.display === 'block') {
-                            searchInput.focus();
-                        }
-                        tapCount = 0;
-                    }
-                } else {
-                    tapCount = 1;
-                }
-                lastTapTime = currentTime;
-            });
-
-            searchContainer.addEventListener('mouseenter', () => {
-                searchContainer.style.opacity = '1';
-            });
-
-            searchContainer.addEventListener('mouseleave', () => {
-                searchContainer.style.opacity = '0.9';
-            });
+            // Create search input first
+            const searchInput = $$new('input');
+            searchInput.type = 'text';
+            searchInput.placeholder = '投稿を検索...';
+            searchInput.style.cssText = `
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            `;
 
             // Container for URL input and toggle button
             const urlContainer = $$new('div');
@@ -271,7 +259,7 @@
                 <h2 style="margin-top: 0; margin-bottom: 20px; color: #333;">投稿検索の使い方</h2>
                 <div style="color: #666; line-height: 1.6;">
                     <h3 style="color: #333; margin: 16px 0 8px;">検索インターフェースの表示</h3>
-                    <p>ページ上の任意の場所をトリプルクリックすると、検索インターフェースの表示/非表示を切り替えられます。</p>
+                    <p>ページ上の任意の場所をロングタップ（マウスの場合は長押し）すると、検索インターフェースの表示/非表示を切り替えられます。</p>
 
                     <h3 style="color: #333; margin: 16px 0 8px;">JSONファイルの設定</h3>
                     <ol>
@@ -344,27 +332,12 @@
             });
 
             helpModal.appendChild(helpContent);
-            document.body.appendChild(helpModal);
 
             searchContainer.style.width = '300px';
 
             urlContainer.appendChild(jsonUrlInput);
             urlContainer.appendChild(toggleButton);
             urlContainer.appendChild(helpIcon);
-
-            const searchInput = $$new('input');
-            searchInput.type = 'text';
-            searchInput.placeholder = '投稿を検索...';
-            searchInput.style.cssText = `
-                width: 100%;
-                padding: 8px;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                font-size: 14px;
-                transition: all 0.3s ease;
-            `;
 
             const resultsContainer = $$new('div');
             resultsContainer.style.cssText = `
@@ -379,103 +352,79 @@
             searchContainer.appendChild(urlContainer);
             searchContainer.appendChild(searchInput);
             searchContainer.appendChild(resultsContainer);
+
+            // Append elements to DOM
             document.body.appendChild(searchContainer);
+            document.body.appendChild(helpModal);
 
-            // Search function
-            async function searchPosts(query) {
-                if (!query) {
-                    resultsContainer.innerHTML = '';
-                    return;
-                }
+            // Initialize event listeners
+            // Mouse Events
+            document.addEventListener('mousedown', handleMouseDown);
+            // document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
 
-                try {
-                    console.debug(`[${SCRIPT_NAME}]: Searching for: ${query}`);
+            // Touch Events
+            document.addEventListener('touchstart', handleTouchStart, { passive: true });
+            document.addEventListener('touchend', handleMouseUp, { passive: true });
+            document.addEventListener('touchcancel', handleMouseUp, { passive: true });
 
-                    let jsonData = null;
-                    const jsonUrl = localStorage.getItem(`${SCRIPT_NAME}-jsonUrl`);
+            // イベントハンドラー関数
+            function handleMouseDown(e) {
+                if (e.button !== 0) return;
+                if (searchContainer.contains(e.target)) return;
 
-                    if (jsonUrl) {
-                        try {
-                            const jsonText = await readFile(jsonUrl);
+                isPressed = true;
+                startX = e.clientX;
+                startY = e.clientY;
 
-                            try {
-                                // Check Content-Type
-                                if (jsonText.startsWith('<!DOCTYPE html>') || jsonText.startsWith('<html>')) {
-                                    throw new Error('HTMLファイルが指定されています。JSONファイルを指定してください。');
-                                }
+                pressTimer = setTimeout(() => {
+                    if (isPressed) {
+                        const isCurrentlyHidden = searchContainer.style.display === 'none';
+                        searchContainer.style.display = isCurrentlyHidden ? 'block' : 'none';
+                        console.debug(`[${SCRIPT_NAME}]: Display toggled to ${isCurrentlyHidden ? 'show' : 'hide'}`);
 
-                                // Parse as JSON
-                                jsonData = JSON.parse(jsonText);
-
-                                // Validate data format
-                                if (typeof jsonData !== 'object') {
-                                    throw new Error('不正なJSONフォーマットです');
-                                }
-                            } catch (parseError) {
-                                console.error(`[${SCRIPT_NAME}]: JSON parse error:`, parseError);
-                                throw new Error('JSONファイルのパースに失敗しました。有効なJSONファイルを指定してください。');
-                            }
-                            console.debug(`[${SCRIPT_NAME}]: Loaded and validated JSON data from URL`);
-                        } catch (error) {
-                            console.error(`[${SCRIPT_NAME}]: Error loading JSON:`, error);
-                            resultsContainer.innerHTML = `<div style="color: red;">JSONの読み込みエラー: ${error.message}</div>`;
-                            return;
+                        if (isCurrentlyHidden) {
+                            searchInput.focus();
                         }
                     }
-                    if (!jsonData) {
-                        throw new Error('検索するJSONファイルのURLを指定してください');
-                    }
-
-                    if (!Array.isArray(jsonData)) {
-                        throw new Error('JSONファイルは投稿データの配列である必要があります');
-                    }
-
-                    // Search posts in JSON data
-                    const searchResults = jsonData.filter(post => {
-                        // Skip posts without text content
-                        if (!post.text) return false;
-
-                        // Case-insensitive search
-                        return post.text.toLowerCase().includes(query.toLowerCase());
-                    })
-                    // Sort by date in descending order
-                    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-                    console.debug(`[${SCRIPT_NAME}]: Found ${searchResults.length} results`);
-                    resultsContainer.innerHTML = searchResults.map(post => `
-                        <div style="margin-bottom: 10px; padding: 8px; border: 1px solid #eee; border-radius: 4px; background: white;">
-                            <div style="margin-bottom: 5px; color: #666; font-size: 12px;">
-                                ${new Date(post.createdAt).toLocaleString()}
-                            </div>
-                            <div style="white-space: pre-wrap; word-break: break-all;">${post.text || ''}</div>
-                        </div>
-                    `).join('');
-
-                    if (searchResults.length === 0) {
-                        resultsContainer.innerHTML = '<div style="color: #666;">検索結果がありません</div>';
-                    }
-                } catch (error) {
-                    console.error(`[${SCRIPT_NAME}]: Error searching posts:`, error);
-                    resultsContainer.innerHTML = `<div style="color: red;">エラー: ${error.message}</div>`;
-                }
+                }, LONG_PRESS_DURATION);
             }
 
-            // Debounce function
-            function debounce(func, wait) {
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                };
+            // function handleMouseMove(e) {
+            //     if (!isPressed) return;
+
+            //     if (Math.abs(e.clientX - startX) > MOVE_THRESHOLD ||
+            //         Math.abs(e.clientY - startY) > MOVE_THRESHOLD) {
+            //         clearTimeout(pressTimer);
+            //         isPressed = false;
+            //     }
+            // }
+
+            function handleMouseUp() {
+                clearTimeout(pressTimer);
+                isPressed = false;
             }
 
-            // Add search event listener with debouncing
-            const debouncedSearch = debounce(searchPosts, 300);
-            searchInput.addEventListener('input', (e) => debouncedSearch(e.target.value));
+            function handleTouchStart(e) {
+                if (searchContainer.contains(e.target)) return;
+
+                isPressed = true;
+                const touch = e.touches[0];
+                startX = touch.clientX;
+                startY = touch.clientY;
+
+                pressTimer = setTimeout(() => {
+                    if (isPressed) {
+                        const isCurrentlyHidden = searchContainer.style.display === 'none';
+                        searchContainer.style.display = isCurrentlyHidden ? 'block' : 'none';
+                        console.debug(`[${SCRIPT_NAME}]: Display toggled to ${isCurrentlyHidden ? 'show' : 'hide'}`);
+
+                        if (isCurrentlyHidden) {
+                            searchInput.focus();
+                        }
+                    }
+                }, LONG_PRESS_DURATION);
+            }
 
             console.debug(`[${SCRIPT_NAME}]: Search interface initialized`);
 
@@ -485,44 +434,7 @@
     }
 
     // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeSearchInterface);
-    } else {
+    document.addEventListener('DOMContentLoaded', setTimeout(() => {
         initializeSearchInterface();
-    }
-
-    // Handle SPA navigation
-    const observer = new MutationObserver((mutations) => {
-        if (!$$one(`#${SCRIPT_NAME}-search`)) {
-            console.debug(`[${SCRIPT_NAME}]: Reinitializing search interface after navigation`);
-            initializeSearchInterface();
-        }
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-
-    /**
-     * Function to load file
-     * @param {string} url - URL of the file
-     * @returns {Promise<string>} - File contents
-     */
-    function readFile(url) {
-        return new Promise((resolve, reject) => {
-            GM_xmlhttpRequest({
-                method: 'GET',
-                url: url,
-                onload: (response) => {
-                    if (response.status === 200) {
-                        resolve(response.responseText);
-                    } else {
-                        reject(new Error(`ファイルの読み込みに失敗しました: ${response.status}`));
-                    }
-                },
-                onerror: () => reject(new Error('ファイルの読み込み中にエラーが発生しました'))
-            });
-        });
-    }
+    }, 3000));
 })();
