@@ -2,7 +2,7 @@
 // @name         Misskey v11 Post Log Search
 // @name:ja      Misskey v11 投稿ログ検索
 // @namespace    https://github.com/hidao80
-// @version      1.0.4
+// @version      1.1.0
 // @description  Search through Misskey v11 posts via API
 // @description:ja Misskey v11の投稿をAPI経由で検索
 // @icon         https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f50d.png
@@ -18,7 +18,7 @@
 (v => {
     /** Constant variable */
     // When debugging: DEBUG = !false;
-    const DEBUG = false;
+    const DEBUG = !false;
     const SCRIPT_NAME = 'MissQueryUS';
     /** Suppress debug printing unless in debug mode */
     const console = {};
@@ -71,10 +71,48 @@
                 font-family: sans-serif;
                 max-width: calc(100% - 20px);
                 box-sizing: border-box;
-                opacity: 0.9;
+                opacity: 1;
                 transition: all 0.3s ease;
                 display: none;
             `;
+
+            // スピナー用のスタイルをsearchContainer作成時に追加
+            const spinnerStyle = $$new('style');
+            spinnerStyle.textContent = `
+                .spinner-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.2);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 5021;
+                    border-radius: 8px;
+                    backdrop-filter: blur(1px);
+                }
+                .spinner {
+                    width: 40px;
+                    height: 40px;
+                    border: 4px solid #f3f3f3;
+                    border-top: 4px solid #3498db;
+                    border-radius: 50%;
+                    animation: spin 1s linear infinite;
+                }
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(spinnerStyle);
+
+            // スピナーのHTML要素を作成（searchContainer作成時に追加）
+            const spinnerOverlay = $$new('div');
+            spinnerOverlay.className = 'spinner-overlay';
+            spinnerOverlay.innerHTML = '<div class="spinner"></div>';
+            searchContainer.appendChild(spinnerOverlay);
 
             // Long press detection
             const LONG_PRESS_DURATION = 500; // milliseconds
@@ -279,7 +317,7 @@
                     <h3 style="color: #333; margin: 16px 0 8px;">投稿の検索</h3>
                     <ol>
                     <li>検索ボックスに検索キーワードを入力します</li>
-                    <li>入力に応じて結果が自動的に更新されます</li>
+                    <li>Enterキーを入力すると検索が始まります</li>
                     <li>結果は日付の降順で表示されます</li>
                     </ol>
                     <h3 style="color: #333; margin: 16px 0 8px;">URL入力オプション</h3>
@@ -425,6 +463,104 @@
                 }, LONG_PRESS_DURATION);
             }
 
+            // Search function
+            async function searchPosts(query) {
+                if (!query) {
+                    resultsContainer.innerHTML = '';
+                    return;
+                }
+
+                // スピナーを表示
+                spinnerOverlay.style.display = 'flex';
+
+                try {
+                    console.debug(`[${SCRIPT_NAME}]: Searching for: ${query}`);
+
+                    let jsonData = null;
+                    const jsonUrl = localStorage.getItem(`${SCRIPT_NAME}-jsonUrl`);
+
+                    if (jsonUrl) {
+                        try {
+                            const jsonText = await readFile(jsonUrl);
+
+                            try {
+                                // Check Content-Type
+                                if (jsonText.startsWith('<!DOCTYPE html>') || jsonText.startsWith('<html>')) {
+                                    throw new Error('HTMLファイルが指定されています。JSONファイルを指定してください。');
+                                }
+
+                                // Parse as JSON
+                                jsonData = JSON.parse(jsonText);
+
+                                // Validate data format
+                                if (typeof jsonData !== 'object') {
+                                    throw new Error('不正なJSONフォーマットです');
+                                }
+                            } catch (parseError) {
+                                console.error(`[${SCRIPT_NAME}]: JSON parse error:`, parseError);
+                                throw new Error('JSONファイルのパースに失敗しました。有効なJSONファイルを指定してください。');
+                            }
+                            console.debug(`[${SCRIPT_NAME}]: Loaded and validated JSON data from URL`);
+                        } catch (error) {
+                            console.error(`[${SCRIPT_NAME}]: Error loading JSON:`, error);
+                            resultsContainer.innerHTML = `<div style="color: red;">JSONの読み込みエラー: ${error.message}</div>`;
+                            return;
+                        }
+                    }
+                    if (!jsonData) {
+                        throw new Error('検索するJSONファイルのURLを指定してください');
+                    }
+
+                    if (!Array.isArray(jsonData)) {
+                        throw new Error('JSONファイルは投稿データの配列である必要があります');
+                    }
+
+                    // Search posts in JSON data
+                    const searchResults = jsonData.filter(post => {
+                        // Skip posts without text content
+                        if (!post.text) return false;
+
+                        console.debug(`[${SCRIPT_NAME}]: createdAt: ${post.createdAt}, localTime: ${new Date(post.createdAt).toLocaleString()}`);
+                        // Case-insensitive search
+                        return post.text.toLowerCase().includes(query.toLowerCase())
+                            || new Date(post.createdAt).toLocaleString().toLowerCase().includes(query.toLowerCase());
+                    })
+                        // Sort by date in descending order
+                        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+                    console.debug(`[${SCRIPT_NAME}]: Found ${searchResults.length} results`);
+                    resultsContainer.innerHTML = searchResults.map(post => `
+                        <div style="margin-bottom: 10px; padding: 8px; border: 1px solid #eee; border-radius: 4px; background: white;">
+                            <div style="margin-bottom: 5px; color: #666; font-size: 12px;">
+                                ${new Date(post.createdAt).toLocaleString()}
+                            </div>
+                            <div style="white-space: pre-wrap; word-break: break-all;">${post.text || ''}</div>
+                        </div>
+                    `).join('');
+
+                    if (searchResults.length === 0) {
+                        resultsContainer.innerHTML = '<div style="color: #666;">検索結果がありません</div>';
+                    }
+                } catch (error) {
+                    console.error(`[${SCRIPT_NAME}]: Error searching posts:`, error);
+                    resultsContainer.innerHTML = `<div style="color: red;">エラー: ${error.message}</div>`;
+                } finally {
+                    // スピナーを非表示
+                    spinnerOverlay.style.display = 'none';
+                }
+                console.debug(`[${SCRIPT_NAME}]: Search interface initialized`);
+            }
+            // Add search event listener for 'Enter' key or mobile 'search' action
+            searchInput.addEventListener('keydown', async (e) => {
+                if (e.key === 'Enter') {
+                    await searchPosts(e.target.value);
+                }
+            });
+
+            searchInput.addEventListener('search', async (e) => {
+                await searchPosts(e.target.value);
+            });
+
             console.debug(`[${SCRIPT_NAME}]: Search interface initialized`);
 
         } catch (error) {
@@ -432,8 +568,30 @@
         }
     }
 
+    /**
+    * Function to load file
+    * @param {string} url - URL of the file
+    * @returns {Promise<string>} - File contents
+    */
+    function readFile(url) {
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: 'GET',
+                url: url,
+                onload: (response) => {
+                    if (response.status === 200) {
+                        resolve(response.responseText);
+                    } else {
+                        reject(new Error(`ファイルの読み込みに失敗しました: ${response.status}`));
+                    }
+                },
+                onerror: () => reject(new Error('ファイルの読み込み中にエラーが発生しました'))
+            });
+        });
+    }
+
     // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', setTimeout(() => {
+    setTimeout(() => {
         initializeSearchInterface();
-    }, 3000));
+    }, 3000);
 })();
