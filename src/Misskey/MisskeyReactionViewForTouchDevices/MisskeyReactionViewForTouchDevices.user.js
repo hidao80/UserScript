@@ -4,14 +4,14 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.7.0
+// @version     1.7.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyReactionViewForTouchDevices
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4dc.png
 // @license     MIT
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

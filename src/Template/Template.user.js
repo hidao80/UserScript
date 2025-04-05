@@ -5,14 +5,14 @@
 // @description:ja このスクリプトの概要
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.0.4
+// @version        1.0.5
 // @namespace      https://github.com/hidao80/UserScript/Template
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a8.png
 // @run-at         document-end
 // @grant          none
 // @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Template/Template.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Template/Template.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Template/Template.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

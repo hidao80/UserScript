@@ -5,14 +5,14 @@
 // @description:ja めいv11の画面内で強制的にリロードさせるボタンを表示します。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.0.1
+// @version        1.0.2
 // @namespace      https://github.com/hidao80/UserScript/MeiV11ReloadButton
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f504.png
 // @license        MIT
 // @run-at         document-end
 // @grant          none
 // @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

@@ -13,14 +13,14 @@
 // @match       https://msky.work/*
 // @match       https://tweetdeck.twitter.com/*
 // @author      hidao80
-// @version     1.3.0
+// @version     1.3.1
 // @namespace   https://github.com/hidao80/UserScript/SnsTextAreaEnlargement
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d2.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/SnsTextAreaEnlargement/SnsTextAreaEnlargement.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/SnsTextAreaEnlargement/SnsTextAreaEnlargement.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/SnsTextAreaEnlargement/SnsTextAreaEnlargement.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

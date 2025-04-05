@@ -5,14 +5,14 @@
 // @description:ja 入力中の投稿がない場合は、10分に1回リロードします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.6.2
+// @version        1.6.3
 // @namespace      https://github.com/hidao80/UserScript/MisskeyAutoReloader
 // @license        MIT
 // @icon           https://twemoji.maxcdn.com/v/latest/72x72/1f552.png
 // @run-at         document-end
 // @grant          none
 // @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

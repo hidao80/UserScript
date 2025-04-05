@@ -5,14 +5,14 @@
 // @description:ja 添付画像のプレビューを小さくします。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.1.2
+// @version        1.1.3
 // @namespace      https://github.com/hidao80/UserScript/MeiV11AttachedImageSmaller
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4cf.png
 // @run-at         document-end
 // @grant          none
 // @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11AttachedImageSmaller/MeiV11AttachedImageSmaller.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11AttachedImageSmaller/MeiV11AttachedImageSmaller.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11AttachedImageSmaller/MeiV11AttachedImageSmaller.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

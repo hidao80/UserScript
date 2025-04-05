@@ -5,14 +5,14 @@
 // @description:ja めいv11用のモバイル版ホームレイアウトのテキストエリアに絵文字パレットを追加します。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        0.4.0
+// @version        0.4.1
 // @namespace      https://github.com/hidao80/UserScript/MeiV11EmojisPaletteForMovileTextArea
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f0cf.png
 // @run-at         document-end
 // @grant          none
 // @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

@@ -1,0 +1,17 @@
+// ==UserScript==
+// @name           Mei v11 notes speech
+// @name:ja        めいv11 note読み上げ
+// @description    UserScript to read out Mei v11's social timeline using the Speech API.
+// @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
+// @match          https://misskey.dev/*
+// @author         hidao80
+// @version        2.7.1
+// @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
+// @license        MIT
+// @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
+// @run-at         document-end
+// @grant          none
+// @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.min.user.js
+// ==/UserScript==
+(async()=>{const e=false;const t="Misskey notes speech";const n={};["log","debug","warn","info","error"].forEach((t=>{n[t]=e?window.console[t]:function(){}}));const o=e=>document.createElement(e);const c=e=>document.querySelector(e);const r=e=>document.querySelectorAll(e);const a=Array.from(t).reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0).toString(16);const s=e=>{const t=document.querySelectorAll(e);return 1==t.length?t[0]:t};n.debug(`[${t}]: Script Loading... [HASH = ${a}]`);const l=window.speechSynthesis;const i=e=>l.getVoices().find((t=>t.name.indexOf(e)>=0));const u=new SpeechSynthesisUtterance;const d="Kyoko";const g="Nanami";const y="Google 日本語";const f="日本語 (日本)";u.rate=1.2;u.volume=.5;let p="Title of Socail Time Line";let v="contributor's name";function b(){const e=window.navigator.languages&&window.navigator.languages[0]||window.navigator.language||window.navigator.userLanguage||window.navigator.browserLanguage;const t=e.slice(0,2);if(t=="ja"){p=/ソーシャル/;v="さんのノート。"}else if(t=="en"){p=/[Ss]ocial/;v="'s note."}u.lang=e;return t}const m=()=>{if(b()==="ja"){u.voice=i(g)||i(y)||i(f)||i(d)||null}};l.onvoiceschanged=m;m();document.body.addEventListener("click",(()=>l.cancel()));const w=setInterval((e=>{const o=document.querySelector(".transition.notes")??document.querySelector(".transition");if(o){clearInterval(w);function r(e,t){const o=c("div.note:not([style*='none'])>article");n.debug(o);n.debug(e);const r=Array.from(e??[]).filter((e=>!(e?.addedNodes[0]instanceof Comment)&&e?.addedNodes[0]?.style?.display!="none"))[0];n.debug(r);let a;if(r){const e=r.addedNodes[0];n.debug(e);a=e?.querySelector("div.note:not([style*='none'])>article");if(a!=o){return}}else{if(c("div.note").style?.display=="none"){return}a=o}n.debug(a);setTimeout((()=>{l.cancel();u.text=a.querySelector(".havbbuyv.nowrap").textContent+v;const e=S(a.querySelector(".cw>.havbbuyv.text")?.getAttribute("text"));u.text+=(e??"")+"。";u.text+=S(a.querySelector(".text>.havbbuyv").getAttribute("text"));if(localStorage.getItem("lastSpeeched")===u.text)return;l.speak(u);localStorage.setItem("lastSpeeched",u.text)}),1500)}n.debug(`[${t}]: get ready.`);new MutationObserver(r).observe(o,{childList:true});r()}}),1500);function S(e){return e&&e.replace(/\n/g,"。").replace(/。+/g,"。").replace(/\`\`\`.+\`\`\`/g," ").replace(/\\(.*\\)/g," ").replace(/https?:\/\/([\w\/:#\$&\?\(\)~\.=\+\-,]|\%[0-9a-fA-F]+)+/g," ").replace(/[_'"`$&\^\\@;:,\.\/\|\[\]\(\)\{\}<>]/g," ").replace(/\*/gu," asterisk ").replace(/=/gu," equal ").replace(/&/gu," and ").replace(/\s\?/gu," question ").replace(/(?=[^\d#])\p{Emoji}/gu,"")}})();

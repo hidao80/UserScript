@@ -4,14 +4,14 @@
 // @description Display the server to which the contributor belongs in an easily viewable manner.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.7.3
+// @version     1.7.4
 // @namespace   https://github.com/hidao80/UserScript/MisskeyFediverseTicker
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a9.png
 // @run-at      document-idle
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyFediverseTicker/MisskeyFediverseTicker.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

@@ -4,14 +4,14 @@
 // @description Summary of this script
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.3.0
+// @version     1.3.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11BackToTop
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2b06.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/MisskeyV11BackToTop/MisskeyV11BackToTop.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

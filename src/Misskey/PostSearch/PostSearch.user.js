@@ -2,7 +2,7 @@
 // @name         Misskey v11 Post Log Search
 // @name:ja      Misskey v11 投稿ログ検索
 // @namespace    https://github.com/hidao80
-// @version      1.0.0
+// @version      1.0.1
 // @description  Search through Misskey v11 posts via API
 // @description:ja Misskey v11の投稿をAPI経由で検索
 // @icon         https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f50d.png
@@ -11,7 +11,7 @@
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // @updateURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js
-// @downloadURL  https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js
+// @downloadURL  https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.min.user.js
 // ==/UserScript==
 
 (function() {
@@ -164,7 +164,7 @@
                 e.stopPropagation();
                 const isEnabled = !jsonUrlInput.disabled;
                 jsonUrlInput.disabled = isEnabled;
-                
+
                 if (isEnabled) {
                     // Hide & disable
                     jsonUrlInput.value = '';
@@ -390,23 +390,23 @@
 
                 try {
                     console.debug(`[${SCRIPT_NAME}]: Searching for: ${query}`);
-                    
+
                     let jsonData = null;
                     const jsonUrl = localStorage.getItem(`${SCRIPT_NAME}-jsonUrl`);
-                    
+
                     if (jsonUrl) {
                         try {
                             const jsonText = await readFile(jsonUrl);
-                            
+
                             try {
                                 // Check Content-Type
                                 if (jsonText.startsWith('<!DOCTYPE html>') || jsonText.startsWith('<html>')) {
                                     throw new Error('HTMLファイルが指定されています。JSONファイルを指定してください。');
                                 }
-                                
+
                                 // Parse as JSON
                                 jsonData = JSON.parse(jsonText);
-                                
+
                                 // Validate data format
                                 if (typeof jsonData !== 'object') {
                                     throw new Error('不正なJSONフォーマットです');
@@ -434,7 +434,7 @@
                     const searchResults = jsonData.filter(post => {
                         // Skip posts without text content
                         if (!post.text) return false;
-                        
+
                         // Case-insensitive search
                         return post.text.toLowerCase().includes(query.toLowerCase());
                     })

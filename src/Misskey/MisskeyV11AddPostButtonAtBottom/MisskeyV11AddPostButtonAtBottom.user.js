@@ -4,14 +4,14 @@
 // @description In Misskey v11, add a new post button to the lower left corner of the screen only when in the home layout.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.2.0
+// @version     1.2.1
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11AddPostButtonAtBottom
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/270f.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11AddPostButtonAtBottom/MisskeyV11AddPostButtonAtBottom.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11AddPostButtonAtBottom/MisskeyV11AddPostButtonAtBottom.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11AddPostButtonAtBottom/MisskeyV11AddPostButtonAtBottom.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

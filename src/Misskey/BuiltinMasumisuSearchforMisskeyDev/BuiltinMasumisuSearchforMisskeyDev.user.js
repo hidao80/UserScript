@@ -5,14 +5,14 @@
 // @description:ja ますみすサーチでMisskay.devの投稿を検索することができます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        1.8.2
+// @version        1.8.3
 // @namespace      https://github.com/hidao80/UserScript/BuiltinMasumisuSearchforMisskeyDev
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f50d.png
 // @license        MIT
 // @run-at         document-end
 // @grant          none
 // @updateURL      https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js
-// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js
+// @downloadURL    https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

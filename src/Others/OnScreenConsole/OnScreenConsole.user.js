@@ -4,14 +4,14 @@
 // @description Display the contents of the browser's developer tools console on the screen
 // @match       *://*/*
 // @author      hidao80
-// @version     1.3.4
+// @version     1.3.5
 // @namespace   https://github.com/hidao80/UserScript/OnScreenConsole
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5a5.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

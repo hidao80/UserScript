@@ -7,16 +7,16 @@
 // @match       https://misskey.noellabo.jp/*
 // @match       https://msky.work/*
 // @author      hidao80
-// @version     1.5.3
+// @version     1.5.4
 // @namespace   https://github.com/hidao80/UserScript/MisskeyKeywordsFilter
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26d4.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.min.user.js
 // ==/UserScript==
-
+//
 // Twitter Emoji (Twemoji)
 // License
 //   Copyright 2019 Twitter, Inc and other contributors

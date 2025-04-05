@@ -12,7 +12,7 @@
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

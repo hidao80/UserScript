@@ -4,7 +4,7 @@
 // @description Displays stickies tied to a url in the screen; anything copied on the web can be pasted.
 // @match       *://*/*
 // @author      hidao80
-// @version     1.2.0
+// @version     1.2.1
 // @namespace   https://github.com/hidao80/UserScript/UrlSticky
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d1.png

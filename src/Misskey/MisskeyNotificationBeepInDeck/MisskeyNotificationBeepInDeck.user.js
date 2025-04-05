@@ -6,14 +6,14 @@
 // @match       https://misskey.io/*
 // @match       https://misskey.noellabo.jp/*
 // @author      hidao80
-// @version     1.8.3
+// @version     1.8.4
 // @namespace   https://github.com/hidao80/UserScript/MisskeyNotificationBeepInDeck
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f514.png
 // @run-at      document-end
 // @grant       none
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js
+// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.min.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)
