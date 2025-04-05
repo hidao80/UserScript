@@ -4,7 +4,7 @@
 // @description You will also be able to see who has reacted on your phone or tablet.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.7.1
+// @version     1.7.3
 // @namespace   https://github.com/hidao80/UserScript/MisskeyReactionViewForTouchDevices
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4dc.png
 // @license     MIT
@@ -33,21 +33,6 @@ const REMOTE_SOURCE_URL = `https://misskey.dev/proxy/s3.arkjp.net/emoji/${PLACEH
 const SUPPORTED_EXTENSIONS = ['png', 'svg', 'apng'];
 
 /**
- * Check if the destination of the url is an image
- *
- * @param   {string} url Target url.
- * @returns {Promise}
- */
-function isImage(url){
-    return new Promise(function (resolve, reject) {
-        const img = new Image();
-        img.src = url;
-        img.onload = () => resolve(url);
-        img.onerror = () => resolve("");
-    });
-};
-
-/**
  * Comparison function to sort the list of reacting users by reaction type
  *
  * @param {Array<User>} a
@@ -60,6 +45,31 @@ function compare( a, b ){
     else if ( a.type > b.type ) { r = 1; }
     return r;
 }
+
+const cache = {};
+/**
+ * Takes a URL and checks if it is a valid image.
+ * @param {*} url
+ * @returns
+ */
+const checkImage = async (url) => {
+    if (cache[url]) return cache[url];
+    try {
+        const response = await new Promise((resolve, reject) => {
+            GM.xmlHttpRequest({
+                method: 'HEAD',
+                url: url,
+                onload: (response) => resolve(response),
+                onerror: (error) => reject(error),
+            });
+        });
+        cache[url] = response.status === 200 ? url : '';
+        return cache[url];
+    } catch {
+        cache[url] = '';
+        return cache[url];
+    }
+};
 
 /**
  * Observer callback function
@@ -136,14 +146,13 @@ function observerCallback() {
                                             innerHtml += `<br>${emojiName}：`;
                                         } else {
                                             // Loading custom emojis
-                                            let promises = [];
-                                            for (const extension of SUPPORTED_EXTENSIONS) {
-                                                promises.push(isImage(SOURCE_URL.replace(PLACEHOLDER, emojiName + '.' + extension)));
-                                                promises.push(isImage(REMOTE_SOURCE_URL.replaceAll(PLACEHOLDER, emojiName + '.' + extension)));
-                                            }
-                                            const urls = await Promise.all(promises);
-                                            // DEBUG && console.debug(urls);
-                                            url = urls.find(v => v);
+                                            const url = await checkImage(SOURCE_URL.replace(PLACEHOLDER, emojiName + '.png'))
+                                                || await checkImage(SOURCE_URL.replace(PLACEHOLDER, emojiName + '.svg'))
+                                                || await checkImage(SOURCE_URL.replace(PLACEHOLDER, emojiName + '.apng'))
+                                                || await checkImage(REMOTE_SOURCE_URL.replaceAll(PLACEHOLDER, emojiName + '.png'))
+                                                || await checkImage(REMOTE_SOURCE_URL.replaceAll(PLACEHOLDER, emojiName + '.svg'))
+                                                || await checkImage(REMOTE_SOURCE_URL.replaceAll(PLACEHOLDER, emojiName + '.apng'));
+                                                // DEBUG && console.debug(urls);
                                             DEBUG && console.debug(url);
                                             if (url) {
                                                 innerHtml += `<br><img src="${url}" style="width: 24px">：`;

@@ -4,7 +4,7 @@
 // @description Retry to load custom emoji that could not be loaded, for Misskey.dev only.
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.1.1
+// @version     1.1.2
 // @namespace   https://github.com/hidao80/UserScript/MisskeyV11CustomEmojiRender
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f60a.png
 // @license     MIT
@@ -31,19 +31,22 @@ const PLACEHOLDER = 'CUSTOM_EMOJI_TAG';
 const SOURCE_URL = `https://raw.githubusercontent.com/tkmrgit/misskey-emoji/main/emoji/${PLACEHOLDER}`
 const SUPPORTED_EXTENSIONS = ['png', 'svg', 'apng'];
 
+const cache = {};
 /**
- * Check if the destination of the url is an image
- *
- * @param   {string} url Target url.
- * @returns {Promise}
+ * Takes a URL and checks if it is a valid image.
+ * @param {*} url
+ * @returns
  */
-function isImage(url){
-    return new Promise(function (resolve, reject) {
-        const img = new Image();
-        img.src = url;
-        img.onload = () => resolve(url);
-        img.onerror = () => reject(url);
-    });
+const checkImage = async (url) => {
+    if (cache[url]) return cache[url];
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+        cache[url] = response.ok ? url : '';
+        return cache[url];
+    } catch {
+        cache[url] = '';
+        return cache[url];
+    }
 };
 
 /**
@@ -55,17 +58,18 @@ function callbackLoadImages() {
 
     if (!customEmojiTagName) return;
 
-    for (const extension of SUPPORTED_EXTENSIONS) {
-        const url = SOURCE_URL.replace(PLACEHOLDER, customEmojiTagName + '.' + extension);
+    (async () => {
+        for (const extension of SUPPORTED_EXTENSIONS) {
+            const url = SOURCE_URL.replace(PLACEHOLDER, customEmojiTagName + '.' + extension);
 
-        isImage(url)
-            .then(url => {
+            if (await checkImage(url)) {
                 DEBUG && console.debug(`[${SCRIPT_NAME}]: ${customEmojiTagName}.${extension} render!`);
-            })
-            .catch(url => {
+                break;
+            } else {
                 DEBUG && console.debug(`[${SCRIPT_NAME}]: ${customEmojiTagName}.${extension} is not found...`);
-            });
-    }
+            }
+        }
+    })();
 }
 
 // Monitor whether emoji are drawn or not.
