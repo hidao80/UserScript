@@ -3,5 +3,6 @@ reviews:
     auto_review:
         enabled: true
         drafts: false
-    docstrings:
-        enabled: false # docstrings生成を完全に無効化
+    finishing_touches:
+        docstrings:
+            enabled: false # docstrings生成を完全に無効化
