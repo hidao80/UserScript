@@ -29,10 +29,16 @@ const SCRIPT_NAME = 'MeiV11RenoteRemover';
 const SCRIPT_CLASS = 'us-hidao80-' + SCRIPT_NAME;
 DEBUG && console.debug(`[${SCRIPT_NAME}]: script started.`);
 
-// Trash icon SVG
+ // Trash icon SVG
+let themeColor = 'rgb(255, 255, 255)';
+try {
+    themeColor = JSON.parse(localStorage.getItem('theme'))?.noteText ?? 'rgb(255, 255, 255)';
+} catch (e) {
+    DEBUG && console.warn(`[${SCRIPT_NAME}]: Failed to parse theme from localStorage, using default color.`);
+}
 const buttonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 1em; height: 1em; opacity: 1;">
     <g>
-        <path fill="${JSON.parse(localStorage.getItem('theme'))?.noteText??'rgb(255, 255, 255)'}" d="M3 6h18v2H3V6zm2 3h14l-1.5 13h-11L5 9zm3 2v8h2v-8H8zm4 0v8h2v-8h-2zM9 4V2h6v2h5v2H4V4h5z"/>
+        <path fill="${themeColor}" d="M3 6h18v2H3V6zm2 3h14l-1.5 13h-11L5 9zm3 2v8h2v-8H8zm4 0v8h2v-8h-2zM9 4V2h6v2h5v2H4V4h5z"/>
     </g>
 </svg>`;
 
