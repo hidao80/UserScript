@@ -23,6 +23,10 @@ A trash can icon will appear at the right end of each renote.\
 Tap the trash can icon to remove that renote.\
 There is no confirmation or cancellation for deletion.
 
+### Screenshots
+
+<img width="461" height="253" alt="image" src="https://github.com/user-attachments/assets/187b674c-7d89-44f6-a299-32a55ab11979" />
+
 ## Notes
 
 - This script is for Misskey V11 only. It may not work on other versions.
