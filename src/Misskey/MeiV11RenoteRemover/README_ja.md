@@ -25,6 +25,10 @@ UserScript管理拡張機能（[Chromium系][chrome-extension], [Firefox系][fir
 そのゴミ箱アイコンをタップするとそのリノートが削除されます。\
 削除の確認はされず、キャンセルもできません。
 
+### スクリーンショット
+
+<img width="461" height="253" alt="image" src="https://github.com/user-attachments/assets/187b674c-7d89-44f6-a299-32a55ab11979" />
+
 ## 注意事項
 
 - 本スクリプトはMisskey V11専用です。他バージョンでは動作しない場合があります。
