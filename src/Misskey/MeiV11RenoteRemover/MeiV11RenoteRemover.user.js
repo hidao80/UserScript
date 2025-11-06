@@ -5,7 +5,7 @@
 // @description:ja めいv11のリノートを削除するボタンを追加します。
 // @match       https://misskey.dev/*
 // @author      hidao80
-// @version     1.0.0
+// @version     1.0.1
 // @namespace   https://github.com/hidao80/UserScript/MeiV11RenoteRemover
 // @license     MIT
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f5d1.png
