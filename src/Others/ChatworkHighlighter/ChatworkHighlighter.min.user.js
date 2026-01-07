@@ -1,14 +1,10 @@
-/*
-I based my work on this article. <https://qiita.com/A-Ota/items/6a6cc8976aa3e5ae0f92>
-Thank you @A-Ota!
- */
 // ==UserScript==
 // @name        Chatwork Syntax Highlighter
 // @name:ja     Chatworkシンタックスハイライト
 // @description Syntax highlighting is applied to the code notation in Chatwork.
 // @match       https://www.chatwork.com/
 // @author      hidao80
-// @version     1.0.4
+// @version     1.0.5
 // @namespace   https://github.com/hidao80/UserScript/ChatworkSyntaxHighlighter
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png
 // @run-at      document-end
@@ -20,4 +16,8 @@ Thank you @A-Ota!
 // @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Others/ChatworkHighlighter/ChatworkHighlighter.user.js
 // @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Others/ChatworkHighlighter/ChatworkHighlighter.min.user.js
 // ==/UserScript==
-GM_addStyle(GM_getResourceText("style"));GM_addStyle(GM_getResourceText("default"));GM_addStyle(`\ncode.hljs {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #282c34;\n}\n`);const observerConfig={attributes:false,childList:true,characterData:false};const root=document.getElementById("root");function highlight(e){for(const t of e){hljs.highlightBlock(t)}}const rootObserver=new MutationObserver((e=>{for(const t of e){if(t.type==="childList"&&t.target.id==="root"){rootObserver.disconnect();const e=document.getElementById("_chatContent");chatContentObserver.observe(e,observerConfig)}}}));const chatContentObserver=new MutationObserver((e=>{for(const t of e){if(t.type==="childList"){const e=document.getElementById("_timeLine");timeLineObserver.observe(e.childNodes[0],observerConfig);highlight(document.getElementsByTagName("code"))}}}));const timeLineObserver=new MutationObserver((e=>{for(const t of e){if(t.type==="childList"){highlight(document.getElementsByTagName("code"))}}}));rootObserver.observe(root,observerConfig);
+/*
+I based my work on this article. <https://qiita.com/A-Ota/items/6a6cc8976aa3e5ae0f92>
+Thank you @A-Ota!
+ */
+GM_addStyle(GM_getResourceText("style")); GM_addStyle(GM_getResourceText("default")); GM_addStyle(`\ncode.hljs {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #282c34;\n}\n`); const observerConfig = { attributes: false, childList: true, characterData: false }; const root = document.getElementById("root"); function highlight(e) { for (const t of e) { hljs.highlightBlock(t) } } const rootObserver = new MutationObserver((e => { for (const t of e) { if (t.type === "childList" && t.target.id === "root") { rootObserver.disconnect(); const e = document.getElementById("_chatContent"); chatContentObserver.observe(e, observerConfig) } } })); const chatContentObserver = new MutationObserver((e => { for (const t of e) { if (t.type === "childList") { const e = document.getElementById("_timeLine"); timeLineObserver.observe(e.childNodes[0], observerConfig); highlight(document.getElementsByTagName("code")) } } })); const timeLineObserver = new MutationObserver((e => { for (const t of e) { if (t.type === "childList") { highlight(document.getElementsByTagName("code")) } } })); rootObserver.observe(root, observerConfig);
