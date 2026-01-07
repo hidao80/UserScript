@@ -1,14 +1,11 @@
-/*
-I based my work on this article. <https://qiita.com/A-Ota/items/6a6cc8976aa3e5ae0f92>
-Thank you @A-Ota!
- */
+
 // ==UserScript==
 // @name        Chatwork Syntax Highlighter
 // @name:ja     Chatworkシンタックスハイライト
 // @description Syntax highlighting is applied to the code notation in Chatwork.
 // @match       https://www.chatwork.com/
 // @author      hidao80
-// @version     1.0.4
+// @version     1.0.5
 // @namespace   https://github.com/hidao80/UserScript/ChatworkSyntaxHighlighter
 // @icon        https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png
 // @run-at      document-end
@@ -26,7 +23,10 @@ Thank you @A-Ota!
 //   Copyright 2019 Twitter, Inc and other contributors
 //   Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
 //   https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
-
+/*
+I based my work on this article. <https://qiita.com/A-Ota/items/6a6cc8976aa3e5ae0f92>
+Thank you @A-Ota!
+ */
 GM_addStyle(GM_getResourceText('style'));
 GM_addStyle(GM_getResourceText('default'));
 
