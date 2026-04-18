@@ -5,7 +5,7 @@
 // @description:ja Speech APIを使ってめいv11のソーシャルタイムラインを読み上げます。
 // @match          https://misskey.dev/*
 // @author         hidao80
-// @version        2.8.0
+// @version        2.8.1
 // @namespace      https://github.com/hidao80/UserScript/MisskeyNotesSpeech
 // @license        MIT
 // @icon           https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4e3.png
@@ -44,12 +44,13 @@
     const getVoice = (n) => synth.getVoices().find((v) => v.name.indexOf(n) >= 0);
     const utter = new SpeechSynthesisUtterance();
     const WIN = "Kyoko";
-    const EDGE = "七海";
+    const EDGE = "Nanami";
+    const EDGE_JP = "七海";
     const GOOGLE_JAPANIESE = "Google 日本語";
     const FIREFOX = "日本語 (日本)";
     utter.rate = 1.2;
     utter.volume = 0.5;
-    let target = "Title of Socail Time Line";
+    let target = "Title of Social Time Line";
     let from = "contributor's name";
 
     /**
@@ -78,7 +79,7 @@
     // Voice tones are given priority to those found from left to right.
     const setVoice = () => {
         if (language() === "ja") {
-            utter.voice = getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(FIREFOX) || getVoice(WIN) || null;
+            utter.voice = getVoice(EDGE_JP) || getVoice(EDGE) || getVoice(GOOGLE_JAPANIESE) || getVoice(FIREFOX) || getVoice(WIN) || null;
         }
     };
 
