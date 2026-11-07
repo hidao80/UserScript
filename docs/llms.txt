@@ -1,0 +1,68 @@
+# UserScript by hidao80
+
+> A collection of 33 small, single-file UserScripts (MIT License) for Misskey, Mastodon and everyday websites. Each script is installed into a UserScript manager such as Tampermonkey (Chromium / Firefox) or Userscripts (Safari) by opening its raw `.user.js` URL.
+
+Scripts are plain JavaScript with a Greasemonkey-style metadata block (`// ==UserScript==`). Most run with `@grant none`; a few use `GM_addStyle`, `GM_getResourceText` or `GM_xmlhttpRequest`, and some load highlight.js, SyntaxHighlighter or jQuery via `@require`. Many scripts watch the page with `MutationObserver`, some keep settings in `localStorage`, and the speech scripts use the Web Speech API. Many scripts target only the hosts listed in their `@match` lines (mostly `misskey.dev`, which runs Mei v11, a fork of Misskey v11), so other instances may need extra `@match` entries.
+
+Repository layout: `src/<Category>/<ScriptName>/` holds `<ScriptName>.user.js`, sometimes a minified `<ScriptName>.min.user.js`, and `README.md` / `README_ja.md`. Categories are `src/` root (Misskey and Mastodon dual-use), `src/Misskey/`, `src/Mastodon/` and `src/Others/`. `src/Template/` is the starting point for new scripts. Install URLs follow `https://github.com/hidao80/UserScript/raw/main/src/<path>/<file>.user.js`.
+
+## Docs
+
+- [Landing page](https://hidao80.github.io/UserScript/): overview, how to install, every script with an install button (7 languages)
+- [README](https://github.com/hidao80/UserScript/blob/main/README.md): entry point linking to each category list
+- [Template](https://github.com/hidao80/UserScript/tree/main/src/Template): `Template.user.js` and README template for new scripts
+
+## Misskey and Mastodon
+
+- [FediverseTimeToAbsolute](https://github.com/hidao80/UserScript/tree/main/src/FediverseTimeToAbsolute): adds the absolute date and time next to the relative post time. Targets Fedibird, mstdn.jp, Pawoo, misskey.dev, misskey.io and others. [Install](https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js)
+- [FediverseTextBlur](https://github.com/hidao80/UserScript/tree/main/src/FediverseTextBlur): blurs the text of posts and user names in Misskey v11 and Mastodon. [Install](https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js)
+
+## Misskey
+
+- [Misskey 2026.10.0 notes speech](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV2026.10.0NotesSpeech): reads the social timeline of Misskey 2026.10.0 aloud with the Web Speech API; click the note being read to cancel. Targets `https://misskey.*/*` and freakmix.com. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV2026.10.0NotesSpeech/Misskey2026.10.0NotesSpeech.min.user.js)
+- [MisskeyNotesSpeech](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyNotesSpeech): reads the Misskey social timeline aloud with the Web Speech API (misskey.dev). [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js)
+- [MisskeyFediverseTicker](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyFediverseTicker): shows which server each poster belongs to. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js)
+- [MisskeyKeywordsFilter](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyKeywordsFilter): filters out offensive words. Targets misskey.dev, misskey.io, misskey.noellabo.jp, msky.work. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js)
+- [MisskeyNotificationBeepInDeck](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyNotificationBeepInDeck): plays the notification sound even while the deck view is shown. Targets misskey.dev, misskey.io, misskey.noellabo.jp. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js)
+- [MisskeyReactionViewForTouchDevices](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyReactionViewForTouchDevices): shows who reacted, on phones and tablets too. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js)
+- [MisskeyDifferentColorLocalOnly](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyDifferentColorLocalOnly): changes the color when the post visibility is "local only". [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js)
+- [MisskeyAutoReloader](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyAutoReloader): reloads the page every 10 minutes unless a post is being typed or something new has arrived. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js)
+- [BuiltinMasumisuSearchforMisskeyDev](https://github.com/hidao80/UserScript/tree/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev): on misskey.dev, searches posts with Masumisu Search (https://masmis-search.ja-jp.org/ui) instead of the built-in search. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js)
+- [Misskey v11 Post Search](https://github.com/hidao80/UserScript/tree/main/src/Misskey/PostSearch): searches Misskey v11 posts through the API with its own interface. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js)
+- [Mei v11 emojis palette for mobile text area](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea): adds an emoji palette to the mobile text area in the Mei v11 home layout. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.user.js)
+- [Mei v11 attached image smaller](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11AttachedImageSmaller): makes attached image previews smaller. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11AttachedImageSmaller/MeiV11AttachedImageSmaller.user.js)
+- [Mei v11 reload button](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11ReloadButton): adds a button that force-reloads the Mei v11 screen. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.user.js)
+- [MeiV11RenoteRemover](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11RenoteRemover): adds a delete button to renotes on the Mei v11 timeline. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11RenoteRemover/MeiV11RenoteRemover.min.user.js)
+- [MisskeyV11AddPostButtonAtBottom](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11AddPostButtonAtBottom): adds a new-post button to the bottom-left corner in the home layout. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11AddPostButtonAtBottom/MisskeyV11AddPostButtonAtBottom.user.js)
+- [MisskeyV11BackToTop](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11BackToTop): adds a back-to-top button. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js)
+- [MisskeyV11CustomEmojiRender](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11CustomEmojiRender): retries loading custom emoji that failed to load (misskey.dev only). [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11CustomEmojiRender/MisskeyV11CustomEmojiRender.user.js)
+- [MisskeyV11ReactionPickerExpandWidth](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth): shows the reaction palette at the bottom of the screen in mobile mode. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js)
+- [MisskeyV11RemoteCustomEmojiMarker](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11RemoteCustomEmojiMarker): makes reactions with remote custom emoji stand out. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11RemoteCustomEmojiMarker/MisskeyV11RemoteCustomEmojiMarker.user.js)
+- [MisskeyV11SendWithCtrlEnterForMobileMode](https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode): posts a note with Ctrl+Enter in mobile mode. [Install](https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js)
+
+Unless noted, the Misskey scripts above match only `https://misskey.dev/*`.
+
+## Mastodon
+
+These match Fedibird, mstdn.jp, Pawoo, mstdn.sublimer.me and social.vivaldi.net.
+
+- [MastodonTootSpeech](https://github.com/hidao80/UserScript/tree/main/src/Mastodon/MastodonTootSpeech): reads new toots in the home timeline aloud with the Web Speech API. [Install](https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonTootSpeech/MastodonTootSpeech.user.js)
+- [MastodonFediverseTicker](https://github.com/hidao80/UserScript/tree/main/src/Mastodon/MastodonFediverseTicker): shows which server each poster belongs to. [Install](https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonFediverseTicker/MastodonFediverseTicker.user.js)
+- [MastodonKeywordsFilter](https://github.com/hidao80/UserScript/tree/main/src/Mastodon/MastodonKeywordsFilter): filters out offensive words. [Install](https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js)
+
+## Other websites
+
+- [UrlSticky](https://github.com/hidao80/UserScript/tree/main/src/Others/UrlSticky): sticky notes tied to each URL; paste anything copied on the web. All sites. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js)
+- [TomatoAlarm](https://github.com/hidao80/UserScript/tree/main/src/Others/TomatoAlarm): Pomodoro-style timer that rings a wind-chime alarm every 10 minutes after Start. All sites. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/TomatoAlarm/TomatoAlarm.user.js)
+- [Browser back recommend disabler](https://github.com/hidao80/UserScript/tree/main/src/Others/BrowserBackRecommendDisabler): blocks the "don't leave yet" recommendation pages some sites show on browser Back. All sites. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/BrowserBackRecommendDisabler/BrowserBackRecommendDisabler.user.js)
+- [HtmlSourceViewer](https://github.com/hidao80/UserScript/tree/main/src/Others/HtmlSourceViewer): shows the HTML source of the current page, syntax-highlighted except on iOS/iPadOS. All sites. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/HtmlSourceViewer/HtmlSourceViewer.user.js)
+- [OnScreenConsole](https://github.com/hidao80/UserScript/tree/main/src/Others/OnScreenConsole): shows the developer-tools console output on the page. All sites. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.user.js)
+- [SnsTextAreaEnlargement](https://github.com/hidao80/UserScript/tree/main/src/Others/SnsTextAreaEnlargement): enlarges the post text area on Mastodon and Misskey instances and TweetDeck. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/SnsTextAreaEnlargement/SnsTextAreaEnlargement.user.js)
+- [ChatGPTSuggest](https://github.com/hidao80/UserScript/tree/main/src/Others/ChatGptSuggest): suggests and autocompletes phrases in the ChatGPT prompt (chatgpt.com). [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.user.js)
+- [ChatworkHighlighter](https://github.com/hidao80/UserScript/tree/main/src/Others/ChatworkHighlighter): adds syntax highlighting to code in Chatwork. [Install](https://github.com/hidao80/UserScript/raw/main/src/Others/ChatworkHighlighter/ChatworkHighlighter.user.js)
+
+## Optional
+
+- [Mei v11 (misskey-v11)](https://github.com/mei23/misskey-v11): the Misskey v11 fork running on misskey.dev, which many Misskey scripts target
+- [Tampermonkey](https://www.tampermonkey.net/): UserScript manager for Chromium and Firefox
+- [Userscripts](https://github.com/quoid/userscripts): UserScript manager for Safari

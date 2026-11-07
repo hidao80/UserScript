@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>UserScript by hidao80 — UserScripts for Misskey, Mastodon &amp; the web</title>
+  <meta name="description" content="A collection of 33 free UserScripts for Misskey, Mastodon and everyday websites. Install with one click in Tampermonkey or Userscripts.">
+  <link rel="canonical" href="https://hidao80.github.io/UserScript/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UserScript by hidao80">
+  <meta property="og:title" content="UserScript by hidao80">
+  <meta property="og:description" content="A collection of 33 free UserScripts for Misskey, Mastodon and everyday websites.">
+  <meta property="og:url" content="https://hidao80.github.io/UserScript/">
+  <meta property="og:image" content="https://hidao80.github.io/UserScript/social-preview.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="UserScript by hidao80: UserScripts for Misskey, Mastodon &amp; the web">
+  <meta property="og:locale" content="en_US">
+
+  <!-- X (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UserScript by hidao80">
+  <meta name="twitter:description" content="A collection of 33 free UserScripts for Misskey, Mastodon and everyday websites.">
+  <meta name="twitter:image" content="https://hidao80.github.io/UserScript/social-preview.png">
+  <meta name="twitter:image:alt" content="UserScript by hidao80: UserScripts for Misskey, Mastodon &amp; the web">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "UserScript by hidao80",
+    "description": "A collection of free UserScripts for Misskey, Mastodon and everyday websites.",
+    "url": "https://hidao80.github.io/UserScript/",
+    "image": "https://hidao80.github.io/UserScript/social-preview.png",
+    "codeRepository": "https://github.com/hidao80/UserScript",
+    "programmingLanguage": "JavaScript",
+    "runtimePlatform": "Tampermonkey, Userscripts (Safari)",
+    "license": "https://opensource.org/licenses/MIT",
+    "keywords": ["userscript", "Misskey", "Mastodon", "Fediverse", "Tampermonkey"],
+    "inLanguage": ["en", "ja", "zh-CN", "zh-TW", "es", "ru", "de"],
+    "author": {
+      "@type": "Person",
+      "name": "hidao80",
+      "url": "https://github.com/hidao80"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css">
+  <style>
+    /* 可視性重視の配色: 本文と背景のコントラストを高め、アクセント色は枠・点・ボタン背景に限定する */
+    :root:not([data-theme=dark]), [data-theme=light] {
+      --pico-background-color: #f6f8fb;
+      --pico-color: #0f172a;
+      --pico-h1-color: #0b1220; --pico-h2-color: #0b1220; --pico-h3-color: #0f172a; --pico-h4-color: #0f172a;
+      --pico-muted-color: #475569;
+      --pico-muted-border-color: #d5dde8;
+      --pico-primary: #1d4ed8;
+      --pico-primary-hover: #1e3a8a;
+      --pico-primary-underline: rgba(29, 78, 216, 0.5);
+      --pico-primary-background: #1d4ed8;
+      --pico-primary-hover-background: #1e40af;
+      --pico-primary-border: #1d4ed8;
+      --pico-primary-hover-border: #1e40af;
+      --pico-primary-focus: rgba(29, 78, 216, 0.35);
+      --pico-primary-inverse: #ffffff;
+      --pico-card-background-color: #ffffff;
+      --pico-card-sectioning-background-color: #eef2f8;
+      --pico-code-background-color: #e8edf5;
+      --surface-border: #cbd5e1;
+      --text-strong: #0f172a;
+      --hero-from: #dbe7ff; --hero-to: #fff4d6;
+      --cat-dual: #7c3aed; --cat-misskey: #4d7c0f; --cat-mastodon: #4f46e5; --cat-others: #c2410c;
+      --tech-runtime: #2563eb; --tech-lib: #15803d; --tech-tool: #7e22ce; --tech-web: #c2410c;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --pico-background-color: #0b1220;
+        --pico-color: #e6ebf2;
+        --pico-h1-color: #ffffff; --pico-h2-color: #ffffff; --pico-h3-color: #f1f5f9; --pico-h4-color: #f1f5f9;
+        --pico-muted-color: #a8b5c8;
+        --pico-muted-border-color: #263450;
+        --pico-primary: #93c5fd;
+        --pico-primary-hover: #bfdbfe;
+        --pico-primary-underline: rgba(147, 197, 253, 0.5);
+        --pico-primary-background: #2563eb;
+        --pico-primary-hover-background: #1d4ed8;
+        --pico-primary-border: #2563eb;
+        --pico-primary-hover-border: #1d4ed8;
+        --pico-primary-focus: rgba(147, 197, 253, 0.4);
+        --pico-primary-inverse: #ffffff;
+        --pico-card-background-color: #121c30;
+        --pico-card-sectioning-background-color: #17233b;
+        --pico-code-background-color: #1a2740;
+        --surface-border: #2c3c5c; --text-strong: #e6ebf2;
+        --hero-from: #15254a; --hero-to: #2a2110;
+        --cat-dual: #c4b5fd; --cat-misskey: #a3e635; --cat-mastodon: #a5b4fc; --cat-others: #fdba74;
+        --tech-runtime: #60a5fa; --tech-lib: #4ade80; --tech-tool: #c084fc; --tech-web: #fb923c;
+      }
+    }
+    [data-theme=dark] {
+      --pico-background-color: #0b1220;
+      --pico-color: #e6ebf2;
+      --pico-h1-color: #ffffff; --pico-h2-color: #ffffff; --pico-h3-color: #f1f5f9; --pico-h4-color: #f1f5f9;
+      --pico-muted-color: #a8b5c8;
+      --pico-muted-border-color: #263450;
+      --pico-primary: #93c5fd;
+      --pico-primary-hover: #bfdbfe;
+      --pico-primary-underline: rgba(147, 197, 253, 0.5);
+      --pico-primary-background: #2563eb;
+      --pico-primary-hover-background: #1d4ed8;
+      --pico-primary-border: #2563eb;
+      --pico-primary-hover-border: #1d4ed8;
+      --pico-primary-focus: rgba(147, 197, 253, 0.4);
+      --pico-primary-inverse: #ffffff;
+      --pico-card-background-color: #121c30;
+      --pico-card-sectioning-background-color: #17233b;
+      --pico-code-background-color: #1a2740;
+      --surface-border: #2c3c5c; --text-strong: #e6ebf2;
+      --hero-from: #15254a; --hero-to: #2a2110;
+      --cat-dual: #c4b5fd; --cat-misskey: #a3e635; --cat-mastodon: #a5b4fc; --cat-others: #fdba74;
+      --tech-runtime: #60a5fa; --tech-lib: #4ade80; --tech-tool: #c084fc; --tech-web: #fb923c;
+    }
+    body { background: var(--pico-background-color); line-height: 1.7; }
+    :focus-visible { outline: 3px solid var(--pico-primary); outline-offset: 2px; }
+
+    header.site { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--pico-background-color) 92%, transparent);
+                  backdrop-filter: blur(8px); border-bottom: 1px solid var(--pico-muted-border-color); }
+    header.site nav { padding-block: 0.25rem; }
+    .nav-brand img { width: 1.5rem; height: 1.5rem; vertical-align: -0.3rem; margin-right: 0.4rem; }
+    .theme-toggle { margin: 0; padding: 0.4rem 0.75rem; }
+    .lang-select { width: auto; margin: 0; padding: 0.4rem 2rem 0.4rem 0.75rem; }
+
+    .hero { text-align: center; margin-block: 2rem 3rem; padding: 3rem 1.25rem 2.5rem; border-radius: 1.5rem;
+            background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); border: 1px solid var(--surface-border); }
+    .hero img { width: 112px; height: 112px; }
+    .hero h1 { margin-block: 1rem 0.5rem; font-size: clamp(2rem, 7vw, 3.25rem); letter-spacing: -0.02em; overflow-wrap: anywhere; }
+    .hero .lead { font-size: clamp(1.1rem, 3vw, 1.35rem); font-weight: 500; max-width: 42rem; margin-inline: auto; }
+    .hero .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0; }
+    .hero .actions a { font-weight: 700; padding-inline: 1.5rem; }
+    /* Pico は a 要素内で --pico-color をリンク色に差し替えるため、本文色は --text-strong で指定する */
+    .hero .actions a.secondary { color: var(--text-strong); border: 2px solid var(--text-strong); background: var(--pico-card-background-color); }
+    .hero .actions a.secondary:hover { color: var(--pico-background-color); background: var(--text-strong); }
+    .stats { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; list-style: none; padding: 0; margin-block: 1.5rem; }
+    .stats li { list-style: none; margin: 0; padding: 0.35rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+                background: var(--pico-card-background-color); border: 1px solid var(--surface-border); }
+
+    main > section { margin-bottom: 3.5rem; }
+    main h2 { font-size: clamp(1.5rem, 4vw, 2rem); padding-bottom: 0.5rem; border-bottom: 3px solid var(--pico-primary-background); display: inline-block; }
+    .features .grid { margin-bottom: var(--pico-grid-row-gap); }
+    .features article { margin-bottom: 0; height: 100%; border: 1px solid var(--surface-border); }
+    .features h3 { font-size: 1.15rem; }
+
+    .steps { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); counter-reset: step; }
+    .steps li { list-style: none; margin: 0; padding: 1.25rem 1.25rem 1.25rem 4rem; position: relative; border-radius: var(--pico-border-radius);
+                background: var(--pico-card-background-color); border: 1px solid var(--surface-border); counter-increment: step; }
+    .steps li::before { content: counter(step); position: absolute; left: 1.1rem; top: 1.1rem; width: 2rem; height: 2rem; border-radius: 50%;
+                        display: grid; place-items: center; font-weight: 700; color: var(--pico-primary-inverse); background: var(--pico-primary-background); }
+
+    .category { margin-bottom: 2.5rem; }
+    .category > h3 { display: flex; align-items: center; gap: 0.6rem; font-size: 1.3rem; }
+    .category > h3::before { content: ""; width: 0.9rem; height: 0.9rem; border-radius: 50%; background: var(--accent); }
+    .category > h3 .count { font-size: 0.85rem; font-weight: 700; padding: 0.1rem 0.6rem; border-radius: 999px; border: 1.5px solid var(--accent); }
+    .cat-dual { --accent: var(--cat-dual); }
+    .cat-misskey { --accent: var(--cat-misskey); }
+    .cat-mastodon { --accent: var(--cat-mastodon); }
+    .cat-others { --accent: var(--cat-others); }
+    .script-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+    .script { display: flex; flex-direction: column; margin: 0; padding: 1.1rem 1.25rem; border: 1px solid var(--surface-border); border-left: 5px solid var(--accent); }
+    .script h4 { font-size: 1.05rem; margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+    .script h4 a { color: var(--text-strong); text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+    .script h4 a:hover { color: var(--pico-primary); }
+    .script p { flex: 1; margin-bottom: 0.9rem; font-size: 0.95rem; }
+    .script .install { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.5rem; padding: 0.35rem 1.1rem;
+                       border-radius: var(--pico-border-radius); font-size: 0.9rem; font-weight: 700; text-decoration: none;
+                       color: var(--pico-primary-inverse); background: var(--pico-primary-background); border: 1px solid var(--pico-primary-border); }
+    .script .install::before { content: "⬇"; }
+    .script .install:hover { color: var(--pico-primary-inverse); background: var(--pico-primary-hover-background); }
+
+    footer { text-align: center; color: var(--pico-muted-color); }
+    @media (max-width: 575px) {
+      .nav-section, .nav-brand span { display: none; }
+    }
+
+    /* 利用技術: 分類ごとの色はアクセント (点・枠) のみに使い、文字は本文色で高コントラストを保つ */
+    .tech-groups { display: grid; gap: 1.25rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); }
+    .tech-group h3 { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; margin-bottom: 0.75rem; }
+    .tech-group h3::before { content: ""; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--accent); }
+    .tech-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+    .tech-list li { list-style: none; margin: 0; }
+    .tech-list a {
+      display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0.4rem 1.1rem;
+      border-radius: 999px; border: 1.5px solid var(--accent); white-space: nowrap;
+      font-size: 0.95rem; font-weight: 600; line-height: 1.3; text-decoration: none;
+      color: var(--text-strong); background: color-mix(in srgb, var(--accent) 12%, var(--pico-background-color));
+      transition: background-color 0.15s, color 0.15s;
+    }
+    .tech-list a:hover { background: var(--accent); color: var(--pico-background-color); }
+    .tech-list a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .tech-runtime { --accent: var(--tech-runtime); }
+    .tech-lib { --accent: var(--tech-lib); }
+    .tech-tool { --accent: var(--tech-tool); }
+    .tech-web { --accent: var(--tech-web); }
+    @media (max-width: 575px) {
+      .tech-list a { min-height: 2.25rem; padding: 0.3rem 0.85rem; font-size: 0.875rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tech-list a { transition: none; }
+    }
+  </style>
+  <script>
+    // 保存済みのテーマを描画前に適用する (未保存なら OS の設定に従う)
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+    } catch (_) {}
+  </script>
+</head>
+<body>
+  <header class="site">
+    <nav class="container">
+      <ul>
+        <li class="nav-brand"><strong><img src="favicon.svg" alt="" width="24" height="24"><span>UserScript by hidao80</span></strong></li>
+      </ul>
+      <ul>
+        <li class="nav-section"><a href="#install">
+          <template type="language-group">
+            <span language="en">How to install</span>
+            <span language="ja">導入方法</span>
+            <span language="zh-CN">安装方法</span>
+            <span language="zh-TW">安裝方法</span>
+            <span language="es">Instalación</span>
+            <span language="ru">Установка</span>
+            <span language="de">Installation</span>
+          </template>
+        </a></li>
+        <li class="nav-section"><a href="#scripts">
+          <template type="language-group">
+            <span language="en">Scripts</span>
+            <span language="ja">スクリプト一覧</span>
+            <span language="zh-CN">脚本列表</span>
+            <span language="zh-TW">腳本列表</span>
+            <span language="es">Scripts</span>
+            <span language="ru">Скрипты</span>
+            <span language="de">Skripte</span>
+          </template>
+        </a></li>
+        <li><a href="https://github.com/hidao80/UserScript">GitHub</a></li>
+        <li>
+          <select class="lang-select" id="lang-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="zh-TW">繁體中文</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </li>
+        <li><button class="theme-toggle outline secondary" id="theme-toggle" type="button" aria-label="Toggle color theme">🌓</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img src="favicon.svg" alt="" width="112" height="112">
+      <h1>UserScript by hidao80</h1>
+      <p class="lead">
+        <template type="language-group">
+          <span language="en">Small, focused UserScripts that make Misskey, Mastodon and everyday websites easier to use.</span>
+          <span language="ja">Misskey、Mastodon、普段使いの Web サイトをもっと使いやすくする、小さくて目的のはっきりした UserScript 集です。</span>
+          <span language="zh-CN">一组小巧、专注的用户脚本，让 Misskey、Mastodon 和日常网站更好用。</span>
+          <span language="zh-TW">一組小巧、專注的使用者腳本，讓 Misskey、Mastodon 與日常網站更好用。</span>
+          <span language="es">UserScripts pequeños y específicos que hacen más cómodos Misskey, Mastodon y los sitios web de cada día.</span>
+          <span language="ru">Небольшие узкоспециализированные пользовательские скрипты, которые делают Misskey, Mastodon и привычные сайты удобнее.</span>
+          <span language="de">Kleine, gezielte UserScripts, die Misskey, Mastodon und alltägliche Websites komfortabler machen.</span>
+        </template>
+      </p>
+      <ul class="stats">
+        <li>📜
+          <template type="language-group">
+            <span language="en">33 scripts</span>
+            <span language="ja">33 本のスクリプト</span>
+            <span language="zh-CN">33 个脚本</span>
+            <span language="zh-TW">33 個腳本</span>
+            <span language="es">33 scripts</span>
+            <span language="ru">33 скрипта</span>
+            <span language="de">33 Skripte</span>
+          </template>
+        </li>
+        <li>🌐 Misskey · Mastodon · Web</li>
+        <li>⚖️
+          <template type="language-group">
+            <span language="en">MIT License</span>
+            <span language="ja">MIT ライセンス</span>
+            <span language="zh-CN">MIT 许可证</span>
+            <span language="zh-TW">MIT 授權</span>
+            <span language="es">Licencia MIT</span>
+            <span language="ru">Лицензия MIT</span>
+            <span language="de">MIT-Lizenz</span>
+          </template>
+        </li>
+      </ul>
+      <p class="actions">
+        <!-- biome-ignore lint/a11y/useSemanticElements: Pico CSS のボタン表示のためリンクに role="button" を付与 -->
+        <a href="#scripts" role="button">
+          <template type="language-group">
+            <span language="en">Browse scripts</span>
+            <span language="ja">スクリプトを見る</span>
+            <span language="zh-CN">浏览脚本</span>
+            <span language="zh-TW">瀏覽腳本</span>
+            <span language="es">Ver scripts</span>
+            <span language="ru">Смотреть скрипты</span>
+            <span language="de">Skripte ansehen</span>
+          </template>
+        </a>
+        <!-- biome-ignore lint/a11y/useSemanticElements: 同上 -->
+        <a href="https://github.com/hidao80/UserScript" role="button" class="secondary outline">
+          <template type="language-group">
+            <span language="en">View on GitHub</span>
+            <span language="ja">GitHub で見る</span>
+            <span language="zh-CN">在 GitHub 上查看</span>
+            <span language="zh-TW">在 GitHub 上查看</span>
+            <span language="es">Ver en GitHub</span>
+            <span language="ru">Открыть на GitHub</span>
+            <span language="de">Auf GitHub ansehen</span>
+          </template>
+        </a>
+      </p>
+    </section>
+
+    <section id="features" class="features">
+      <h2>
+        <template type="language-group">
+          <span language="en">Why these scripts</span>
+          <span language="ja">特長</span>
+          <span language="zh-CN">特点</span>
+          <span language="zh-TW">特色</span>
+          <span language="es">Por qué estos scripts</span>
+          <span language="ru">Особенности</span>
+          <span language="de">Was sie auszeichnet</span>
+        </template>
+      </h2>
+      <div class="grid">
+        <article>
+          <h3>🌐
+            <template type="language-group">
+              <span language="en">Made for the Fediverse</span>
+              <span language="ja">Fediverse のために</span>
+              <span language="zh-CN">为 Fediverse 打造</span>
+              <span language="zh-TW">為 Fediverse 打造</span>
+              <span language="es">Pensados para el Fediverso</span>
+              <span language="ru">Для Федивёрса</span>
+              <span language="de">Fürs Fediverse gemacht</span>
+            </template>
+          </h3>
+          <p>
+            <template type="language-group">
+              <span language="en">Most scripts improve Misskey (including Misskey v11 / Mei v11) and Mastodon: reading aloud, filtering, server tickers and more.</span>
+              <span language="ja">多くは Misskey（Misskey v11 / Mei v11 を含む）と Mastodon 向け。読み上げ、フィルター、所属サーバー表示などを追加します。</span>
+              <span language="zh-CN">大多数脚本面向 Misskey（含 Misskey v11 / Mei v11）和 Mastodon，提供朗读、过滤、所属服务器显示等功能。</span>
+              <span language="zh-TW">大多數腳本適用於 Misskey（含 Misskey v11 / Mei v11）與 Mastodon，提供朗讀、過濾、所屬伺服器顯示等功能。</span>
+              <span language="es">La mayoría mejora Misskey (incluidos Misskey v11 / Mei v11) y Mastodon: lectura en voz alta, filtros, indicador de servidor y más.</span>
+              <span language="ru">Большинство скриптов улучшают Misskey (включая Misskey v11 / Mei v11) и Mastodon: чтение вслух, фильтры, отображение сервера и многое другое.</span>
+              <span language="de">Die meisten Skripte verbessern Misskey (inkl. Misskey v11 / Mei v11) und Mastodon: Vorlesen, Filter, Server-Anzeige und mehr.</span>
+            </template>
+          </p>
+        </article>
+        <article>
+          <h3>🪶
+            <template type="language-group">
+              <span language="en">Lightweight</span>
+              <span language="ja">軽量</span>
+              <span language="zh-CN">轻量</span>
+              <span language="zh-TW">輕量</span>
+              <span language="es">Ligeros</span>
+              <span language="ru">Лёгкие</span>
+              <span language="de">Leichtgewichtig</span>
+            </template>
+          </h3>
+          <p>
+            <template type="language-group">
+              <span language="en">Plain JavaScript in a single file. Most scripts need no special permissions (<code>@grant none</code>).</span>
+              <span language="ja">1 ファイルの素の JavaScript。ほとんどのスクリプトは特別な権限を必要としません（<code>@grant none</code>）。</span>
+              <span language="zh-CN">单文件纯 JavaScript。大多数脚本无需任何特殊权限（<code>@grant none</code>）。</span>
+              <span language="zh-TW">單一檔案的純 JavaScript。大多數腳本不需要任何特殊權限（<code>@grant none</code>）。</span>
+              <span language="es">JavaScript puro en un solo archivo. La mayoría no necesita permisos especiales (<code>@grant none</code>).</span>
+              <span language="ru">Чистый JavaScript в одном файле. Большинству скриптов не нужны особые разрешения (<code>@grant none</code>).</span>
+              <span language="de">Reines JavaScript in einer einzigen Datei. Die meisten Skripte brauchen keine besonderen Rechte (<code>@grant none</code>).</span>
+            </template>
+          </p>
+        </article>
+        <article>
+          <h3>⚡
+            <template type="language-group">
+              <span language="en">One-click install</span>
+              <span language="ja">ワンクリック導入</span>
+              <span language="zh-CN">一键安装</span>
+              <span language="zh-TW">一鍵安裝</span>
+              <span language="es">Instalación en un clic</span>
+              <span language="ru">Установка в один клик</span>
+              <span language="de">Installation mit einem Klick</span>
+            </template>
+          </h3>
+          <p>
+            <template type="language-group">
+              <span language="en">Every card has an Install button. Free and open source under the MIT License.</span>
+              <span language="ja">各カードのインストールボタンからすぐ導入できます。MIT ライセンスの無料オープンソースです。</span>
+              <span language="zh-CN">每张卡片都有安装按钮。基于 MIT 许可证的免费开源软件。</span>
+              <span language="zh-TW">每張卡片都有安裝按鈕。採用 MIT 授權的免費開源軟體。</span>
+              <span language="es">Cada tarjeta tiene un botón Instalar. Gratuitos y de código abierto con licencia MIT.</span>
+              <span language="ru">На каждой карточке есть кнопка установки. Бесплатно и с открытым исходным кодом по лицензии MIT.</span>
+              <span language="de">Jede Karte hat eine Installieren-Schaltfläche. Kostenlos und quelloffen unter der MIT-Lizenz.</span>
+            </template>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="install">
+      <h2>
+        <template type="language-group">
+          <span language="en">How to install</span>
+          <span language="ja">導入方法</span>
+          <span language="zh-CN">安装方法</span>
+          <span language="zh-TW">安裝方法</span>
+          <span language="es">Cómo instalar</span>
+          <span language="ru">Как установить</span>
+          <span language="de">So installierst du sie</span>
+        </template>
+      </h2>
+      <ol class="steps">
+        <li>
+          <template type="language-group">
+            <span language="en">Install a UserScript manager: <a href="https://www.tampermonkey.net/">Tampermonkey</a> (Chromium / Firefox) or <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a> (Safari).</span>
+            <span language="ja">UserScript 管理拡張機能を入れます: <a href="https://www.tampermonkey.net/">Tampermonkey</a>（Chromium 系 / Firefox 系）または <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a>（Safari）。</span>
+            <span language="zh-CN">安装用户脚本管理器：<a href="https://www.tampermonkey.net/">Tampermonkey</a>（Chromium / Firefox）或 <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a>（Safari）。</span>
+            <span language="zh-TW">安裝使用者腳本管理器：<a href="https://www.tampermonkey.net/">Tampermonkey</a>（Chromium / Firefox）或 <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a>（Safari）。</span>
+            <span language="es">Instala un gestor de UserScripts: <a href="https://www.tampermonkey.net/">Tampermonkey</a> (Chromium / Firefox) o <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a> (Safari).</span>
+            <span language="ru">Установите менеджер пользовательских скриптов: <a href="https://www.tampermonkey.net/">Tampermonkey</a> (Chromium / Firefox) или <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a> (Safari).</span>
+            <span language="de">Installiere einen UserScript-Manager: <a href="https://www.tampermonkey.net/">Tampermonkey</a> (Chromium / Firefox) oder <a href="https://apps.apple.com/us/app/userscripts/id1463298887">Userscripts</a> (Safari).</span>
+          </template>
+        </li>
+        <li>
+          <template type="language-group">
+            <span language="en">Pick a script below and press its <strong>Install</strong> button.</span>
+            <span language="ja">下の一覧からスクリプトを選び、<strong>インストール</strong>ボタンを押します。</span>
+            <span language="zh-CN">在下方列表中选择脚本，点击<strong>安装</strong>按钮。</span>
+            <span language="zh-TW">在下方列表中選擇腳本，點擊<strong>安裝</strong>按鈕。</span>
+            <span language="es">Elige un script de la lista y pulsa su botón <strong>Instalar</strong>.</span>
+            <span language="ru">Выберите скрипт ниже и нажмите кнопку <strong>Установить</strong>.</span>
+            <span language="de">Wähle unten ein Skript und klicke auf <strong>Installieren</strong>.</span>
+          </template>
+        </li>
+        <li>
+          <template type="language-group">
+            <span language="en">Confirm in your manager's install screen, then reload the target site.</span>
+            <span language="ja">管理拡張機能のインストール画面で確定し、対象サイトを再読み込みします。</span>
+            <span language="zh-CN">在管理器的安装页面中确认，然后重新加载目标网站。</span>
+            <span language="zh-TW">在管理器的安裝畫面中確認，然後重新載入目標網站。</span>
+            <span language="es">Confirma en la pantalla de instalación del gestor y recarga el sitio.</span>
+            <span language="ru">Подтвердите установку в менеджере и перезагрузите нужный сайт.</span>
+            <span language="de">Bestätige im Installationsdialog des Managers und lade die Zielseite neu.</span>
+          </template>
+        </li>
+      </ol>
+    </section>
+
+    <section id="scripts">
+      <h2>
+        <template type="language-group">
+          <span language="en">Scripts</span>
+          <span language="ja">スクリプト一覧</span>
+          <span language="zh-CN">脚本列表</span>
+          <span language="zh-TW">腳本列表</span>
+          <span language="es">Scripts</span>
+          <span language="ru">Скрипты</span>
+          <span language="de">Skripte</span>
+        </template>
+      </h2>
+
+      <div class="category cat-dual" id="dual">
+        <h3>
+          <template type="language-group">
+            <span language="en">Misskey &amp; Mastodon</span>
+            <span language="ja">Misskey・Mastodon 両対応</span>
+            <span language="zh-CN">Misskey 与 Mastodon 通用</span>
+            <span language="zh-TW">Misskey 與 Mastodon 通用</span>
+            <span language="es">Misskey y Mastodon</span>
+            <span language="ru">Misskey и Mastodon</span>
+            <span language="de">Misskey &amp; Mastodon</span>
+          </template>
+          <span class="count">2</span>
+        </h3>
+        <div class="script-grid">
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/FediverseTimeToAbsolute">FediverseTimeToAbsolute</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds the absolute date and time next to the relative post time on the Fediverse.</span>
+              <span language="ja">Fediverse の投稿時刻（相対表記）に、絶対時刻を併記します。</span>
+              <span language="zh-CN">在 Fediverse 的相对发帖时间旁显示绝对日期时间。</span>
+              <span language="zh-TW">在 Fediverse 的相對發文時間旁顯示絕對日期時間。</span>
+              <span language="es">Añade la fecha y hora absolutas junto a la hora relativa de las publicaciones del Fediverso.</span>
+              <span language="ru">Добавляет абсолютные дату и время рядом с относительным временем публикации в Федивёрсе.</span>
+              <span language="de">Ergänzt die relative Beitragszeit im Fediverse um absolutes Datum und Uhrzeit.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/FediverseTimeToAbsolute/FediverseTimeToAbsolute.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/FediverseTextBlur">FediverseTextBlur</a></h4>
+            <p><template type="language-group">
+              <span language="en">Blurs the text of posts and user names in Misskey v11 and Mastodon.</span>
+              <span language="ja">Misskey v11 と Mastodon で、投稿本文とユーザー名をぼかします。</span>
+              <span language="zh-CN">在 Misskey v11 和 Mastodon 中模糊帖子正文和用户名。</span>
+              <span language="zh-TW">在 Misskey v11 與 Mastodon 中模糊貼文內容與使用者名稱。</span>
+              <span language="es">Difumina el texto de las publicaciones y los nombres de usuario en Misskey v11 y Mastodon.</span>
+              <span language="ru">Размывает текст постов и имена пользователей в Misskey v11 и Mastodon.</span>
+              <span language="de">Macht Beitragstexte und Benutzernamen in Misskey v11 und Mastodon unscharf.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/FediverseTextBlur/FediverseTextBlur.user.js" data-i18n="install">Install</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="category cat-misskey" id="misskey">
+        <h3>
+          <template type="language-group">
+            <span language="en">For Misskey</span>
+            <span language="ja">Misskey 向け</span>
+            <span language="zh-CN">适用于 Misskey</span>
+            <span language="zh-TW">適用於 Misskey</span>
+            <span language="es">Para Misskey</span>
+            <span language="ru">Для Misskey</span>
+            <span language="de">Für Misskey</span>
+          </template>
+          <span class="count">20</span>
+        </h3>
+        <div class="script-grid">
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV2026.10.0NotesSpeech">Misskey 2026.10.0 notes speech</a></h4>
+            <p><template type="language-group">
+              <span language="en">Reads the social timeline of Misskey 2026.10.0 aloud with the Web Speech API. Click a note to stop.</span>
+              <span language="ja">Misskey 2026.10.0 のソーシャルタイムラインを Speech API で読み上げます。読み上げ中のノートをクリックすると停止します。</span>
+              <span language="zh-CN">使用 Web Speech API 朗读 Misskey 2026.10.0 的社交时间线。点击正在朗读的帖子即可停止。</span>
+              <span language="zh-TW">使用 Web Speech API 朗讀 Misskey 2026.10.0 的社群時間軸。點擊正在朗讀的貼文即可停止。</span>
+              <span language="es">Lee en voz alta la línea de tiempo social de Misskey 2026.10.0 con la Web Speech API. Haz clic en la nota para detenerla.</span>
+              <span language="ru">Зачитывает социальную ленту Misskey 2026.10.0 с помощью Web Speech API. Нажмите на заметку, чтобы остановить.</span>
+              <span language="de">Liest die soziale Timeline von Misskey 2026.10.0 mit der Web Speech API vor. Ein Klick auf die Notiz stoppt das Vorlesen.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV2026.10.0NotesSpeech/Misskey2026.10.0NotesSpeech.min.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyNotesSpeech">MisskeyNotesSpeech</a></h4>
+            <p><template type="language-group">
+              <span language="en">Reads the Misskey social timeline aloud with the Web Speech API.</span>
+              <span language="ja">Misskey のソーシャルタイムラインを Speech API で読み上げます。</span>
+              <span language="zh-CN">使用 Web Speech API 朗读 Misskey 的社交时间线。</span>
+              <span language="zh-TW">使用 Web Speech API 朗讀 Misskey 的社群時間軸。</span>
+              <span language="es">Lee en voz alta la línea de tiempo social de Misskey con la Web Speech API.</span>
+              <span language="ru">Зачитывает социальную ленту Misskey с помощью Web Speech API.</span>
+              <span language="de">Liest die soziale Timeline von Misskey mit der Web Speech API vor.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotesSpeech/MisskeyNotesSpeech.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyFediverseTicker">MisskeyFediverseTicker</a></h4>
+            <p><template type="language-group">
+              <span language="en">Shows at a glance which server each poster belongs to.</span>
+              <span language="ja">投稿者の所属サーバーをひと目でわかるように表示します。</span>
+              <span language="zh-CN">醒目地显示发帖者所属的服务器。</span>
+              <span language="zh-TW">醒目地顯示發文者所屬的伺服器。</span>
+              <span language="es">Muestra de forma visible el servidor al que pertenece cada autor.</span>
+              <span language="ru">Наглядно показывает, к какому серверу относится автор поста.</span>
+              <span language="de">Zeigt gut sichtbar an, zu welchem Server die Verfasser gehören.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyFediverseTicker/MisskeyFediverseTicker.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyKeywordsFilter">MisskeyKeywordsFilter</a></h4>
+            <p><template type="language-group">
+              <span language="en">Filters out offensive words in Misskey.</span>
+              <span language="ja">Misskey で不快な単語をフィルタリングします。</span>
+              <span language="zh-CN">在 Misskey 中过滤冒犯性词语。</span>
+              <span language="zh-TW">在 Misskey 中過濾冒犯性字詞。</span>
+              <span language="es">Filtra las palabras ofensivas en Misskey.</span>
+              <span language="ru">Отфильтровывает оскорбительные слова в Misskey.</span>
+              <span language="de">Filtert anstößige Wörter in Misskey heraus.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyKeywordsFilter/MisskeyKeywordsFilter.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyNotificationBeepInDeck">MisskeyNotificationBeepInDeck</a></h4>
+            <p><template type="language-group">
+              <span language="en">Plays the notification sound in Misskey even while the deck view is shown.</span>
+              <span language="ja">Misskey でデッキ表示中でも通知音を鳴らします。</span>
+              <span language="zh-CN">在 Misskey 显示 Deck 视图时也会播放通知音。</span>
+              <span language="zh-TW">在 Misskey 顯示 Deck 檢視時也會播放通知音。</span>
+              <span language="es">Reproduce el sonido de notificación en Misskey incluso con la vista Deck abierta.</span>
+              <span language="ru">Воспроизводит звук уведомлений в Misskey даже в режиме Deck.</span>
+              <span language="de">Spielt in Misskey auch in der Deck-Ansicht den Benachrichtigungston ab.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyNotificationBeepInDeck/MisskeyNotificationBeepInDeck.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyReactionViewForTouchDevices">MisskeyReactionViewForTouchDevices</a></h4>
+            <p><template type="language-group">
+              <span language="en">Lets you see who reacted, even on phones and tablets.</span>
+              <span language="ja">スマホやタブレットでも、誰がリアクションしたかを確認できます。</span>
+              <span language="zh-CN">在手机和平板上也能查看是谁做出了回应。</span>
+              <span language="zh-TW">在手機和平板上也能查看是誰做出了反應。</span>
+              <span language="es">Permite ver quién reaccionó, también en móviles y tabletas.</span>
+              <span language="ru">Позволяет видеть, кто поставил реакцию, даже на телефонах и планшетах.</span>
+              <span language="de">Zeigt auch auf Smartphones und Tablets, wer reagiert hat.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyReactionViewForTouchDevices/MisskeyReactionViewForTouchDevices.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyDifferentColorLocalOnly">MisskeyDifferentColorLocalOnly</a></h4>
+            <p><template type="language-group">
+              <span language="en">Changes the color when the post visibility is set to “Local only” in Misskey.</span>
+              <span language="ja">Misskey で投稿範囲が「ローカルのみ」のとき、違う色にします。</span>
+              <span language="zh-CN">在 Misskey 中将可见范围设为“仅本地”时改变颜色。</span>
+              <span language="zh-TW">在 Misskey 中將公開範圍設為「僅限本地」時改變顏色。</span>
+              <span language="es">Cambia el color cuando la visibilidad de la publicación es «Solo local» en Misskey.</span>
+              <span language="ru">Меняет цвет, когда в Misskey выбрана видимость «Только локально».</span>
+              <span language="de">Ändert die Farbe, wenn die Sichtbarkeit in Misskey auf „Nur lokal“ steht.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyDifferentColorLocalOnly/MisskeyDifferentColorLocalOnly.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyAutoReloader">MisskeyAutoReloader</a></h4>
+            <p><template type="language-group">
+              <span language="en">Reloads the page every 10 minutes unless you are typing a post or something new has arrived.</span>
+              <span language="ja">入力中の投稿や新着がなければ、10 分に一度ページを再読み込みします。</span>
+              <span language="zh-CN">若没有正在输入的帖子或新消息，每 10 分钟重新加载一次页面。</span>
+              <span language="zh-TW">若沒有正在輸入的貼文或新訊息，每 10 分鐘重新載入一次頁面。</span>
+              <span language="es">Recarga la página cada 10 minutos si no estás escribiendo ni ha llegado nada nuevo.</span>
+              <span language="ru">Перезагружает страницу каждые 10 минут, если вы не пишете пост и не пришло ничего нового.</span>
+              <span language="de">Lädt die Seite alle 10 Minuten neu, sofern du keinen Beitrag schreibst und nichts Neues eingegangen ist.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyAutoReloader/MisskeyAutoReloader.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev">BuiltinMasumisuSearchforMisskeyDev</a></h4>
+            <p><template type="language-group">
+              <span language="en">On Misskey.dev, searches posts with <a href="https://masmis-search.ja-jp.org/ui">Masumisu Search</a> instead of the built-in search.</span>
+              <span language="ja">Misskey.dev の投稿検索で、標準の検索機能の代わりに<a href="https://masmis-search.ja-jp.org/ui">ますみすサーチ</a>を使います。</span>
+              <span language="zh-CN">在 Misskey.dev 上使用 <a href="https://masmis-search.ja-jp.org/ui">Masumisu Search</a> 代替内置搜索来搜索帖子。</span>
+              <span language="zh-TW">在 Misskey.dev 上以 <a href="https://masmis-search.ja-jp.org/ui">Masumisu Search</a> 取代內建搜尋來搜尋貼文。</span>
+              <span language="es">En Misskey.dev, busca publicaciones con <a href="https://masmis-search.ja-jp.org/ui">Masumisu Search</a> en lugar del buscador integrado.</span>
+              <span language="ru">На Misskey.dev ищет посты через <a href="https://masmis-search.ja-jp.org/ui">Masumisu Search</a> вместо встроенного поиска.</span>
+              <span language="de">Sucht auf Misskey.dev Beiträge mit <a href="https://masmis-search.ja-jp.org/ui">Masumisu Search</a> statt mit der eingebauten Suche.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/BuiltinMasumisuSearchforMisskeyDev/BuiltinMasumisuSearchforMisskeyDev.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/PostSearch">Misskey v11 Post Search</a></h4>
+            <p><template type="language-group">
+              <span language="en">Searches Misskey v11 posts through the API with a handy interface.</span>
+              <span language="ja">Misskey v11 の投稿を、使いやすい画面から API 経由で検索します。</span>
+              <span language="zh-CN">通过 API，以便捷的界面搜索 Misskey v11 的帖子。</span>
+              <span language="zh-TW">透過 API，以便利的介面搜尋 Misskey v11 的貼文。</span>
+              <span language="es">Busca publicaciones de Misskey v11 a través de la API con una interfaz práctica.</span>
+              <span language="ru">Ищет посты Misskey v11 через API в удобном интерфейсе.</span>
+              <span language="de">Durchsucht Misskey-v11-Beiträge über die API mit einer praktischen Oberfläche.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/PostSearch/PostSearch.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea">Mei v11 emojis palette for mobile text area</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds an emoji palette to the mobile text area in the Mei v11 home layout.</span>
+              <span language="ja">Mei v11 のホームレイアウトで、モバイル用の入力欄に絵文字パレットを追加します。</span>
+              <span language="zh-CN">在 Mei v11 主页布局的移动端输入框中添加表情面板。</span>
+              <span language="zh-TW">在 Mei v11 首頁版面的行動版輸入框中加入表情符號面板。</span>
+              <span language="es">Añade una paleta de emojis al área de texto móvil del diseño de inicio de Mei v11.</span>
+              <span language="ru">Добавляет палитру эмодзи в мобильное поле ввода в домашнем макете Mei v11.</span>
+              <span language="de">Fügt dem mobilen Textfeld im Home-Layout von Mei v11 eine Emoji-Palette hinzu.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11EmojisPaletteForMovileTextArea/MeiV11EmojisPaletteForMovileTextArea.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11AttachedImageSmaller">Mei v11 attached image smaller</a></h4>
+            <p><template type="language-group">
+              <span language="en">Makes the preview of attached images smaller in Mei v11.</span>
+              <span language="ja">Mei v11 で、添付画像のプレビューを小さく表示します。</span>
+              <span language="zh-CN">缩小 Mei v11 中附加图片的预览。</span>
+              <span language="zh-TW">縮小 Mei v11 中附加圖片的預覽。</span>
+              <span language="es">Reduce la vista previa de las imágenes adjuntas en Mei v11.</span>
+              <span language="ru">Уменьшает превью прикреплённых изображений в Mei v11.</span>
+              <span language="de">Verkleinert die Vorschau angehängter Bilder in Mei v11.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11AttachedImageSmaller/MeiV11AttachedImageSmaller.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11ReloadButton">Mei v11 reload button</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds a button that force-reloads the Mei v11 screen.</span>
+              <span language="ja">Mei v11 の画面を強制的に再読み込みするボタンを追加します。</span>
+              <span language="zh-CN">添加一个强制重新加载 Mei v11 页面的按钮。</span>
+              <span language="zh-TW">加入可強制重新載入 Mei v11 畫面的按鈕。</span>
+              <span language="es">Añade un botón para forzar la recarga de la pantalla de Mei v11.</span>
+              <span language="ru">Добавляет кнопку принудительной перезагрузки экрана Mei v11.</span>
+              <span language="de">Fügt eine Schaltfläche hinzu, die den Mei-v11-Bildschirm neu lädt.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11ReloadButton/MeiV11ReloadButton.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MeiV11RenoteRemover">MeiV11RenoteRemover</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds a delete button to renotes on the Mei v11 timeline.</span>
+              <span language="ja">Mei v11 のタイムライン上のリノートに、削除ボタンを追加します。</span>
+              <span language="zh-CN">在 Mei v11 时间线的转发帖上添加删除按钮。</span>
+              <span language="zh-TW">在 Mei v11 時間軸的轉發貼文上加入刪除按鈕。</span>
+              <span language="es">Añade un botón de eliminar a las renotas en la línea de tiempo de Mei v11.</span>
+              <span language="ru">Добавляет кнопку удаления к ренотам в ленте Mei v11.</span>
+              <span language="de">Fügt Renotes auf der Mei-v11-Timeline eine Löschen-Schaltfläche hinzu.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MeiV11RenoteRemover/MeiV11RenoteRemover.min.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11AddPostButtonAtBottom">MisskeyV11AddPostButtonAtBottom</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds a new-post button to the bottom-left corner in the Misskey v11 home layout.</span>
+              <span language="ja">Misskey v11 のホームレイアウトで、画面左下に投稿ボタンを追加します。</span>
+              <span language="zh-CN">在 Misskey v11 主页布局的屏幕左下角添加发帖按钮。</span>
+              <span language="zh-TW">在 Misskey v11 首頁版面的畫面左下角加入發文按鈕。</span>
+              <span language="es">Añade un botón de nueva publicación en la esquina inferior izquierda del diseño de inicio de Misskey v11.</span>
+              <span language="ru">Добавляет кнопку нового поста в левый нижний угол в домашнем макете Misskey v11.</span>
+              <span language="de">Fügt im Home-Layout von Misskey v11 unten links eine Schaltfläche für neue Beiträge hinzu.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11AddPostButtonAtBottom/MisskeyV11AddPostButtonAtBottom.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11BackToTop">MisskeyV11BackToTop</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds a back-to-top button in Misskey v11.</span>
+              <span language="ja">Misskey v11 に、ページ先頭へ戻るボタンを追加します。</span>
+              <span language="zh-CN">为 Misskey v11 添加返回顶部按钮。</span>
+              <span language="zh-TW">為 Misskey v11 加入回到頂端按鈕。</span>
+              <span language="es">Añade un botón para volver arriba en Misskey v11.</span>
+              <span language="ru">Добавляет кнопку «Наверх» в Misskey v11.</span>
+              <span language="de">Fügt Misskey v11 eine Schaltfläche „Nach oben“ hinzu.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11BackToTop/MisskeyV11BackToTop.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11CustomEmojiRender">MisskeyV11CustomEmojiRender</a></h4>
+            <p><template type="language-group">
+              <span language="en">Retries loading custom emoji that failed to load (Misskey.dev only).</span>
+              <span language="ja">読み込めなかったカスタム絵文字を再読み込みします（Misskey.dev 専用）。</span>
+              <span language="zh-CN">重新加载未能加载的自定义表情（仅限 Misskey.dev）。</span>
+              <span language="zh-TW">重新載入無法載入的自訂表情符號（僅限 Misskey.dev）。</span>
+              <span language="es">Reintenta cargar los emojis personalizados que no se pudieron cargar (solo Misskey.dev).</span>
+              <span language="ru">Повторно загружает кастомные эмодзи, которые не удалось загрузить (только Misskey.dev).</span>
+              <span language="de">Lädt benutzerdefinierte Emojis erneut, die nicht geladen werden konnten (nur Misskey.dev).</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11CustomEmojiRender/MisskeyV11CustomEmojiRender.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth">MisskeyV11ReactionPickerExpandWidth</a></h4>
+            <p><template type="language-group">
+              <span language="en">Shows the reaction palette at the bottom of the screen in Misskey v11 mobile mode.</span>
+              <span language="ja">Misskey v11 のモバイル版モードで、リアクションパレットを画面下部に表示します。</span>
+              <span language="zh-CN">在 Misskey v11 移动版模式下，将回应面板显示在屏幕底部。</span>
+              <span language="zh-TW">在 Misskey v11 行動版模式下，將反應面板顯示在畫面底部。</span>
+              <span language="es">Muestra la paleta de reacciones en la parte inferior de la pantalla en el modo móvil de Misskey v11.</span>
+              <span language="ru">Показывает палитру реакций внизу экрана в мобильном режиме Misskey v11.</span>
+              <span language="de">Zeigt die Reaktionspalette im mobilen Modus von Misskey v11 am unteren Bildschirmrand an.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11ReactionPickerExpandWidth/MisskeyV11ReactionPickerExpandWidth.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11RemoteCustomEmojiMarker">MisskeyV11RemoteCustomEmojiMarker</a></h4>
+            <p><template type="language-group">
+              <span language="en">Makes reactions with remote custom emoji stand out in Misskey v11.</span>
+              <span language="ja">Misskey v11 で、リモートのカスタム絵文字によるリアクションを目立たせます。</span>
+              <span language="zh-CN">在 Misskey v11 中突出显示使用远程自定义表情的回应。</span>
+              <span language="zh-TW">在 Misskey v11 中突顯使用遠端自訂表情符號的反應。</span>
+              <span language="es">Resalta las reacciones con emojis personalizados remotos en Misskey v11.</span>
+              <span language="ru">Выделяет реакции с удалёнными кастомными эмодзи в Misskey v11.</span>
+              <span language="de">Hebt Reaktionen mit entfernten benutzerdefinierten Emojis in Misskey v11 hervor.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11RemoteCustomEmojiMarker/MisskeyV11RemoteCustomEmojiMarker.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode">MisskeyV11SendWithCtrlEnterForMobileMode</a></h4>
+            <p><template type="language-group">
+              <span language="en">Lets you post a note with Ctrl+Enter in Misskey v11 mobile mode.</span>
+              <span language="ja">Misskey v11 のモバイル版モードで、Ctrl+Enter でノートを投稿できるようにします。</span>
+              <span language="zh-CN">在 Misskey v11 移动版模式下，可用 Ctrl+Enter 发布帖子。</span>
+              <span language="zh-TW">在 Misskey v11 行動版模式下，可用 Ctrl+Enter 發布貼文。</span>
+              <span language="es">Permite publicar una nota con Ctrl+Enter en el modo móvil de Misskey v11.</span>
+              <span language="ru">Позволяет отправлять заметку по Ctrl+Enter в мобильном режиме Misskey v11.</span>
+              <span language="de">Ermöglicht das Senden einer Notiz mit Strg+Enter im mobilen Modus von Misskey v11.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Misskey/MisskeyV11SendWithCtrlEnterForMobileMode/MisskeyV11SendWithCtrlEnterForMobileMode.user.js" data-i18n="install">Install</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="category cat-mastodon" id="mastodon">
+        <h3>
+          <template type="language-group">
+            <span language="en">For Mastodon</span>
+            <span language="ja">Mastodon 向け</span>
+            <span language="zh-CN">适用于 Mastodon</span>
+            <span language="zh-TW">適用於 Mastodon</span>
+            <span language="es">Para Mastodon</span>
+            <span language="ru">Для Mastodon</span>
+            <span language="de">Für Mastodon</span>
+          </template>
+          <span class="count">3</span>
+        </h3>
+        <div class="script-grid">
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Mastodon/MastodonTootSpeech">MastodonTootSpeech</a></h4>
+            <p><template type="language-group">
+              <span language="en">Reads new toots in the Mastodon home timeline aloud with the Web Speech API.</span>
+              <span language="ja">Mastodon のホームタイムラインの新着トゥートを Speech API で読み上げます。</span>
+              <span language="zh-CN">使用 Web Speech API 朗读 Mastodon 主页时间线中的新嘟文。</span>
+              <span language="zh-TW">使用 Web Speech API 朗讀 Mastodon 首頁時間軸中的新嘟文。</span>
+              <span language="es">Lee en voz alta los nuevos toots de la cronología de inicio de Mastodon con la Web Speech API.</span>
+              <span language="ru">Зачитывает новые туты из домашней ленты Mastodon с помощью Web Speech API.</span>
+              <span language="de">Liest neue Toots in der Home-Timeline von Mastodon mit der Web Speech API vor.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonTootSpeech/MastodonTootSpeech.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Mastodon/MastodonFediverseTicker">MastodonFediverseTicker</a></h4>
+            <p><template type="language-group">
+              <span language="en">Shows at a glance which server each poster belongs to.</span>
+              <span language="ja">投稿者の所属サーバーをひと目でわかるように表示します。</span>
+              <span language="zh-CN">醒目地显示发帖者所属的服务器。</span>
+              <span language="zh-TW">醒目地顯示發文者所屬的伺服器。</span>
+              <span language="es">Muestra de forma visible el servidor al que pertenece cada autor.</span>
+              <span language="ru">Наглядно показывает, к какому серверу относится автор поста.</span>
+              <span language="de">Zeigt gut sichtbar an, zu welchem Server die Verfasser gehören.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonFediverseTicker/MastodonFediverseTicker.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Mastodon/MastodonKeywordsFilter">MastodonKeywordsFilter</a></h4>
+            <p><template type="language-group">
+              <span language="en">Filters out offensive words in Mastodon.</span>
+              <span language="ja">Mastodon で不快な単語をフィルタリングします。</span>
+              <span language="zh-CN">在 Mastodon 中过滤冒犯性词语。</span>
+              <span language="zh-TW">在 Mastodon 中過濾冒犯性字詞。</span>
+              <span language="es">Filtra las palabras ofensivas en Mastodon.</span>
+              <span language="ru">Отфильтровывает оскорбительные слова в Mastodon.</span>
+              <span language="de">Filtert anstößige Wörter in Mastodon heraus.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonKeywordsFilter/MastodonKeywordsFilter.user.js" data-i18n="install">Install</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="category cat-others" id="others">
+        <h3>
+          <template type="language-group">
+            <span language="en">Other websites</span>
+            <span language="ja">その他の Web サイト</span>
+            <span language="zh-CN">其他网站</span>
+            <span language="zh-TW">其他網站</span>
+            <span language="es">Otros sitios web</span>
+            <span language="ru">Другие сайты</span>
+            <span language="de">Andere Websites</span>
+          </template>
+          <span class="count">8</span>
+        </h3>
+        <div class="script-grid">
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/UrlSticky">UrlSticky</a></h4>
+            <p><template type="language-group">
+              <span language="en">Shows sticky notes tied to each URL. Paste in anything you copied on the web.</span>
+              <span language="ja">URL に紐付いた付箋を画面に表示します。Web でコピーしたものは何でも貼り付けられます。</span>
+              <span language="zh-CN">在页面上显示与 URL 绑定的便签，可粘贴从网上复制的任何内容。</span>
+              <span language="zh-TW">在頁面上顯示與 URL 綁定的便利貼，可貼上從網路複製的任何內容。</span>
+              <span language="es">Muestra notas adhesivas vinculadas a cada URL. Pega cualquier cosa que hayas copiado en la web.</span>
+              <span language="ru">Показывает стикеры, привязанные к URL. В них можно вставить всё, что вы скопировали в интернете.</span>
+              <span language="de">Zeigt an URLs gebundene Haftnotizen an. Füge alles ein, was du im Web kopiert hast.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/UrlSticky/UrlSticky.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/TomatoAlarm">TomatoAlarm</a></h4>
+            <p><template type="language-group">
+              <span language="en">A Pomodoro-style timer: after you press Start, a wind-chime alarm rings every 10 minutes.</span>
+              <span language="ja">ポモドーロ・テクニックの要領で、スタートボタンを押してから 10 分ごとに風鈴の音でアラームを鳴らします。</span>
+              <span language="zh-CN">番茄工作法式计时器：点击开始后，每 10 分钟响一次风铃提示音。</span>
+              <span language="zh-TW">番茄工作法式計時器：按下開始後，每 10 分鐘響一次風鈴提示音。</span>
+              <span language="es">Temporizador estilo Pomodoro: tras pulsar Iniciar, suena un carillón de viento cada 10 minutos.</span>
+              <span language="ru">Таймер в стиле «Помидоро»: после нажатия «Старт» каждые 10 минут звучит сигнал музыки ветра.</span>
+              <span language="de">Timer nach der Pomodoro-Technik: Nach dem Start erklingt alle 10 Minuten ein Windspiel-Signal.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/TomatoAlarm/TomatoAlarm.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/BrowserBackRecommendDisabler">Browser back recommend disabler</a></h4>
+            <p><template type="language-group">
+              <span language="en">Blocks the “don't leave yet” recommendation pages some sites show when you press the browser's Back button.</span>
+              <span language="ja">ブラウザバックで表示される、サイト離脱を防ぐためのページへの遷移を防止します。</span>
+              <span language="zh-CN">阻止部分网站在你点击浏览器“后退”时弹出的挽留推荐页面。</span>
+              <span language="zh-TW">阻止部分網站在你按下瀏覽器「上一頁」時跳出的挽留推薦頁面。</span>
+              <span language="es">Bloquea las páginas de recomendaciones que algunos sitios muestran al pulsar Atrás para que no te vayas.</span>
+              <span language="ru">Блокирует страницы с рекомендациями, которыми некоторые сайты удерживают вас при нажатии «Назад».</span>
+              <span language="de">Verhindert die „Bleib noch“-Empfehlungsseiten, die manche Websites beim Zurück-Button anzeigen.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/BrowserBackRecommendDisabler/BrowserBackRecommendDisabler.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/SnsTextAreaEnlargement">SnsTextAreaEnlargement</a></h4>
+            <p><template type="language-group">
+              <span language="en">Enlarges the post text area on social sites such as Misskey and Fedibird.</span>
+              <span language="ja">Misskey や Fedibird などの SNS で、投稿欄を大きくします。</span>
+              <span language="zh-CN">放大 Misskey、Fedibird 等社交网站的发帖输入框。</span>
+              <span language="zh-TW">放大 Misskey、Fedibird 等社群網站的發文輸入框。</span>
+              <span language="es">Agranda el área de texto de publicación en redes como Misskey y Fedibird.</span>
+              <span language="ru">Увеличивает поле ввода поста в соцсетях вроде Misskey и Fedibird.</span>
+              <span language="de">Vergrößert das Beitragsfeld auf sozialen Netzwerken wie Misskey und Fedibird.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/SnsTextAreaEnlargement/SnsTextAreaEnlargement.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/ChatGptSuggest">ChatGPTSuggest</a></h4>
+            <p><template type="language-group">
+              <span language="en">Suggests and autocompletes handy phrases in the ChatGPT prompt.</span>
+              <span language="ja">ChatGPT のプロンプトに入力するおすすめフレーズの候補を表示し、入力補完します。</span>
+              <span language="zh-CN">在 ChatGPT 提示词输入框中显示推荐短语并自动补全。</span>
+              <span language="zh-TW">在 ChatGPT 提示詞輸入框中顯示推薦片語並自動完成。</span>
+              <span language="es">Sugiere y autocompleta frases útiles en el cuadro de prompt de ChatGPT.</span>
+              <span language="ru">Подсказывает и автоматически дополняет полезные фразы в поле запроса ChatGPT.</span>
+              <span language="de">Schlägt im ChatGPT-Eingabefeld nützliche Phrasen vor und vervollständigt sie.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/ChatGptSuggest/ChatGptSuggest.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/ChatworkHighlighter">ChatworkHighlighter</a></h4>
+            <p><template type="language-group">
+              <span language="en">Adds syntax highlighting to code in Chatwork.</span>
+              <span language="ja">Chatwork のコード表記にシンタックスハイライトをかけます。</span>
+              <span language="zh-CN">为 Chatwork 中的代码添加语法高亮。</span>
+              <span language="zh-TW">為 Chatwork 中的程式碼加上語法突顯。</span>
+              <span language="es">Añade resaltado de sintaxis al código en Chatwork.</span>
+              <span language="ru">Добавляет подсветку синтаксиса для кода в Chatwork.</span>
+              <span language="de">Fügt Code in Chatwork Syntaxhervorhebung hinzu.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/ChatworkHighlighter/ChatworkHighlighter.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/HtmlSourceViewer">HtmlSourceViewer</a></h4>
+            <p><template type="language-group">
+              <span language="en">Shows the HTML source of the current page, with syntax highlighting except on iOS/iPadOS.</span>
+              <span language="ja">表示中のページの HTML ソースを表示します。iOS/iPadOS 以外ではシンタックスハイライトがかかります。</span>
+              <span language="zh-CN">显示当前页面的 HTML 源代码，iOS/iPadOS 以外的平台带语法高亮。</span>
+              <span language="zh-TW">顯示目前頁面的 HTML 原始碼，iOS/iPadOS 以外的平台附語法突顯。</span>
+              <span language="es">Muestra el código HTML de la página actual, con resaltado de sintaxis salvo en iOS/iPadOS.</span>
+              <span language="ru">Показывает HTML-код текущей страницы с подсветкой синтаксиса (кроме iOS/iPadOS).</span>
+              <span language="de">Zeigt den HTML-Quelltext der aktuellen Seite an, außer unter iOS/iPadOS mit Syntaxhervorhebung.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/HtmlSourceViewer/HtmlSourceViewer.user.js" data-i18n="install">Install</a>
+          </article>
+          <article class="script">
+            <h4><a href="https://github.com/hidao80/UserScript/tree/main/src/Others/OnScreenConsole">OnScreenConsole</a></h4>
+            <p><template type="language-group">
+              <span language="en">Shows the browser's developer-tools console output on the page itself.</span>
+              <span language="ja">ブラウザの開発者ツールのコンソールの内容を画面に表示します。</span>
+              <span language="zh-CN">在页面上直接显示浏览器开发者工具控制台的内容。</span>
+              <span language="zh-TW">在頁面上直接顯示瀏覽器開發人員工具主控台的內容。</span>
+              <span language="es">Muestra en la propia página la salida de la consola de las herramientas de desarrollo.</span>
+              <span language="ru">Выводит содержимое консоли инструментов разработчика прямо на страницу.</span>
+              <span language="de">Zeigt die Ausgabe der Entwicklertools-Konsole direkt auf der Seite an.</span>
+            </template></p>
+            <a class="install" href="https://github.com/hidao80/UserScript/raw/main/src/Others/OnScreenConsole/OnScreenConsole.user.js" data-i18n="install">Install</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-stack">
+      <h2>
+        <template type="language-group">
+          <span language="en">Built with</span>
+          <span language="ja">利用技術</span>
+          <span language="zh-CN">使用的技术</span>
+          <span language="zh-TW">使用的技術</span>
+          <span language="es">Tecnologías utilizadas</span>
+          <span language="ru">Используемые технологии</span>
+          <span language="de">Verwendete Technologien</span>
+        </template>
+      </h2>
+      <div class="tech-groups">
+        <div class="tech-group tech-runtime">
+          <h3>
+            <template type="language-group">
+              <span language="en">Language &amp; Web APIs</span>
+              <span language="ja">言語・Web API</span>
+              <span language="zh-CN">语言与 Web API</span>
+              <span language="zh-TW">語言與 Web API</span>
+              <span language="es">Lenguaje y APIs web</span>
+              <span language="ru">Язык и Web API</span>
+              <span language="de">Sprache &amp; Web-APIs</span>
+            </template>
+          </h3>
+          <ul class="tech-list">
+            <li><a href="https://developer.mozilla.org/docs/Web/JavaScript">JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/docs/Web/API/Web_Speech_API">Web Speech API</a></li>
+            <li><a href="https://developer.mozilla.org/docs/Web/API/MutationObserver">MutationObserver</a></li>
+            <li><a href="https://developer.mozilla.org/docs/Web/API/HTMLAudioElement">HTMLAudioElement</a></li>
+            <li><a href="https://developer.mozilla.org/docs/Web/API/Web_Storage_API">Web Storage</a></li>
+          </ul>
+        </div>
+        <div class="tech-group tech-lib">
+          <h3>
+            <template type="language-group">
+              <span language="en">Libraries</span>
+              <span language="ja">ライブラリー</span>
+              <span language="zh-CN">库</span>
+              <span language="zh-TW">函式庫</span>
+              <span language="es">Bibliotecas</span>
+              <span language="ru">Библиотеки</span>
+              <span language="de">Bibliotheken</span>
+            </template>
+          </h3>
+          <ul class="tech-list">
+            <li><a href="https://highlightjs.org/">highlight.js</a></li>
+            <li><a href="https://github.com/syntaxhighlighter/syntaxhighlighter">SyntaxHighlighter</a></li>
+            <li><a href="https://jquery.com/">jQuery</a></li>
+            <li><a href="https://github.com/jdecked/twemoji">Twemoji</a></li>
+          </ul>
+        </div>
+        <div class="tech-group tech-tool">
+          <h3>
+            <template type="language-group">
+              <span language="en">Script managers &amp; development</span>
+              <span language="ja">スクリプト管理・開発</span>
+              <span language="zh-CN">脚本管理与开发</span>
+              <span language="zh-TW">腳本管理與開發</span>
+              <span language="es">Gestores de scripts y desarrollo</span>
+              <span language="ru">Менеджеры скриптов и разработка</span>
+              <span language="de">Skript-Manager &amp; Entwicklung</span>
+            </template>
+          </h3>
+          <ul class="tech-list">
+            <li><a href="https://www.tampermonkey.net/">Tampermonkey</a></li>
+            <li><a href="https://github.com/quoid/userscripts">Userscripts (Safari)</a></li>
+            <li><a href="https://wiki.greasespot.net/Metadata_Block">Metadata Block</a></li>
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://www.coderabbit.ai/">CodeRabbit</a></li>
+          </ul>
+        </div>
+        <div class="tech-group tech-web">
+          <h3>
+            <template type="language-group">
+              <span language="en">Website</span>
+              <span language="ja">Web サイト</span>
+              <span language="zh-CN">网站</span>
+              <span language="zh-TW">網站</span>
+              <span language="es">Sitio web</span>
+              <span language="ru">Сайт</span>
+              <span language="de">Website</span>
+            </template>
+          </h3>
+          <ul class="tech-list">
+            <li><a href="https://picocss.com/">Pico CSS</a></li>
+            <li><a href="https://www.npmjs.com/package/multilanguagejs">MultilanguageJS</a></li>
+            <li><a href="https://github.com/jdecked/twemoji">Twemoji</a></li>
+            <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <hr>
+    <p>
+      <a href="https://github.com/hidao80/UserScript">GitHub</a> ·
+      <a href="https://github.com/hidao80/UserScript/blob/main/LICENSE">MIT License</a> ·
+      <template type="language-group">
+        <span language="en">Emoji graphics by <a href="https://github.com/jdecked/twemoji">Twemoji</a> (CC-BY 4.0)</span>
+        <span language="ja">絵文字画像: <a href="https://github.com/jdecked/twemoji">Twemoji</a>（CC-BY 4.0）</span>
+        <span language="zh-CN">表情图形来自 <a href="https://github.com/jdecked/twemoji">Twemoji</a>（CC-BY 4.0）</span>
+        <span language="zh-TW">表情符號圖形來自 <a href="https://github.com/jdecked/twemoji">Twemoji</a>（CC-BY 4.0）</span>
+        <span language="es">Gráficos de emoji de <a href="https://github.com/jdecked/twemoji">Twemoji</a> (CC-BY 4.0)</span>
+        <span language="ru">Графика эмодзи: <a href="https://github.com/jdecked/twemoji">Twemoji</a> (CC-BY 4.0)</span>
+        <span language="de">Emoji-Grafiken von <a href="https://github.com/jdecked/twemoji">Twemoji</a> (CC-BY 4.0)</span>
+      </template>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/multilanguagejs@2.0.1/dist/multilanguagejs.umd.cjs"></script>
+  <script src="main.js"></script>
+</body>
+</html>
